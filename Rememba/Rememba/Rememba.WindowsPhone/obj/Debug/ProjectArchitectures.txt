@@ -1,0 +1,1 @@
+C:\Code\AppBase\RefApp\RefApp\RefApp.WindowsPhone\RefApp.WindowsPhone.csproj;neutral

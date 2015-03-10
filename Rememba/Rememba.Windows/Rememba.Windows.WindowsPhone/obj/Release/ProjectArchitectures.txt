@@ -1,0 +1,13 @@
+C:\Code\RefApp\RefApp\RefApp.Contracts\RefApp.Contracts.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Contracts\RefApp.Contracts.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Contracts\RefApp.Contracts.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Model\RefApp.Model.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Repositories.Windows\RefApp.Repositories.Windows.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Repositories\RefApp.Repositories.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Service.Windows\RefApp.Service.Windows.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Shared.Windows\RefApp.Shared.Windows.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Shared\RefApp.SharedPCL.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Shared\RefApp.SharedPCL.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Shared\RefApp.SharedPCL.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.ViewModels.Windows\RefApp.ViewModels.Windows.csproj;neutral
+C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.WindowsPhone\RefApp.Windows.WindowsPhone.csproj;neutral
