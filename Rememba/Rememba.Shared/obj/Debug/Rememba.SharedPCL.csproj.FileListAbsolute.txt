@@ -1,0 +1,7 @@
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Autofac.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Autofac.xml
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.SharedPCL.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.SharedPCL.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\obj\Debug\Rememba.SharedPCL.csprojResolveAssemblyReference.cache
+C:\Code\Rememba\Rememba\Rememba.Shared\obj\Debug\Rememba.SharedPCL.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\obj\Debug\Rememba.SharedPCL.pdb

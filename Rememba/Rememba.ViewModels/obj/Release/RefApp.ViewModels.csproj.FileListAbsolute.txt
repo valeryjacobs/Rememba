@@ -1,0 +1,8 @@
+C:\Code\AppBase\RefApp\RefApp.ViewModels\bin\Release\RefApp.ViewModels.dll
+C:\Code\AppBase\RefApp\RefApp.ViewModels\bin\Release\RefApp.ViewModels.pdb
+C:\Code\AppBase\RefApp\RefApp.ViewModels\obj\Release\RefApp.ViewModels.dll
+C:\Code\AppBase\RefApp\RefApp.ViewModels\obj\Release\RefApp.ViewModels.pdb
+C:\Code\RefApp\RefApp\RefApp.ViewModels\bin\Release\RefApp.ViewModels.dll
+C:\Code\RefApp\RefApp\RefApp.ViewModels\bin\Release\RefApp.ViewModels.pdb
+C:\Code\RefApp\RefApp\RefApp.ViewModels\obj\Release\RefApp.ViewModels.dll
+C:\Code\RefApp\RefApp\RefApp.ViewModels\obj\Release\RefApp.ViewModels.pdb

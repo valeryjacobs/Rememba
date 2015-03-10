@@ -1,0 +1,9 @@
+C:\Code\Rememba\Rememba\Rememba.Model\obj\Debug\Rememba.Model.csprojResolveAssemblyReference.cache
+C:\Code\Rememba\Rememba\Rememba.Model\bin\Debug\Rememba.Model.dll
+C:\Code\Rememba\Rememba\Rememba.Model\bin\Debug\Rememba.Model.pdb
+C:\Code\Rememba\Rememba\Rememba.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Code\Rememba\Rememba\Rememba.Model\bin\Debug\Rememba.Contracts.dll
+C:\Code\Rememba\Rememba\Rememba.Model\bin\Debug\Rememba.Contracts.pdb
+C:\Code\Rememba\Rememba\Rememba.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Code\Rememba\Rememba\Rememba.Model\obj\Debug\Rememba.Model.dll
+C:\Code\Rememba\Rememba\Rememba.Model\obj\Debug\Rememba.Model.pdb

@@ -1,0 +1,17 @@
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\bin\Debug\RefApp.Shared.Windows.dll
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\bin\Debug\RefApp.Shared.Windows.pdb
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\bin\Debug\RefApp.Shared.Windows.pri
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\RefApp.Shared.Windows.csprojResolveAssemblyReference.cache
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\RefApp.Shared.Windows.dll
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\RefApp.Shared.Windows.pdb
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\priconfig.xml
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\priconfig.xml.intermediate
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\layout.resfiles
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\layout.resfiles.intermediate
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\resources.resfiles
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\resources.resfiles.intermediate
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\pri.resfiles
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\pri.resfiles.intermediate
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\qualifiers.txt
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\qualifiers.txt.intermediate
+C:\Code\AppBase\RefApp\RefApp.Shared.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt

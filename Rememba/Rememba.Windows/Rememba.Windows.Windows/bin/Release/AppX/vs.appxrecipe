@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SURFACERED</Machine>
+    <WindowsUser>Valery</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>41540b8d-f660-48b8-95f0-efce16ce0e0b</PackageIdentityName>
+    <IntermediateOutputPath>C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\obj\Release\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>65DD9C925EADA253F2059B6778FC8BD30872E3276974F25C894B135C1B98C34A</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>41540b8d-f660-48b8-95f0-efce16ce0e0b_1.0.0.0_neutral__wntqsxhwzrmd6</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>41540b8d-f660-48b8-95f0-efce16ce0e0b_wntqsxhwzrmd6!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>41540b8d-f660-48b8-95f0-efce16ce0e0b</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Valery</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-03-09T14:32:25.166</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\RefApp.Windows.Windows.exe">
+      <PackagePath>RefApp.Windows.Windows.exe</PackagePath>
+      <Modified>2015-03-09T16:01:51.292</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.dll">
+      <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
+      <Modified>2015-03-06T15:54:38.236</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
+      <Modified>2015-03-06T15:54:38.266</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
+      <Modified>2015-03-06T15:54:38.333</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
+      <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
+      <Modified>2015-03-06T15:54:36.744</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Contracts\bin\Release\RefApp.Contracts.dll">
+      <PackagePath>RefApp.Contracts.dll</PackagePath>
+      <Modified>2015-03-09T08:09:49.726</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Service.Windows\bin\Release\RefApp.Service.Windows.dll">
+      <PackagePath>RefApp.Service.Windows.dll</PackagePath>
+      <Modified>2015-03-09T15:58:38.250</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Shared\bin\Release\RefApp.SharedPCL.dll">
+      <PackagePath>RefApp.SharedPCL.dll</PackagePath>
+      <Modified>2015-03-09T15:58:37.494</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.ViewModels.Windows\bin\Release\RefApp.ViewModels.Windows.dll">
+      <PackagePath>RefApp.ViewModels.Windows.dll</PackagePath>
+      <Modified>2015-03-09T15:58:38.250</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Service.Windows\bin\Release\RefApp.Repositories.Windows.dll">
+      <PackagePath>RefApp.Repositories.Windows.dll</PackagePath>
+      <Modified>2015-03-09T08:09:51.576</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Service.Windows\bin\Release\RefApp.Model.dll">
+      <PackagePath>RefApp.Model.dll</PackagePath>
+      <Modified>2015-03-09T08:09:51.025</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T09:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T09:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T09:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T09:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-03-08T07:21:40.374</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-03-08T07:21:40.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\Views\SomeObjectDetailView.xbf">
+      <PackagePath>Views\SomeObjectDetailView.xbf</PackagePath>
+      <Modified>2015-03-09T12:20:46.673</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\Views\SomeOtherObjectDetailView.xbf">
+      <PackagePath>Views\SomeOtherObjectDetailView.xbf</PackagePath>
+      <Modified>2015-03-09T16:01:51.112</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\RefApp.Windows.Windows.xr.xml">
+      <PackagePath>RefApp.Windows.Windows.xr.xml</PackagePath>
+      <Modified>2015-03-09T16:01:51.052</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Repositories\bin\Release\RefApp.Repositories.dll">
+      <PackagePath>RefApp.Repositories.dll</PackagePath>
+      <Modified>2015-03-08T07:19:04.010</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Shared.Windows\bin\Release\RefApp.Shared.Windows.dll">
+      <PackagePath>RefApp.Shared.Windows.dll</PackagePath>
+      <Modified>2015-03-08T07:19:04.525</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\bin\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-03-09T16:01:51.741</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

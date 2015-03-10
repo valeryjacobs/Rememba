@@ -1,0 +1,9 @@
+C:\Code\AppBase\RefApp\RefApp.Contracts\bin\Release\RefApp.Contracts.dll
+C:\Code\AppBase\RefApp\RefApp.Contracts\bin\Release\RefApp.Contracts.pdb
+C:\Code\AppBase\RefApp\RefApp.Contracts\obj\Release\RefApp.Contracts.dll
+C:\Code\AppBase\RefApp\RefApp.Contracts\obj\Release\RefApp.Contracts.pdb
+C:\Code\RefApp\RefApp\RefApp.Contracts\bin\Release\RefApp.Contracts.dll
+C:\Code\RefApp\RefApp\RefApp.Contracts\bin\Release\RefApp.Contracts.pdb
+C:\Code\RefApp\RefApp\RefApp.Contracts\obj\Release\RefApp.Contracts.csprojResolveAssemblyReference.cache
+C:\Code\RefApp\RefApp\RefApp.Contracts\obj\Release\RefApp.Contracts.dll
+C:\Code\RefApp\RefApp\RefApp.Contracts\obj\Release\RefApp.Contracts.pdb

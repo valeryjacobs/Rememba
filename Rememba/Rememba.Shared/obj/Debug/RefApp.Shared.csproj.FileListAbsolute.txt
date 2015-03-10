@@ -1,0 +1,7 @@
+C:\Code\AppBase\RefApp\RefApp.Shared\obj\Debug\RefApp.Shared.csprojResolveAssemblyReference.cache
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Debug\RefApp.Shared.dll
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Debug\RefApp.Shared.pdb
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Debug\Autofac.dll
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Debug\Autofac.xml
+C:\Code\AppBase\RefApp\RefApp.Shared\obj\Debug\RefApp.Shared.dll
+C:\Code\AppBase\RefApp\RefApp.Shared\obj\Debug\RefApp.Shared.pdb

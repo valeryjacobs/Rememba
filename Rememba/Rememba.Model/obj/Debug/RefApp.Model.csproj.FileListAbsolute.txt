@@ -1,0 +1,14 @@
+C:\Code\AppBase\RefApp\RefApp.Model\obj\Debug\RefApp.Model.csprojResolveAssemblyReference.cache
+C:\Code\AppBase\RefApp\RefApp.Model\bin\Debug\RefApp.Model.dll
+C:\Code\AppBase\RefApp\RefApp.Model\bin\Debug\RefApp.Model.pdb
+C:\Code\AppBase\RefApp\RefApp.Model\bin\Debug\RefApp.Contracts.dll
+C:\Code\AppBase\RefApp\RefApp.Model\bin\Debug\RefApp.Contracts.pdb
+C:\Code\AppBase\RefApp\RefApp.Model\obj\Debug\RefApp.Model.dll
+C:\Code\AppBase\RefApp\RefApp.Model\obj\Debug\RefApp.Model.pdb
+C:\Code\RefApp\RefApp\RefApp.Model\bin\Debug\RefApp.Model.dll
+C:\Code\RefApp\RefApp\RefApp.Model\bin\Debug\RefApp.Model.pdb
+C:\Code\RefApp\RefApp\RefApp.Model\bin\Debug\RefApp.Contracts.dll
+C:\Code\RefApp\RefApp\RefApp.Model\bin\Debug\RefApp.Contracts.pdb
+C:\Code\RefApp\RefApp\RefApp.Model\obj\Debug\RefApp.Model.csprojResolveAssemblyReference.cache
+C:\Code\RefApp\RefApp\RefApp.Model\obj\Debug\RefApp.Model.dll
+C:\Code\RefApp\RefApp\RefApp.Model\obj\Debug\RefApp.Model.pdb

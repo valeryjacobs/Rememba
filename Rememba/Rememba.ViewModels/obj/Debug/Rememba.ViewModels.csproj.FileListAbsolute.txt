@@ -1,0 +1,5 @@
+C:\Code\Rememba\Rememba\Rememba.ViewModels\bin\Debug\RefApp.ViewModels.dll
+C:\Code\Rememba\Rememba\Rememba.ViewModels\bin\Debug\RefApp.ViewModels.pdb
+C:\Code\Rememba\Rememba\Rememba.ViewModels\obj\Debug\Rememba.ViewModels.csprojResolveAssemblyReference.cache
+C:\Code\Rememba\Rememba\Rememba.ViewModels\obj\Debug\RefApp.ViewModels.dll
+C:\Code\Rememba\Rememba\Rememba.ViewModels\obj\Debug\RefApp.ViewModels.pdb

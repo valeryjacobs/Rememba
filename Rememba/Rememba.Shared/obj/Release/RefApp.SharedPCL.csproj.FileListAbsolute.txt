@@ -1,0 +1,14 @@
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Release\RefApp.SharedPCL.dll
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Release\RefApp.SharedPCL.pdb
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Release\Autofac.dll
+C:\Code\AppBase\RefApp\RefApp.Shared\bin\Release\Autofac.xml
+C:\Code\AppBase\RefApp\RefApp.Shared\obj\Release\RefApp.SharedPCL.csprojResolveAssemblyReference.cache
+C:\Code\AppBase\RefApp\RefApp.Shared\obj\Release\RefApp.SharedPCL.dll
+C:\Code\AppBase\RefApp\RefApp.Shared\obj\Release\RefApp.SharedPCL.pdb
+C:\Code\RefApp\RefApp\RefApp.Shared\bin\Release\RefApp.SharedPCL.dll
+C:\Code\RefApp\RefApp\RefApp.Shared\bin\Release\RefApp.SharedPCL.pdb
+C:\Code\RefApp\RefApp\RefApp.Shared\bin\Release\Autofac.dll
+C:\Code\RefApp\RefApp\RefApp.Shared\bin\Release\Autofac.xml
+C:\Code\RefApp\RefApp\RefApp.Shared\obj\Release\RefApp.SharedPCL.csprojResolveAssemblyReference.cache
+C:\Code\RefApp\RefApp\RefApp.Shared\obj\Release\RefApp.SharedPCL.dll
+C:\Code\RefApp\RefApp\RefApp.Shared\obj\Release\RefApp.SharedPCL.pdb

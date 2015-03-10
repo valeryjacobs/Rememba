@@ -1,0 +1,10 @@
+C:\Code\AppBase\RefApp\RefApp.Contracts\obj\Debug\RefApp.Contracts.csprojResolveAssemblyReference.cache
+C:\Code\AppBase\RefApp\RefApp.Contracts\bin\Debug\RefApp.Contracts.dll
+C:\Code\AppBase\RefApp\RefApp.Contracts\bin\Debug\RefApp.Contracts.pdb
+C:\Code\AppBase\RefApp\RefApp.Contracts\obj\Debug\RefApp.Contracts.dll
+C:\Code\AppBase\RefApp\RefApp.Contracts\obj\Debug\RefApp.Contracts.pdb
+C:\Code\RefApp\RefApp\RefApp.Contracts\bin\Debug\RefApp.Contracts.dll
+C:\Code\RefApp\RefApp\RefApp.Contracts\bin\Debug\RefApp.Contracts.pdb
+C:\Code\RefApp\RefApp\RefApp.Contracts\obj\Debug\RefApp.Contracts.csprojResolveAssemblyReference.cache
+C:\Code\RefApp\RefApp\RefApp.Contracts\obj\Debug\RefApp.Contracts.dll
+C:\Code\RefApp\RefApp\RefApp.Contracts\obj\Debug\RefApp.Contracts.pdb

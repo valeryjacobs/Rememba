@@ -1,0 +1,9 @@
+C:\Code\AppBase\RefApp\RefApp.Repositories\bin\Release\RefApp.Repositories.dll
+C:\Code\AppBase\RefApp\RefApp.Repositories\bin\Release\RefApp.Repositories.pdb
+C:\Code\AppBase\RefApp\RefApp.Repositories\obj\Release\RefApp.Repositories.dll
+C:\Code\AppBase\RefApp\RefApp.Repositories\obj\Release\RefApp.Repositories.pdb
+C:\Code\RefApp\RefApp\RefApp.Repositories\bin\Release\RefApp.Repositories.dll
+C:\Code\RefApp\RefApp\RefApp.Repositories\bin\Release\RefApp.Repositories.pdb
+C:\Code\RefApp\RefApp\RefApp.Repositories\obj\Release\RefApp.Repositories.csprojResolveAssemblyReference.cache
+C:\Code\RefApp\RefApp\RefApp.Repositories\obj\Release\RefApp.Repositories.dll
+C:\Code\RefApp\RefApp\RefApp.Repositories\obj\Release\RefApp.Repositories.pdb

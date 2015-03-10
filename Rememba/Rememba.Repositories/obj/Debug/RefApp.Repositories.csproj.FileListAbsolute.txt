@@ -1,0 +1,5 @@
+C:\Code\AppBase\RefApp\RefApp.Repositories\bin\Debug\RefApp.Repositories.dll
+C:\Code\AppBase\RefApp\RefApp.Repositories\bin\Debug\RefApp.Repositories.pdb
+C:\Code\AppBase\RefApp\RefApp.Repositories\obj\Debug\RefApp.Repositories.csprojResolveAssemblyReference.cache
+C:\Code\AppBase\RefApp\RefApp.Repositories\obj\Debug\RefApp.Repositories.dll
+C:\Code\AppBase\RefApp\RefApp.Repositories\obj\Debug\RefApp.Repositories.pdb
