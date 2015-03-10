@@ -13,14 +13,43 @@
         <converters:BindingInspector x:Key="inspector"></converters:BindingInspector>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="Green"></Grid>
-        <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>
-        <ListView Margin="50" ItemsSource="{Binding RootNode.Children}" SelectionMode="Single" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"></ColumnDefinition>
+            <ColumnDefinition Width="260"></ColumnDefinition>
+            <ColumnDefinition Width="320"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--<TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>-->
+        <ListView ItemsSource="{Binding ParentList}" SelectionMode="Single" SelectionChanged="Parent_Selected" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
                         <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
                         <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView" SelectionChanged="Child_Selected"  SelectedValue="{Binding ChildSelected}"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Description}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectionChanged="SubChild_Selected" SelectedValue="{Binding SubChildSelected}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock TextWrapping="Wrap" FontWeight="Bold"   Text="{Binding Title}"></TextBlock>
+                        <TextBlock  TextWrapping="Wrap"  Text="{Binding Description}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
