@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
+  <Roots.Interfaces>
+    <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
+  </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="MainViewViewModel" />
+    <RootPropertyPathName Name="Main" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="TestBinding" />
     <RootPropertyPathName Name="SomeOtherObjectDetailViewModel" />
@@ -15,6 +19,7 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
+      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
@@ -24,13 +29,16 @@
     <RootType FullName="Rememba.Windows.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
+      <RootProperty Name="Path" />
+      <RootProperty Name="Converter" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Rememba.Windows.Views.MainView" />
+    <RootType FullName="Rememba.Windows.Converters.BindingInspector" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="FontSize" />
       <RootProperty Name="Text" />
+      <RootProperty Name="FontSize" />
     </RootType>
+    <RootType FullName="Rememba.Windows.Views.MainView" />
     <RootType FullName="Rememba.Windows.Views.SomeObjectDetailView" />
     <RootType FullName="Rememba.Windows.Views.SomeOtherObjectDetailView" />
   </Roots.RootTypes>

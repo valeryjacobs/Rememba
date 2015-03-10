@@ -49,6 +49,7 @@ namespace Rememba.Windows.ViewModel
 
             SimpleIoc.Default.Register<ISomeObjectDetailViewModel, SomeObjectDetailViewModel>();
             SimpleIoc.Default.Register<ISomeOtherObjectDetailViewModel, SomeOtherObjectDetailViewModel>();
+            SimpleIoc.Default.Register<IMainViewViewModel, MainViewViewModel>();
 
             //if (ViewModelBase.IsInDesignModeStatic)
             //{
@@ -58,7 +59,8 @@ namespace Rememba.Windows.ViewModel
             //else
             //{
                 // Create run time view services and models
-            SimpleIoc.Default.Register<ISomeDataService, SomeDataService>();
+            SimpleIoc.Default.Register<ISomeDataService, SomeDataService>(); 
+            SimpleIoc.Default.Register<IMindMapDataService, MindMapDataService>();
             //}
 
             SimpleIoc.Default.Register<ICacheDataService, CacheDataService>();
@@ -67,8 +69,9 @@ namespace Rememba.Windows.ViewModel
         private INavigationService CreateNavigationService()
         {
             var navigationService = new NavigationService();
-            navigationService.Configure("SomeObjectDetailView", typeof(SomeObjectDetailView));
-            navigationService.Configure("SomeOtherObjectDetailView", typeof(SomeOtherObjectDetailView));
+            navigationService.Configure(PageNames.SomeObjectDetailView, typeof(SomeObjectDetailView));
+            navigationService.Configure(PageNames.SomeOtherObjectDetailView, typeof(SomeOtherObjectDetailView));
+            navigationService.Configure(PageNames.MainView, typeof(MainView));
 
 
             return navigationService;
@@ -100,6 +103,14 @@ namespace Rememba.Windows.ViewModel
             get
             {
                 return SimpleIoc.Default.GetInstance<ISomeOtherObjectDetailViewModel>();
+            }
+        }
+
+        public IMainViewViewModel MainViewViewModel
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<IMainViewViewModel>();
             }
         }
     }

@@ -5,3 +5,9 @@ C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.SharedPCL.pdb
 C:\Code\Rememba\Rememba\Rememba.Shared\obj\Debug\Rememba.SharedPCL.csprojResolveAssemblyReference.cache
 C:\Code\Rememba\Rememba\Rememba.Shared\obj\Debug\Rememba.SharedPCL.dll
 C:\Code\Rememba\Rememba\Rememba.Shared\obj\Debug\Rememba.SharedPCL.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.Contracts.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.Model.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Newtonsoft.Json.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.Contracts.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.Model.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Newtonsoft.Json.xml

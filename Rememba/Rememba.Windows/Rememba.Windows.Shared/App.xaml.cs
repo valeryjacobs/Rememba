@@ -92,7 +92,7 @@ namespace Rememba.Windows
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                navigationService.NavigateTo(PageNames.SomeObjectDetailView, null);
+                navigationService.NavigateTo(PageNames.MainView, null);
             }
 
             if (rootFrame.Content == null)

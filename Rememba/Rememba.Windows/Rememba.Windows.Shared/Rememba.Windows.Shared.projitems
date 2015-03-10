@@ -6,7 +6,7 @@
     <SharedGUID>e0b21e42-252f-4e41-9532-eb7175ffc173</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>RefApp.Windows</Import_RootNamespace>
+    <Import_RootNamespace>Rememba.Windows</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BindingInspector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
   </ItemGroup>

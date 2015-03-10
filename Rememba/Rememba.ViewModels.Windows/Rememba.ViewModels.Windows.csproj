@@ -59,6 +59,7 @@
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainViewViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SomeObjectDetailViewModel.cs" />
     <Compile Include="SomeOtherObjectDetailViewModel.cs" />

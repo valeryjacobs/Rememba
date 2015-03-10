@@ -31,6 +31,9 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Contracts\bin\Debug\Rememba.Contracts.dll">
       <PackagePath>Rememba.Contracts.dll</PackagePath>
     </AppxPackagedFile>
@@ -48,9 +51,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Model.dll">
       <PackagePath>Rememba.Model.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Newtonsoft.Json.dll">
-      <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -73,6 +73,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\MainView.xbf">
+      <PackagePath>Views\MainView.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\SomeObjectDetailView.xbf">
       <PackagePath>Views\SomeObjectDetailView.xbf</PackagePath>

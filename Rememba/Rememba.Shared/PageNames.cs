@@ -11,5 +11,6 @@ namespace Rememba.Shared
 
         public const string SomeObjectDetailView = "SomeObjectDetailView";
         public const string SomeOtherObjectDetailView = "SomeOtherObjectDetailView";
-   }
+        public const string MainView = "MainView";
+    }
 }

@@ -1,12 +1,12 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.windows\rememba.windows.windowsphone\obj\debug\intermediatexaml\rememba.windows.windowsphone.exe" HashGuid="f2757d73-bf9f-7d30-134e-64bfb3c50f6e" />
+    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.windows\rememba.windows.windowsphone\obj\debug\intermediatexaml\rememba.windows.windowsphone.exe" HashGuid="270dc701-9304-61fe-5315-80d8418780fc" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\wpa81\galasoft.mvvmlight.dll" HashGuid="d702f8e6-9904-1220-8de7-be8614bf93e8" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\wpa81\galasoft.mvvmlight.extras.dll" HashGuid="f59e2cac-89a1-06f4-bbe7-18857251ef78" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\wpa81\galasoft.mvvmlight.platform.dll" HashGuid="27c4f135-c15f-18a2-cb9f-847748d33bdb" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\commonservicelocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\microsoft.practices.servicelocation.dll" HashGuid="89de7f80-26d8-a17c-5ad9-b855f81ea5b2" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\newtonsoft.json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="225745d8-3693-ad6f-ebd5-8845d81f8e0f" />
-    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="ecf90584-452e-bfa6-066c-24c384d3310d" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="0b849f15-5824-97bf-7d35-6ae75530eea0" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.service.windows\bin\debug\rememba.service.windows.dll" HashGuid="5ef17591-5200-f0e4-6b8a-66cb2ae2cfd8" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.shared\bin\debug\rememba.sharedpcl.dll" HashGuid="0e9549ea-1689-49cb-8562-70213b2c8c30" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="8f071d44-76df-59bb-0e54-06e51fb2d845" />

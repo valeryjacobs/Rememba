@@ -12,8 +12,6 @@ namespace Rememba.Service.Windows.Data
 {
     public class SomeDataService : ISomeDataService
     {
-
-
         public async Task<ObservableCollection<ISomeObjectInfo>> GetSubSetOfSomeObjects()
         {
             SomeObjectRepository someObjectRepository = new SomeObjectRepository();
