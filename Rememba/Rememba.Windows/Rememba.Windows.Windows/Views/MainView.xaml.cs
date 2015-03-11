@@ -33,5 +33,11 @@ namespace Rememba.Windows.Views
         {
             get { return this.DataContext as IViewModel; }
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+
+        }
     }
 }

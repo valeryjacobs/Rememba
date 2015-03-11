@@ -81,11 +81,3 @@ C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\V
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\Views\MainView.xbf
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Views\MainView.xaml
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Views\MainView.xbf
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles.intermediate
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles.intermediate
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles.intermediate
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml.intermediate

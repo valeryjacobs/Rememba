@@ -81,11 +81,5 @@ C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\MainView.xbf
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\MainView.xaml
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\MainView.xbf
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles.intermediate
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles.intermediate
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles.intermediate
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml.intermediate
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Microsoft.Xaml.Interactions.dll
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Microsoft.Xaml.Interactivity.dll

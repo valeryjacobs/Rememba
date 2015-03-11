@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CacheDataService.cs" />
+    <Compile Include="Data\ContentDataService.cs" />
     <Compile Include="Data\MindMapDataService.cs" />
     <Compile Include="Data\SomeDataService.cs" />
     <Compile Include="Infrastructure\Frame.cs" />

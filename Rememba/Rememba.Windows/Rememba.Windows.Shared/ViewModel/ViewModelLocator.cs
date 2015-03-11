@@ -61,6 +61,7 @@ namespace Rememba.Windows.ViewModel
                 // Create run time view services and models
             SimpleIoc.Default.Register<ISomeDataService, SomeDataService>(); 
             SimpleIoc.Default.Register<IMindMapDataService, MindMapDataService>();
+            SimpleIoc.Default.Register<IContentDataService, ContentDataService>();
             //}
 
             SimpleIoc.Default.Register<ICacheDataService, CacheDataService>();

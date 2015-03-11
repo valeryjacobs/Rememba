@@ -8,7 +8,7 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>41540b8d-f660-48b8-95f0-efce16ce0e0b</PackageIdentityName>
     <IntermediateOutputPath>C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>56F59D5C13686DB68FCA3F49C184F7BD76361A0FDAF3459A3EDCE32019D6848B</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>D2BBCDD22040F9430BB4A7793A1D079F941D543DFA42527745EA5200BB427E48</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>41540b8d-f660-48b8-95f0-efce16ce0e0b_1.0.0.0_neutral__wntqsxhwzrmd6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>41540b8d-f660-48b8-95f0-efce16ce0e0b_wntqsxhwzrmd6!App</RegisteredUserModeAppID>
     <RegisteredPackageID>41540b8d-f660-48b8-95f0-efce16ce0e0b</RegisteredPackageID>
@@ -20,13 +20,21 @@
     <AppXManifest Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-03-10T14:52:11.925</Modified>
+      <Modified>2015-03-11T22:35:31.542</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Rememba.Windows.Windows.exe">
       <PackagePath>Rememba.Windows.Windows.exe</PackagePath>
-      <Modified>2015-03-10T15:05:36.089</Modified>
+      <Modified>2015-03-11T22:54:13.537</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2014-04-29T13:23:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2014-04-29T13:23:50.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.dll">
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
@@ -50,27 +58,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Contracts\bin\Debug\Rememba.Contracts.dll">
       <PackagePath>Rememba.Contracts.dll</PackagePath>
-      <Modified>2015-03-10T15:00:54.438</Modified>
+      <Modified>2015-03-11T22:35:20.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Service.Windows.dll">
       <PackagePath>Rememba.Service.Windows.dll</PackagePath>
-      <Modified>2015-03-10T15:00:59.290</Modified>
+      <Modified>2015-03-11T22:37:40.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.SharedPCL.dll">
       <PackagePath>Rememba.SharedPCL.dll</PackagePath>
-      <Modified>2015-03-10T15:00:57.389</Modified>
+      <Modified>2015-03-11T22:35:22.135</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.ViewModels.Windows\bin\Debug\Rememba.ViewModels.Windows.dll">
       <PackagePath>Rememba.ViewModels.Windows.dll</PackagePath>
-      <Modified>2015-03-10T15:01:00.423</Modified>
+      <Modified>2015-03-11T22:54:11.152</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Repositories.Windows.dll">
       <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
-      <Modified>2015-03-10T15:00:56.927</Modified>
+      <Modified>2015-03-11T22:35:21.755</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Model.dll">
       <PackagePath>Rememba.Model.dll</PackagePath>
-      <Modified>2015-03-10T15:00:56.165</Modified>
+      <Modified>2015-03-11T22:35:21.053</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
+      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
+      <Modified>2015-03-09T22:50:15.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -102,7 +114,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\MainView.xbf">
       <PackagePath>Views\MainView.xbf</PackagePath>
-      <Modified>2015-03-10T15:05:35.388</Modified>
+      <Modified>2015-03-11T22:49:47.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\SomeObjectDetailView.xbf">
       <PackagePath>Views\SomeObjectDetailView.xbf</PackagePath>
@@ -114,15 +126,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Rememba.Windows.Windows.xr.xml">
       <PackagePath>Rememba.Windows.Windows.xr.xml</PackagePath>
-      <Modified>2015-03-10T15:05:35.334</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
-      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
-      <Modified>2015-03-09T22:50:15.580</Modified>
+      <Modified>2015-03-11T22:49:47.151</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-03-10T15:05:37.518</Modified>
+      <Modified>2015-03-11T22:52:31.677</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

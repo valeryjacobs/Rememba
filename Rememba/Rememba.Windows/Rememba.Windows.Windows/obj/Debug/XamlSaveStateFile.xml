@@ -1,14 +1,16 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.windows\rememba.windows.windows\obj\debug\intermediatexaml\rememba.windows.windows.exe" HashGuid="1022bc04-c041-8ad8-a2fb-2a134401be5c" />
+    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.windows\rememba.windows.windows\obj\debug\intermediatexaml\rememba.windows.windows.exe" HashGuid="9b6658ce-ca02-cfdc-8094-270e6bae3da5" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactions.dll" HashGuid="95a94f94-3917-d473-4f7c-18c4bd437046" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactivity.dll" HashGuid="d25f59e6-dd81-900a-0dfc-55b39f6898ef" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\windows81\galasoft.mvvmlight.dll" HashGuid="d702f8e6-9904-1220-8de7-be8614bf93e8" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\windows81\galasoft.mvvmlight.extras.dll" HashGuid="f59e2cac-89a1-06f4-bbe7-18857251ef78" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\windows81\galasoft.mvvmlight.platform.dll" HashGuid="27c4f135-c15f-18a2-cb9f-847748d33bdb" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\commonservicelocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\microsoft.practices.servicelocation.dll" HashGuid="89de7f80-26d8-a17c-5ad9-b855f81ea5b2" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\newtonsoft.json.6.0.8\lib\netcore45\newtonsoft.json.dll" HashGuid="fd3dfcab-cf69-c796-78a2-2423dadb814b" />
-    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="0b849f15-5824-97bf-7d35-6ae75530eea0" />
-    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.service.windows\bin\debug\rememba.service.windows.dll" HashGuid="5ef17591-5200-f0e4-6b8a-66cb2ae2cfd8" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="52f1ff7d-f027-88ac-59ae-ba3496d438b6" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.service.windows\bin\debug\rememba.service.windows.dll" HashGuid="fa6c5e66-e7eb-7373-4d9b-1a3399b8a25b" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.shared\bin\debug\rememba.sharedpcl.dll" HashGuid="0e9549ea-1689-49cb-8562-70213b2c8c30" />
-    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="8f071d44-76df-59bb-0e54-06e51fb2d845" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="1d1f86f4-24c7-a740-2b82-e90e83107f88" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

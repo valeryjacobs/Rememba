@@ -6,13 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:converters="using:Rememba.Windows.Converters"
+    xmlns:converters="using:Rememba.Windows.Converters"                 
     DataContext="{Binding MainViewViewModel, Source={StaticResource MainViewModelLocator}}"
     >
     <Page.Resources>
         <converters:BindingInspector x:Key="inspector"></converters:BindingInspector>
     </Page.Resources>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Margin="80" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260"></ColumnDefinition>
             <ColumnDefinition Width="260"></ColumnDefinition>
@@ -23,8 +23,14 @@
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
-        <!--<TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>-->
-        <ListView ItemsSource="{Binding ParentList}" SelectionMode="Single" SelectionChanged="Parent_Selected" >
+        <StackPanel Grid.Row="1">
+            <Button Command="{Binding SelectParentNodeCommand}">Select</Button>
+            <Button Command="{Binding SelectChildNodeCommand}">Select</Button>
+            <Button Command="{Binding SelectSubChildNodeCommand}">Select</Button>
+            <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>
+        </StackPanel>
+
+        <ListView ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
@@ -34,7 +40,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView" SelectionChanged="Child_Selected"  SelectedValue="{Binding ChildSelected}"  >
+        <ListView Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
@@ -44,7 +50,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectionChanged="SubChild_Selected" SelectedValue="{Binding SubChildSelected}" >
+        <ListView Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
