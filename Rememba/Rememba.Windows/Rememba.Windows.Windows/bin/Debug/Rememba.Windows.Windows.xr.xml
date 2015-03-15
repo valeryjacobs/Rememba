@@ -5,6 +5,8 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="MainViewViewModel" />
+    <RootPropertyPathName Name="SelectedNodeContent" />
+    <RootPropertyPathName Name="Data" />
     <RootPropertyPathName Name="SubChildList" />
     <RootPropertyPathName Name="SelectedSubChild" />
     <RootPropertyPathName Name="Description" />
@@ -13,10 +15,11 @@
     <RootPropertyPathName Name="SelectedChild" />
     <RootPropertyPathName Name="ParentList" />
     <RootPropertyPathName Name="SelectedParent" />
-    <RootPropertyPathName Name="RootNode" />
-    <RootPropertyPathName Name="SelectSubChildNodeCommand" />
-    <RootPropertyPathName Name="SelectChildNodeCommand" />
-    <RootPropertyPathName Name="SelectParentNodeCommand" />
+    <RootPropertyPathName Name="DeleteContent" />
+    <RootPropertyPathName Name="UpdateContent" />
+    <RootPropertyPathName Name="AddContent" />
+    <RootPropertyPathName Name="Save" />
+    <RootPropertyPathName Name="GoUpTree" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="SelectedObject" />
     <RootPropertyPathName Name="SomeStringProp" />
@@ -42,16 +45,20 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Rememba.Windows.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
-      <RootProperty Name="Mode" />
       <RootProperty Name="Converter" />
+      <RootProperty Name="ConverterParameter" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Rememba.Windows.Converters.BindingInspector" />
+    <RootType FullName="Rememba.Windows.Converters.WebContentViewConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -68,6 +75,12 @@
       <RootProperty Name="SelectedValue" />
       <RootProperty Name="SelectionMode" />
       <RootProperty Name="ItemTemplate" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.WebView">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Tag" />
+      <RootEvent Name="ScriptNotify" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />

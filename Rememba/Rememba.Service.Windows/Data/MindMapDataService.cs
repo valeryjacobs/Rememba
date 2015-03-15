@@ -30,5 +30,11 @@ namespace Rememba.Service.Windows.Data
 
             return await Task.Run(() => TreeHelper.BuildTree(new Node(), json));
         }
+
+        public async Task Save(IMindMap mindMap, INode rootNode)
+        {
+            MindMapRepository rep = new MindMapRepository();
+            await rep.SaveMindMap(rootNode, mindMap);
+        }
     }
 }

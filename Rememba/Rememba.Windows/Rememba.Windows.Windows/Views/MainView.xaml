@@ -5,29 +5,35 @@
     xmlns:local="using:Rememba.Windows.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    xmlns:converters="using:Rememba.Windows.Converters"                 
+   xmlns:conv="using:Rememba.Windows.Converters"
+    mc:Ignorable="d"               
     DataContext="{Binding MainViewViewModel, Source={StaticResource MainViewModelLocator}}"
     >
     <Page.Resources>
-        <converters:BindingInspector x:Key="inspector"></converters:BindingInspector>
+        <conv:BindingInspector x:Key="inspector"></conv:BindingInspector>
+        <conv:WebContentViewConverter x:Key="WebViewContentConverter" />
     </Page.Resources>
-    <Grid Margin="80" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260"></ColumnDefinition>
             <ColumnDefinition Width="260"></ColumnDefinition>
             <ColumnDefinition Width="320"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
-            <Button Command="{Binding SelectParentNodeCommand}">Select</Button>
+            <!--<Button Command="{Binding SelectParentNodeCommand}">Select</Button>
             <Button Command="{Binding SelectChildNodeCommand}">Select</Button>
             <Button Command="{Binding SelectSubChildNodeCommand}">Select</Button>
-            <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>
+            <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>-->
+            <Button Command="{Binding GoUpTree}">Up</Button>
+            <Button Command="{Binding Save}">Save</Button>
+            <Button Command="{Binding AddContent}">Add content</Button>
+            <Button Command="{Binding UpdateContent}">Update content</Button>
+            <Button Command="{Binding DeleteContent}">Delete content</Button>
         </StackPanel>
 
         <ListView ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
@@ -60,5 +66,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <WebView ScriptNotify="contentView_ScriptNotify"  Grid.Column="3" Grid.RowSpan="2"  HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
+
     </Grid>
 </Page>

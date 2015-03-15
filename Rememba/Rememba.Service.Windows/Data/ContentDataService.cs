@@ -29,5 +29,26 @@ namespace Rememba.Service.Windows.Data
 
             return contentItem;
         }
+
+        public async Task AddContent(IContent content)
+        {
+            ContentRepository rep = new ContentRepository();
+
+            await rep.AddContent(content);
+        }
+
+        public async Task UpdateContent(IContent content)
+        {
+            ContentRepository rep = new ContentRepository();
+
+            await rep.UpdateContent(content);
+        }
+
+        public async Task DeleteContent(string id)
+        {
+            ContentRepository rep = new ContentRepository();
+
+            await rep.DeleteContent(id);
+        }
     }
 }

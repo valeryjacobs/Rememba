@@ -1,5 +1,7 @@
 ﻿using Rememba.Contracts.ViewModels;
 using Rememba.Contracts.Views;
+using Rememba.ViewModels.Windows;
+using Rememba.Windows.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,10 +36,9 @@ namespace Rememba.Windows.Views
             get { return this.DataContext as IViewModel; }
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void contentView_ScriptNotify(object sender, NotifyEventArgs e)
         {
-            
-
+            (this.DataContext as MainViewViewModel).UpdateContentFromWebView(e.Value);
         }
     }
 }

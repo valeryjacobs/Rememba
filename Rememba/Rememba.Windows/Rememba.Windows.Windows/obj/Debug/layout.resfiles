@@ -1,3 +1,14 @@
+html\ContentEditor\ContentTemplate.html
+html\ContentEditor\Editor.html
+html\ContentEditor\epiceditor\js\epiceditor.js
+html\ContentEditor\epiceditor\js\epiceditor.min.js
+html\ContentEditor\epiceditor\themes\base\epiceditor.css
+html\ContentEditor\epiceditor\themes\editor\epic-dark.css
+html\ContentEditor\epiceditor\themes\editor\epic-light.css
+html\ContentEditor\epiceditor\themes\preview\bartik.css
+html\ContentEditor\epiceditor\themes\preview\github.css
+html\ContentEditor\epiceditor\themes\preview\preview-dark.css
+html\ContentEditor\jquery-1.11.1.min.js
 Assets\Logo.scale-100.png
 Assets\SmallLogo.scale-100.png
 Assets\SplashScreen.scale-100.png

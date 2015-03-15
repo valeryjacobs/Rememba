@@ -1,6 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace RefApp.ViewModels.Windows.ViewModel
+namespace Rememba.ViewModels.Windows.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

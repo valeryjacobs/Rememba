@@ -18,6 +18,14 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoBack { get; set; }
+
+        public RelayCommand GoBackTree { get; set; }
+        public RelayCommand GoUpTree { get; set; }
+        public RelayCommand AddContent { get; set; }
+        public RelayCommand UpdateContent { get; set; }
+        public RelayCommand DeleteContent { get; set; }
+
+        public RelayCommand Save { get; set; }
         //public RelayCommand<SelectionChangedEventArgs> SelectParentNodeCommand { get; set; }
         public RelayCommand<SelectionChangedEventArgs> SelectChildNodeCommand { get; set; }
         public RelayCommand<SelectionChangedEventArgs> SelectSubChildNodeCommand { get; set; }
@@ -36,14 +44,19 @@ namespace Rememba.ViewModels.Windows
         private INode _selectedNode;
         private INode _rootNode;
 
+        private IMindMap _mindMap;
+
         public async void Initialize(object parameter)
         {
-            var mindMap = await _mindMapDataService.GetMindMap("MyKnowledge");
-            RootNode = await _mindMapDataService.GetRootNode(mindMap);
+            _mindMap = await _mindMapDataService.GetMindMap("MyKnowledge");
+            RootNode = await _mindMapDataService.GetRootNode(_mindMap);
 
             ParentList = RootNode.Children;
             SelectParent(RootNode.Children[2]);
         }
+
+
+       
 
         public MainViewViewModel(
             IMindMapDataService mindMapDataService,
@@ -65,26 +78,50 @@ namespace Rememba.ViewModels.Windows
                 _navigationService.GoBack();
             });
 
-
-            SelectParentNodeCommand = new RelayCommand<INode>(node =>
+            GoUpTree = new RelayCommand(() =>
             {
-                if (node == null) return;
+                NavigateUp();
+            });
 
-                SelectParent(node);
+            Save = new RelayCommand(() =>
+            {
+                _mindMapDataService.Save(_mindMap, _rootNode);
             });
-            //SelectParentNodeCommand = new RelayCommand<SelectionChangedEventArgs>((e) =>
-            //{
-            //    SelectParent((Node)e.AddedItems[0]);
-            //});
 
-            SelectChildNodeCommand = new RelayCommand<SelectionChangedEventArgs>((e) =>
+            AddContent = new RelayCommand(() =>
             {
-                SelectChild((Node)e.AddedItems[0]);
+                _contentDataService.AddContent(SelectedNodeContent);
             });
-            SelectSubChildNodeCommand = new RelayCommand<SelectionChangedEventArgs>((e) =>
+
+            UpdateContent = new RelayCommand(() =>
             {
-                SelectSubChild((Node)e.AddedItems[0]);
+                _contentDataService.UpdateContent(SelectedNodeContent);
             });
+
+            DeleteContent = new RelayCommand(() =>
+            {
+                _contentDataService.DeleteContent(SelectedNodeContent.Id);
+                SelectedNodeContent.Data = "";
+            });
+        }
+
+        public void UpdateContentFromWebView(string content)
+        {
+            SelectedNodeContent.Data = content;
+            _contentDataService.UpdateContent(SelectedNodeContent);
+        }
+       
+
+        public void NavigateUp()
+        {
+            if (SelectedSubChild == null || SelectedChild == null || SelectedParent == null || SelectedParent.Parent == null) return;
+
+            SubChildList = SelectedSubChild.Parent.Children;
+            ChildList = SelectedSubChild.Parent.Parent.Children;
+            ParentList = SelectedSubChild.Parent.Parent.Parent.Children;
+            SelectedSubChild = SelectedSubChild.Parent;
+            SelectedChild = SelectedChild.Parent;
+            SelectedParent = SelectedParent.Parent;
         }
 
 
@@ -182,6 +219,16 @@ namespace Rememba.ViewModels.Windows
 
         public void SelectChild(INode selectedChild)
         {
+            if (selectedChild == null)
+            {
+                if (_selectedSubChild != null && _selectedSubChild.Parent != null)
+                {
+                    selectedChild = _selectedSubChild.Parent;
+                }
+                else
+                { return; }
+            }
+
             SelectedNode = selectedChild;
             _selectedChild = SelectedNode;
             SubChildList = SelectedChild.Children;
@@ -190,6 +237,8 @@ namespace Rememba.ViewModels.Windows
 
         public void SelectParent(INode selectedParent)
         {
+            if (selectedParent == null) selectedParent = _selectedChild.Parent;
+
             SelectedNode = selectedParent;
             _selectedParent = SelectedNode;
             ChildList = SelectedNode.Children;
@@ -206,6 +255,8 @@ namespace Rememba.ViewModels.Windows
 
         public void SelectSubChild(INode selectedSubChild)
         {
+            if (selectedSubChild == null) return;
+
             SelectedNode = selectedSubChild;
             _selectedSubChild = SelectedNode;
             if ((SelectedNode.Children != null) && (SelectedNode.Children.Count() > 0))
@@ -222,9 +273,11 @@ namespace Rememba.ViewModels.Windows
             SetContent();
         }
 
-        public void SetContent()
+        public async void SetContent()
         {
-            var content = _contentDataService.GetContent(SelectedNode.ContentId);
+            var content = await _contentDataService.GetContent(SelectedNode.ContentId);
+
+            SelectedNodeContent = content;
 
         }
 

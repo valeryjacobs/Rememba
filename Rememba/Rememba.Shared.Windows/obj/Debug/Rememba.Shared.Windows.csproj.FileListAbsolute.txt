@@ -1,4 +1,3 @@
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.csprojResolveAssemblyReference.cache
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\priconfig.xml
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\priconfig.xml.intermediate
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\layout.resfiles

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Editor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <!-- Place inside the <head> of your HTML -->
+    <!--<script src="jquery-1.11.1.min.js"></script>
+    <script src="tinymce.min.js"></script>
+   
+    <script src="bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="tinymce.min.js"></script>
+      <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+  
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        SetZoom(1.8);
+
+         tinymce.init({
+            selector: "textarea",
+            menubar: false,
+            statusbar: false,
+            toolbar:false,
+            theme: "modern",
+            style_formats: [
+           { title: 'Bold text', inline: 'b' },
+           { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
+           { title: 'Red header', block: 'h1', styles: { color: '#ff0000' } },
+           { title: 'Example 1', inline: 'span', classes: 'example1' },
+           { title: 'Example 2', inline: 'span', classes: 'example2' },
+           { title: 'Table styles' },
+           { title: 'Table row 1', selector: 'tr', classes: 'tablerow1' }
+            ],
+            plugins: [
+                "advlist autolink lists link image charmap preview hr anchor pagebreak",
+                "searchreplace visualblocks visualchars code fullscreen",
+                "insertdatetime media nonbreaking save table contextmenu directionality",
+                "emoticons template paste textcolor colorpicker textpattern"
+            ]
+           
+           
+         });
+
+         function resizeTiny() {
+             if (!tinymce) return;
+             var footer = document.getElementById("overview-footer");
+             var header = document.getElementById("main-box-header");
+             tinymce.activeEditor.theme.resizeTo(
+                 footer.clientWidth - 2,
+                 footer.offsetTop - header.offsetHeight - 105
+             );
+         }
+
+        
+
+        function GetContent() {
+            return tinyMCE.activeEditor.getContent({ format: 'raw' });
+        }
+
+        function SetContent(value) {
+            tinyMCE.activeEditor.setContent(value, { format: 'raw' });
+        }
+
+        function SetViewSize(width,heigth) {
+            tinyMCE.DOM.setStyle(tinyMCE.DOM.get("elm1" + '_ifr'), 'height', height + 'px');
+            tinyMCE.DOM.setStyle(tinyMCE.DOM.get("elm1" + '_ifr'), 'width', width + 'px');
+        }
+
+        function SetZoom(value) {
+             $('body,html').css('zoom', value);
+        }
+
+        function CallCommand(command) {
+            tinyMCE.execCommand(command);
+        }
+        
+
+
+    </script>
+</head>
+<body style="height:100%">
+
+    <form method="post" action="somepage" style="height:100%">
+        <textarea name="content" id="content" style="width:100%;height:100%"></textarea>
+    </form>
+</body>
+</html>

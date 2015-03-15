@@ -15,9 +15,30 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Class.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BindingInspector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\WebContentConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\WebContentViewConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ItemClickCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StreamURIResolver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\ContentTemplate.html" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\Editor.html" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\js\epiceditor.js" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\js\epiceditor.min.js" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\base\epiceditor.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\editor\epic-dark.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\editor\epic-light.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\preview\bartik.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\preview\github.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\preview\preview-dark.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\jquery-1.11.1.min.js" />
   </ItemGroup>
 </Project>

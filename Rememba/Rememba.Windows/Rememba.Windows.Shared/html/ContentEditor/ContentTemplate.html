@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>A StrapDown.js template</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+  
+    <script src="/ContentEditor/epiceditor/js/epiceditor.min.js"></script>
+</head>
+<body style="background-color:black;color:white;">
+    <div id="epiceditor" style="height:800px"></div>
+    
+    <script>
+    var editor = new EpicEditor().load();
+
+        // window.external.notify('test');
+
+    function SetContent(value) {
+        editor.importFile('content', value).preview();
+    }
+
+    //window.onresize = function () {
+    //    editor.reflow();
+    //}
+
+
+    //editor.on('edit', function () {
+    //    window.external.notify(editor.exportFile());
+    //});
+
+    editor.on('preview', function () {
+        window.external.notify(editor.exportFile());
+    });
+
+    </script>
+
+</body>
+</html>

@@ -12,6 +12,12 @@ namespace Rememba.Contracts.Services
     {
         Task<ObservableCollection<IContent>> GetContentItems();
 
-        Task<IContent> GetContent(string contentId);
+        Task<IContent> GetContent(string id);
+
+        Task AddContent(IContent content);
+
+        Task UpdateContent(IContent content);
+
+        Task DeleteContent(string id);
     }
 }

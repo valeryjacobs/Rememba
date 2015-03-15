@@ -13,6 +13,8 @@ namespace Rememba.Contracts.Services
         Task<INode> GetRootNode(IMindMap mindMap);
 
         Task<IMindMap> GetMindMap(string mindMapName);
+
+        Task Save(IMindMap mindMap, INode rootNode);
       
     }
 }

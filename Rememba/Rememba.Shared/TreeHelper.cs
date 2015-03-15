@@ -12,14 +12,17 @@ namespace Rememba.Shared
     {
         public static INode BuildTree(INode node, dynamic source)
         {
+            //if (source.id == null) source.id = Guid.NewGuid().ToString();
+            //if (source.d == null) source.d = "";
+            //if (source.n == null) source.n = "";
             var newNode = new Node
-            {
-                Id = source.id,
-                ContentId = source.cid,
-                Description = source.d,
-                Title = source.n,
-                Parent = node
-            };
+                      {
+                          Id = source.id,
+                          ContentId = source.cid,
+                          Description = source.d,
+                          Title = source.n,
+                          Parent = node
+                      };
 
             if (source.c != null)
             {

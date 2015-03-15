@@ -2,6 +2,7 @@
 using Microsoft.Practices.ServiceLocation;
 using Rememba.Contracts.Services;
 using Rememba.Shared;
+using Rememba.Windows.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,8 @@ namespace Rememba.Windows
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+
+            ControlLocator.StreamResolver = new StreamUriWinRTResolver();
         }
 
         /// <summary>
