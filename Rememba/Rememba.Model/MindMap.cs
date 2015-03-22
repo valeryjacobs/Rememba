@@ -10,6 +10,7 @@ namespace Rememba.Model
 {
     public class MindMap : IMindMap
     {
+        [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
         [JsonProperty(PropertyName = "name")]

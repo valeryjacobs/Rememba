@@ -14,3 +14,4 @@ C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.pri
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.dll
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.csprojResolveAssemblyReference.cache

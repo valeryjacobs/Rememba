@@ -9,14 +9,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Networking.Connectivity;
 using Windows.Storage;
 
 namespace Rememba.Repositories.Windows
 {
     public class ContentRepository
     {
-        private const string tenantContainerSaS = "https://rememba.blob.core.windows.net/34a3e707-00d8-4172-91a1-873ce6efd843?sv=2014-02-14&sr=c&si=34a3e707-00d8-4172-91a1-873ce6efd843&sig=BSLN7oWVtOTKgY9YE2dGXVtemmWRp99AGHqt2cLYoag%3D";
+        public static bool IsConnected()
+        {
+            return false;
+            ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
+            bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
+            return internet;
 
+           
+        }
 
         public async Task<ObservableCollection<IContent>> GetContentItems()
         {
@@ -35,51 +43,117 @@ namespace Rememba.Repositories.Windows
         {
             if (contentId == null || contentId == "") contentId = Guid.NewGuid().ToString();
 
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(tenantContainerSaS));
-            
+            string data = null;
 
-            bool exists = await container.GetBlockBlobReference(contentId).ExistsAsync();
-            var data = "";
-
-            if (exists)
+            StorageFolder localFolder =
+                  ApplicationData.Current.LocalFolder;
+            if (await StorageHelper.DoesFileExistAsync
+                (contentId, localFolder))
             {
-                CloudBlockBlob blob = container.GetBlockBlobReference(contentId);
-                data = await blob.DownloadTextAsync();
+                //use cached version
+                StorageFile file =
+                    await localFolder.GetFileAsync(contentId);
+                data = await FileIO.ReadTextAsync(file);
+
+                return new Content
+                {
+                    Id = contentId,
+                    Data = data
+                };
             }
-
-            return new Content
+            else //download and store now
             {
-                Id = contentId,
-                Data = data
-            };
+                if (IsConnected())
+                {
+                    CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
+
+                    bool exists = await container.GetBlockBlobReference(contentId).ExistsAsync();
+
+                    if (exists)
+                    {
+                        CloudBlockBlob blob = container.GetBlockBlobReference(contentId);
+                        data = await blob.DownloadTextAsync();
+                    }
+
+                    StorageFile storageFile = await localFolder.CreateFileAsync(contentId, CreationCollisionOption.ReplaceExisting);
+                    await FileIO.WriteTextAsync(storageFile, data);
+
+                    return new Content
+                    {
+                        Id = contentId,
+                        Data = data
+                    };
+                }
+                else
+                {
+                    return new Content
+                    {
+                        Id = contentId,
+                        Data = data
+                    };
+                }
+            }
         }
 
         public async Task AddContent(IContent content)
         {
+            if (content.Data == null) return;
 
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(tenantContainerSaS));
-            CloudBlockBlob blob = container.GetBlockBlobReference(content.Id);
+            if (IsConnected())
+            {
 
-            await blob.UploadTextAsync(content.Data);
+                CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
+                CloudBlockBlob blob = container.GetBlockBlobReference(content.Id);
+
+                await blob.UploadTextAsync(content.Data);
+
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
+                await FileIO.WriteTextAsync(storageFile, content.Data);
+            }
+            else
+            {
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
+                await FileIO.WriteTextAsync(storageFile, content.Data);
+            }
         }
 
         public async Task UpdateContent(IContent content)
         {
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(tenantContainerSaS));
-            CloudBlockBlob blob = container.GetBlockBlobReference(content.Id);
+            if (content.Data == null) return;
 
-            //StorageFolder folder = ApplicationData.Current.LocalFolder;
-            //StorageFile fileToUpload = await folder.GetFileAsync(content.Id);
-            //Stream uploadStream = await fileToUpload.OpenStreamForReadAsync();
+            if (content.Id == "1" || content.Id == "2")
+            {
+                content.Id = Guid.NewGuid().ToString();
+                await AddContent(content);
+            }
+            else
+            {
+                if (IsConnected())
+                {
+                    CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
+                    CloudBlockBlob blob = container.GetBlockBlobReference(content.Id);
 
+                    await blob.UploadTextAsync(content.Data);
 
-            //await blob.UploadFromStreamAsync(uploadStream.AsInputStream());
-            await blob.UploadTextAsync(content.Data);
+                    StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                    StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
+                    await FileIO.WriteTextAsync(storageFile, content.Data);
+                }
+                else
+                {
+
+                    StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                    StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
+                    await FileIO.WriteTextAsync(storageFile, content.Data);
+                }
+              }
         }
 
         public async Task DeleteContent(string id)
         {
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(tenantContainerSaS));
+            CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
 
             CloudBlockBlob blob = container.GetBlockBlobReference(id);
 
@@ -89,24 +163,29 @@ namespace Rememba.Repositories.Windows
 
         public async Task<string> DownloadContent(string contentId)
         {
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(tenantContainerSaS));
-            CloudBlockBlob blob = container.GetBlockBlobReference(contentId);
+            string stemp = "";
 
-            // Get reference to the file in blob storage
-            CloudBlockBlob blobFromSASCredential = container.GetBlockBlobReference(contentId);
+            if (IsConnected())
+            {
+                CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
+                CloudBlockBlob blob = container.GetBlockBlobReference(contentId);
 
-            string stemp = await blobFromSASCredential.DownloadTextAsync();
+                // Get reference to the file in blob storage
+                CloudBlockBlob blobFromSASCredential = container.GetBlockBlobReference(contentId);
 
-            //store the JSON file from Blob storage to Windows local Storage
-            StorageFolder folder = ApplicationData.Current.LocalFolder;
-            StorageFile file = await folder.CreateFileAsync(contentId,
-                CreationCollisionOption.ReplaceExisting);
-            Stream outStream = await file.OpenStreamForWriteAsync();
+                stemp = await blobFromSASCredential.DownloadTextAsync();
 
-            await blobFromSASCredential.DownloadToStreamAsync(outStream.AsOutputStream());
+                //store the JSON file from Blob storage to Windows local Storage
+                StorageFolder folder = ApplicationData.Current.LocalFolder;
+                StorageFile file = await folder.CreateFileAsync(contentId,
+                    CreationCollisionOption.ReplaceExisting);
+                Stream outStream = await file.OpenStreamForWriteAsync();
+
+                await blobFromSASCredential.DownloadToStreamAsync(outStream.AsOutputStream());
+            }
+
 
             return stemp;
         }
-
     }
 }

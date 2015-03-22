@@ -18,7 +18,7 @@ namespace Rememba.Windows.Converters
 
             ControlLocator.ContentView.Height = ((Grid)ControlLocator.ContentView.Parent).Height;
 
-            if (value == null) value = "";
+            if (value == null) value = "Not found or not connection available to download.";
 
             if (ControlLocator.ContentViewReady && ControlLocator.ContentView.Source.LocalPath == "/ContentEditor/ContentTemplate.html")
             {

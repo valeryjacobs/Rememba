@@ -40,6 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2CAED5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemembaManager", "RemembaManager\RemembaManager.csproj", "{F3DD6854-1BD5-4AEC-9CEF-47586EA39412}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rememba.Settings", "Rememba.Settings\Rememba.Settings.csproj", "{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Rememba.Windows\Rememba.Windows.Shared\Rememba.Windows.Shared.projitems*{32ccf5d6-23d5-4935-bb2d-bfc4a16f999b}*SharedItemsImports = 4
@@ -231,6 +233,18 @@ Global
 		{F3DD6854-1BD5-4AEC-9CEF-47586EA39412}.Release|Win32.ActiveCfg = Release|Any CPU
 		{F3DD6854-1BD5-4AEC-9CEF-47586EA39412}.Release|x64.ActiveCfg = Release|Any CPU
 		{F3DD6854-1BD5-4AEC-9CEF-47586EA39412}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Release|Win32.ActiveCfg = Release|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Release|x64.ActiveCfg = Release|Any CPU
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -248,5 +262,6 @@ Global
 		{ACFCF5A6-0E47-49CB-B725-1BB207EB3DA4} = {1F1BA2E3-BB4F-45A1-B6F7-BCCAD14FC501}
 		{32CCF5D6-23D5-4935-BB2D-BFC4A16F999B} = {1F1BA2E3-BB4F-45A1-B6F7-BCCAD14FC501}
 		{F3DD6854-1BD5-4AEC-9CEF-47586EA39412} = {0ACFC22F-2D26-497B-BA34-7B3FA84E5C93}
+		{6A24F3A0-A505-4F3B-ACFF-B93C77BF64D6} = {2B7202BB-0938-4BB7-88DE-1121353C0576}
 	EndGlobalSection
 EndGlobal

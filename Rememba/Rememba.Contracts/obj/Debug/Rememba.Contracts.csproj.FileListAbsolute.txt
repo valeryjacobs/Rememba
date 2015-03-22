@@ -2,3 +2,4 @@ C:\Code\Rememba\Rememba\Rememba.Contracts\bin\Debug\Rememba.Contracts.dll
 C:\Code\Rememba\Rememba\Rememba.Contracts\bin\Debug\Rememba.Contracts.pdb
 C:\Code\Rememba\Rememba\Rememba.Contracts\obj\Debug\Rememba.Contracts.dll
 C:\Code\Rememba\Rememba\Rememba.Contracts\obj\Debug\Rememba.Contracts.pdb
+C:\Code\Rememba\Rememba\Rememba.Contracts\obj\Debug\Rememba.Contracts.csprojResolveAssemblyReference.cache

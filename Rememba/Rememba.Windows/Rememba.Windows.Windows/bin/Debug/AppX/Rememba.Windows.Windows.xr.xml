@@ -17,9 +17,17 @@
     <RootPropertyPathName Name="SelectedParent" />
     <RootPropertyPathName Name="DeleteContent" />
     <RootPropertyPathName Name="UpdateContent" />
+    <RootPropertyPathName Name="EditContent" />
     <RootPropertyPathName Name="AddContent" />
+    <RootPropertyPathName Name="MoveUpTreeCommand" />
+    <RootPropertyPathName Name="MoveDownOrder" />
+    <RootPropertyPathName Name="MoveUpOrder" />
+    <RootPropertyPathName Name="DeleteNodeCommand" />
+    <RootPropertyPathName Name="AddSiblingNodeCommand" />
+    <RootPropertyPathName Name="AddChildNodeCommand" />
     <RootPropertyPathName Name="Save" />
     <RootPropertyPathName Name="GoUpTree" />
+    <RootPropertyPathName Name="GoDo" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="SelectedObject" />
     <RootPropertyPathName Name="SomeStringProp" />
@@ -43,10 +51,10 @@
       <RootProperty Name="Children" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
-      <RootMethod Name="GetRowSpan" />
-      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Rememba.Windows.MainPage" />
@@ -66,9 +74,10 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="Children" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
@@ -80,6 +89,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Tag" />
+      <RootEvent Name="LostFocus" />
+      <RootEvent Name="KeyDown" />
       <RootEvent Name="ScriptNotify" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -96,6 +107,15 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Command" />
       <RootProperty Name="Content" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Rememba.Windows.Views.MainView" />
     <RootType FullName="Rememba.Windows.Views.SomeObjectDetailView" />

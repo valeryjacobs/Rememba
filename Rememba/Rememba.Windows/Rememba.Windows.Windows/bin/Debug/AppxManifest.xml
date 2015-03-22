@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="41540b8d-f660-48b8-95f0-efce16ce0e0b" Publisher="CN=Valery" Version="1.0.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="41540b8d-f660-48b8-95f0-efce16ce0e0b" Publisher="CN=Valery" Version="0.9.0.0" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>RefApp.Windows.Windows</DisplayName>
-    <PublisherDisplayName>Valery</PublisherDisplayName>
+    <PublisherDisplayName>Valery Jacobs</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -22,13 +22,17 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="Rememba.Windows.Windows.exe" EntryPoint="RefApp.Windows.Windows.App">
-      <m2:VisualElements DisplayName="RefApp.Windows.Windows" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="RefApp.Windows.Windows" ForegroundText="light" BackgroundColor="#464646">
+      <m2:VisualElements DisplayName="Rememba" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Rememba lets you contruct a tree of knowledge and easily access that knowledge whenever you need it." ForegroundText="light" BackgroundColor="#464646">
+        <m2:DefaultTile ShortName="Rememba"></m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
       </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="picturesLibrary" />
+    <DeviceCapability Name="location" />
+    <DeviceCapability Name="microphone" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="SharedGUID" Value="e0b21e42-252f-4e41-9532-eb7175ffc173" />

@@ -3,33 +3,49 @@
 <head>
     <title>A StrapDown.js template</title>
     <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-  
+
     <script src="/ContentEditor/epiceditor/js/epiceditor.min.js"></script>
 </head>
 <body style="background-color:black;color:white;">
     <div id="epiceditor" style="height:800px"></div>
-    
+
     <script>
-    var editor = new EpicEditor().load();
-
-        // window.external.notify('test');
-
-    function SetContent(value) {
-        editor.importFile('content', value).preview();
-    }
-
-    //window.onresize = function () {
-    //    editor.reflow();
-    //}
+        var editor = new EpicEditor().load();
+        var notifySwitch = false;
 
 
-    //editor.on('edit', function () {
-    //    window.external.notify(editor.exportFile());
-    //});
 
-    editor.on('preview', function () {
-        window.external.notify(editor.exportFile());
-    });
+        function SetContent(value) {
+            notifySwitch = false;
+            editor.importFile('content', value).preview();
+        }
+
+        function GetContent(value) {
+            return editor.exportFile();
+        }
+
+        function Edit(value) {
+            notifySwitch = false;
+            editor.edit();
+        }
+
+        function Preview(value) {
+            notifySwitch = true;
+            editor.preview();
+        }
+
+        $(document).keypress(function (e) {
+            //window.external.notify(editor.exportFile());
+            //var checkWebkitandIE = (e.which == 26 ? 1 : 0);
+            //var checkMoz = (e.which == 122 && e.ctrlKey ? 1 : 0);
+
+        });
+
+        editor.on('preview', function () {
+            if (notifySwitch) {
+                window.external.notify(editor.exportFile());
+            }
+        });
 
     </script>
 

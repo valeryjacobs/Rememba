@@ -14,8 +14,9 @@ namespace Rememba.Repositories.Windows
         {
             try
             {
-                await folder.GetFileAsync(fileName);
-                return true;
+                var fileList = await folder.GetFilesAsync();
+
+                return fileList.Count(x => x.Name == fileName) > 0;
             }
             catch
             {

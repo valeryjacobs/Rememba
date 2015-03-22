@@ -22,3 +22,5 @@ C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\bin\Debug\Newtonsoft.Json.x
 C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\obj\Debug\Rememba.Repositories.Windows.dll
 C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\obj\Debug\Rememba.Repositories.Windows.pdb
 C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\bin\Debug\Rememba.Settings.dll
+C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\bin\Debug\Rememba.Settings.pdb

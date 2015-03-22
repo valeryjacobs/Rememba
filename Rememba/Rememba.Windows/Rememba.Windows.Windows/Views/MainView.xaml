@@ -21,22 +21,38 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Height" Value="50"></Setter>
+                    <Setter Property="Margin" Value="7"></Setter>
+                </Style>
+            </StackPanel.Resources>
             <!--<Button Command="{Binding SelectParentNodeCommand}">Select</Button>
             <Button Command="{Binding SelectChildNodeCommand}">Select</Button>
             <Button Command="{Binding SelectSubChildNodeCommand}">Select</Button>
             <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>-->
+            
+            <Button Command="{Binding GoDo}">Do</Button>
             <Button Command="{Binding GoUpTree}">Up</Button>
             <Button Command="{Binding Save}">Save</Button>
+            <Button Command="{Binding AddChildNodeCommand}">Add Child</Button>
+            <Button Command="{Binding AddSiblingNodeCommand}">Add Sibling</Button>
+            <Button Command="{Binding DeleteNodeCommand}">Delete node</Button>
+            <Button Command="{Binding MoveUpOrder}">Order up</Button>
+            <Button Command="{Binding MoveDownOrder}">Order down</Button>
+            <Button Command="{Binding MoveUpTreeCommand}">Up tree</Button>
+
             <Button Command="{Binding AddContent}">Add content</Button>
+            <Button x:Name="switchModeButton" Command="{Binding EditContent}" Click="SwitchMode_Click">Edit</Button>
             <Button Command="{Binding UpdateContent}">Update content</Button>
-            <Button Command="{Binding DeleteContent}">Delete content</Button>
+            <Button Command="{Binding DeleteContent}" >Delete content</Button>
         </StackPanel>
 
-        <ListView ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
+        <ListView Grid.Row="1"  ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
@@ -46,7 +62,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
+        <ListView Grid.Row="1"  Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
@@ -56,7 +72,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListView Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
+        <ListView Grid.Row="1"  Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
@@ -66,7 +82,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <WebView ScriptNotify="contentView_ScriptNotify"  Grid.Column="3" Grid.RowSpan="2"  HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
+        <WebView Grid.Row="1" LostFocus="contentView_LostFocus" KeyDown="contentView_KeyDown" ScriptNotify="contentView_ScriptNotify"  Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
 
     </Grid>
 </Page>

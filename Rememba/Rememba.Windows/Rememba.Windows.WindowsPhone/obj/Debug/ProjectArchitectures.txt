@@ -7,6 +7,7 @@ C:\Code\Rememba\Rememba\Rememba.Model\Rememba.Model.csproj;neutral
 C:\Code\Rememba\Rememba\Rememba.Model\Rememba.Model.csproj;neutral
 C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\Rememba.Repositories.Windows.csproj;neutral
 C:\Code\Rememba\Rememba\Rememba.Service.Windows\Rememba.Service.Windows.csproj;neutral
+C:\Code\Rememba\Rememba\Rememba.Settings\Rememba.Settings.csproj;neutral
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\Rememba.Shared.Windows.csproj;neutral
 C:\Code\Rememba\Rememba\Rememba.Shared\Rememba.SharedPCL.csproj;neutral
 C:\Code\Rememba\Rememba\Rememba.Shared\Rememba.SharedPCL.csproj;neutral

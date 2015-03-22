@@ -40,5 +40,30 @@ namespace Rememba.Windows.Views
         {
             (this.DataContext as MainViewViewModel).UpdateContentFromWebView(e.Value);
         }
+
+        private void SwitchMode_Click(object sender, RoutedEventArgs e)
+        {
+            if (switchModeButton.Content.ToString() == "Edit")
+            {
+                switchModeButton.Content = "Preview";
+                contentView.InvokeScriptAsync("Edit", null);
+            }
+            else
+            {
+                switchModeButton.Content = "Edit";
+                contentView.InvokeScriptAsync("Preview", null);
+            }
+        }
+
+        private void contentView_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+
+        }
+
+        private async void contentView_LostFocus(object sender, RoutedEventArgs e)
+        {
+            //var content = await contentView.InvokeScriptAsync("GetContent", null);
+            //(this.DataContext as MainViewViewModel).UpdateContentFromWebView(content);
+        }
     }
 }
