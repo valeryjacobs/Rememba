@@ -35,15 +35,20 @@
             <StackPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Height" Value="50"></Setter>
-                    <Setter Property="Margin" Value="7"></Setter>
+                    <Setter Property="Margin" Value="3"></Setter>
+                    <Setter Property="FontSize" Value="9"></Setter>
                 </Style>
             </StackPanel.Resources>
+            <!--<TextBox Text="{Binding Path.MindMap.Name}"></TextBox>-->
             <!--<Button Command="{Binding SelectParentNodeCommand}">Select</Button>
             <Button Command="{Binding SelectChildNodeCommand}">Select</Button>
             <Button Command="{Binding SelectSubChildNodeCommand}">Select</Button>
             <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>-->
-
+            <ComboBox Width="240" Height="30" ItemsSource="{Binding Graphs}" SelectedItem="{Binding MindMap, Mode=TwoWay}" DisplayMemberPath="Name" >
+            </ComboBox>
+            <Button Command="{Binding LoadGraphCommand}">Load</Button>
             <Button Command="{Binding GoDo}">Do</Button>
+           
             <Button Command="{Binding CreateGraphCommand}">Create Graph</Button>
             <Button Command="{Binding GoUpTree}">Up</Button>
             <Button Command="{Binding Save}">Save</Button>

@@ -50,5 +50,12 @@ namespace Rememba.Service.Windows.Data
 
             await rep.DeleteContent(id);
         }
+
+        public async Task ClearCache()
+        {
+            ContentRepository rep = new ContentRepository();
+
+            await rep.ClearCache();
+        }
     }
 }

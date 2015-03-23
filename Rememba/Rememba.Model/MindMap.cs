@@ -18,5 +18,8 @@ namespace Rememba.Model
 
         [JsonProperty(PropertyName = "content")]
         public string Content { get; set; }
+
+        [JsonProperty(PropertyName = "contenturi")]
+        public string ContentUri { get; set; }
     }
 }

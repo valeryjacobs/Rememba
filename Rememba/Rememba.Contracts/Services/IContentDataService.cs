@@ -19,5 +19,6 @@ namespace Rememba.Contracts.Services
         Task UpdateContent(IContent content);
 
         Task DeleteContent(string id);
+        Task ClearCache();
     }
 }

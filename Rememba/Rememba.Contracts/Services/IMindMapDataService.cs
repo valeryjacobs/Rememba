@@ -12,9 +12,9 @@ namespace Rememba.Contracts.Services
     {
         Task<INode> GetRootNode(IMindMap mindMap);
 
-        Task<IMindMap> GetMindMap(string mindMapName);
+        Task<IMindMap> GetMindMap(string id);
 
-        Task<Dictionary<string,string>> ListMindMaps();
+        Task<List<IMindMap>> ListMindMaps();
 
         Task Save(IMindMap mindMap, INode rootNode);
         Task<IMindMap> Create(string name);

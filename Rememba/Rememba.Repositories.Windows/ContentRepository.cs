@@ -26,6 +26,21 @@ namespace Rememba.Repositories.Windows
            
         }
 
+        public async Task ClearCache()
+        {
+            StorageFolder localFolder =
+                ApplicationData.Current.LocalFolder;
+
+            var files = await localFolder.GetFilesAsync();
+
+            foreach(StorageFile file in files)
+            {
+               await file.DeleteAsync();
+            }
+
+        }
+
+
         public async Task<ObservableCollection<IContent>> GetContentItems()
         {
             var contentItems = new ObservableCollection<IContent>();

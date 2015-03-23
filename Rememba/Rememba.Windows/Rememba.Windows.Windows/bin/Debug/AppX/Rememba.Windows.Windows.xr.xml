@@ -31,6 +31,9 @@
     <RootPropertyPathName Name="GoUpTree" />
     <RootPropertyPathName Name="CreateGraphCommand" />
     <RootPropertyPathName Name="GoDo" />
+    <RootPropertyPathName Name="LoadGraphCommand" />
+    <RootPropertyPathName Name="Graphs" />
+    <RootPropertyPathName Name="MindMap" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="SelectedObject" />
     <RootPropertyPathName Name="SomeStringProp" />
@@ -81,6 +84,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="Background" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="FontSize" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
@@ -132,6 +136,13 @@
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="DisplayMemberPath" />
     </RootType>
     <RootType FullName="Rememba.Windows.Views.MainView" />
     <RootType FullName="Rememba.Windows.Views.SomeObjectDetailView" />

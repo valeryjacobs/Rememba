@@ -11,6 +11,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Core;
+using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 
 namespace Rememba.ViewModels.Windows
@@ -18,6 +20,7 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoDo { get; set; }
+        public RelayCommand LoadGraphCommand { get; set; }
         public RelayCommand CreateGraphCommand { get; set; }
         public RelayCommand GoBack { get; set; }
         public RelayCommand GoBackTree { get; set; }
@@ -37,7 +40,6 @@ namespace Rememba.ViewModels.Windows
         //public RelayCommand<SelectionChangedEventArgs> SelectParentNodeCommand { get; set; }
         public RelayCommand<SelectionChangedEventArgs> SelectChildNodeCommand { get; set; }
         public RelayCommand<SelectionChangedEventArgs> SelectSubChildNodeCommand { get; set; }
-
         public RelayCommand<INode> SelectParentNodeCommand { get; set; }
 
         private IMindMapDataService _mindMapDataService;
@@ -52,28 +54,45 @@ namespace Rememba.ViewModels.Windows
         private IContent _selectedNodeContent;
         private INode _selectedNode;
         private INode _rootNode;
-
         private IMindMap _mindMap;
+
+        public IMindMap MindMap
+        {
+            get { return _mindMap; }
+            set
+            {
+                _mindMap = value;
+                RaisePropertyChanged("MindMap");
+            }
+        }
+
+        private async Task InitMindMap()
+        {
+            if (_mindMap.Content == null)
+            {
+                _mindMap = await _mindMapDataService.GetMindMap(_mindMap.Id);
+            }
+
+            RootNode = await _mindMapDataService.GetRootNode(_mindMap);
+
+            ParentList = RootNode.Children;
+            if (RootNode.Children.Count > 0)
+            {
+                SelectParent(RootNode.Children[0]);
+            }
+        }
 
         public INode PreviousSelectedNode { get; set; }
 
-        public Dictionary<string, string> Graphs { get; set; }
 
         public async void Initialize(object parameter)
         {
-
-           
-            //_mindMap = await _mindMapDataService.GetMindMap("ValeryJacobs");
-            //RootNode = await _mindMapDataService.GetRootNode(_mindMap);
-
-            //ParentList = RootNode.Children;
-            //if (RootNode.Children.Count > 0)
-            //{
-            //    SelectParent(RootNode.Children[0]);
-
-            //}
-
-           
+            Graphs = await _mindMapDataService.ListMindMaps();
+            if (Graphs.Count > 0)
+            {
+                MindMap = Graphs.First();
+                await InitMindMap();
+            }
         }
 
         public MainViewViewModel(
@@ -87,21 +106,27 @@ namespace Rememba.ViewModels.Windows
             this._contentDataService = contentDataService;
             this._dialogService = dialogService;
 
-            Graphs = new Dictionary<string, string>();
 
             InitializeCommands();
             Initialize("");
         }
 
-        private void InitializeCommands()
+        private async void InitializeCommands()
         {
-            GoDo = new RelayCommand(async () =>
+            LoadGraphCommand = new RelayCommand(async () =>
             {
-               Graphs = await _mindMapDataService.ListMindMaps();
+                InitMindMap();
 
             });
 
-            CreateGraphCommand = new RelayCommand(async () => 
+            GoDo = new RelayCommand(async () =>
+            {
+              //  Graphs = await _mindMapDataService.ListMindMaps();
+                _contentDataService.ClearCache();
+
+            });
+
+            CreateGraphCommand = new RelayCommand(async () =>
             {
                 await _dialogService.ShowMessage("Do you want to save the current graph? All intermediate changes will be lost.",
                     "Warning",
@@ -110,7 +135,7 @@ namespace Rememba.ViewModels.Windows
                     {
                         if (confirmed)
                         {
-                           await _mindMapDataService.Save(_mindMap, _rootNode);
+                            await _mindMapDataService.Save(_mindMap, _rootNode);
                         }
 
 
@@ -169,7 +194,7 @@ namespace Rememba.ViewModels.Windows
 
             DeleteContent = new RelayCommand(async () =>
             {
-                await _dialogService.ShowMessage("Are you sure you want to delete this nodes content? ["+ SelectedNode.Title + "]" ,
+                await _dialogService.ShowMessage("Are you sure you want to delete this nodes content? [" + SelectedNode.Title + "]",
                     "Warning",
                     buttonConfirmText: "Yes", buttonCancelText: "No",
                     afterHideCallback: async (confirmed) =>
@@ -180,7 +205,7 @@ namespace Rememba.ViewModels.Windows
                             SelectedNodeContent.Data = "";
                         }
                     });
-               
+
             });
 
             EditContent = new RelayCommand(() =>
@@ -200,7 +225,7 @@ namespace Rememba.ViewModels.Windows
                            DeleteNode();
                        }
                    });
-                
+
             });
 
             AddChildNodeCommand = new RelayCommand(() =>
@@ -213,7 +238,8 @@ namespace Rememba.ViewModels.Windows
                 CreateNode(false, SelectedNode);
             });
 
-            EditNodeCommand = new RelayCommand(() => {
+            EditNodeCommand = new RelayCommand(() =>
+            {
                 SwitchNodeToEditMode();
             });
         }
@@ -318,6 +344,7 @@ namespace Rememba.ViewModels.Windows
             get { return _rootNode; }
             set
             {
+
                 _rootNode = value;
                 RaisePropertyChanged("RootNode");
             }
@@ -526,5 +553,19 @@ namespace Rememba.ViewModels.Windows
                 RaisePropertyChanged("ParentList");
             }
         }
+
+        private List<IMindMap> _graphs;
+
+        public List<IMindMap> Graphs
+        {
+            get { return _graphs; }
+            set
+            {
+                _graphs = value;
+                RaisePropertyChanged("Graphs");
+
+            }
+        }
+
     }
 }

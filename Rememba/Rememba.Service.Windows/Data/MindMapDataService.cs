@@ -49,7 +49,7 @@ namespace Rememba.Service.Windows.Data
         }
 
 
-        public async Task<Dictionary<string,string>> ListMindMaps()
+        public async Task<List<IMindMap>> ListMindMaps()
         {
             MindMapRepository rep = new MindMapRepository();
             return await rep.ListMindMaps();
