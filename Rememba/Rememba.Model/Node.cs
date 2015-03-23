@@ -72,6 +72,19 @@ namespace Rememba.Model
             }
         }
 
+        private bool _edit;
+
+        [JsonIgnoreAttribute]
+        public bool Edit
+        {
+            get { return _edit; }
+            set
+            {
+                _edit = value;
+                NotifyPropertyChanged("Edit");
+            }
+        }
+
         private INode _parent;
 
         [JsonIgnoreAttribute]

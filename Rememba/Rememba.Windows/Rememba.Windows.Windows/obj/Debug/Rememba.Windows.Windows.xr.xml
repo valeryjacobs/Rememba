@@ -9,6 +9,7 @@
     <RootPropertyPathName Name="Data" />
     <RootPropertyPathName Name="SubChildList" />
     <RootPropertyPathName Name="SelectedSubChild" />
+    <RootPropertyPathName Name="Edit" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="ChildList" />
@@ -23,10 +24,12 @@
     <RootPropertyPathName Name="MoveDownOrder" />
     <RootPropertyPathName Name="MoveUpOrder" />
     <RootPropertyPathName Name="DeleteNodeCommand" />
+    <RootPropertyPathName Name="EditNodeCommand" />
     <RootPropertyPathName Name="AddSiblingNodeCommand" />
     <RootPropertyPathName Name="AddChildNodeCommand" />
     <RootPropertyPathName Name="Save" />
     <RootPropertyPathName Name="GoUpTree" />
+    <RootPropertyPathName Name="CreateGraphCommand" />
     <RootPropertyPathName Name="GoDo" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="SelectedObject" />
@@ -67,6 +70,22 @@
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Rememba.Windows.Converters.BindingInspector" />
     <RootType FullName="Rememba.Windows.Converters.WebContentViewConverter" />
+    <RootType FullName="Rememba.Windows.Converters.BoolToVisibilityConverter" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Width" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Foreground" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -78,6 +97,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
@@ -112,10 +132,6 @@
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Setter">
-      <RootProperty Name="Property" />
-      <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Rememba.Windows.Views.MainView" />
     <RootType FullName="Rememba.Windows.Views.SomeObjectDetailView" />

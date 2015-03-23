@@ -15,5 +15,7 @@ namespace Rememba.Contracts.Models
         bool MarkedForDeletion { get; set; }
         INode Parent { get; set; }
         string Title { get; set; }
+
+        bool Edit { get; set; }
     }
 }

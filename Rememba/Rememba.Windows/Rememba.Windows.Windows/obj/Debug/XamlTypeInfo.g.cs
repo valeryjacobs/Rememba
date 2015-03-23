@@ -124,7 +124,7 @@ namespace Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[18];
             _typeNameTable[0] = "Rememba.Windows.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "Rememba.Windows.ViewModel.MainViewModel";
@@ -138,12 +138,13 @@ namespace Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo
             _typeNameTable[10] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[11] = "Rememba.Windows.Converters.BindingInspector";
             _typeNameTable[12] = "Rememba.Windows.Converters.WebContentViewConverter";
-            _typeNameTable[13] = "Rememba.Windows.Views.MainView";
-            _typeNameTable[14] = "Rememba.Contracts.ViewModels.IViewModel";
-            _typeNameTable[15] = "Rememba.Windows.Views.SomeObjectDetailView";
-            _typeNameTable[16] = "Rememba.Windows.Views.SomeOtherObjectDetailView";
+            _typeNameTable[13] = "Rememba.Windows.Converters.BoolToVisibilityConverter";
+            _typeNameTable[14] = "Rememba.Windows.Views.MainView";
+            _typeNameTable[15] = "Rememba.Contracts.ViewModels.IViewModel";
+            _typeNameTable[16] = "Rememba.Windows.Views.SomeObjectDetailView";
+            _typeNameTable[17] = "Rememba.Windows.Views.SomeOtherObjectDetailView";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[18];
             _typeTable[0] = typeof(global::Rememba.Windows.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::Rememba.Windows.ViewModel.MainViewModel);
@@ -157,10 +158,11 @@ namespace Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo
             _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[11] = typeof(global::Rememba.Windows.Converters.BindingInspector);
             _typeTable[12] = typeof(global::Rememba.Windows.Converters.WebContentViewConverter);
-            _typeTable[13] = typeof(global::Rememba.Windows.Views.MainView);
-            _typeTable[14] = typeof(global::Rememba.Contracts.ViewModels.IViewModel);
-            _typeTable[15] = typeof(global::Rememba.Windows.Views.SomeObjectDetailView);
-            _typeTable[16] = typeof(global::Rememba.Windows.Views.SomeOtherObjectDetailView);
+            _typeTable[13] = typeof(global::Rememba.Windows.Converters.BoolToVisibilityConverter);
+            _typeTable[14] = typeof(global::Rememba.Windows.Views.MainView);
+            _typeTable[15] = typeof(global::Rememba.Contracts.ViewModels.IViewModel);
+            _typeTable[16] = typeof(global::Rememba.Windows.Views.SomeObjectDetailView);
+            _typeTable[17] = typeof(global::Rememba.Windows.Views.SomeOtherObjectDetailView);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -200,9 +202,10 @@ namespace Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo
         private object Activate_8_MainPage() { return new global::Rememba.Windows.MainPage(); }
         private object Activate_11_BindingInspector() { return new global::Rememba.Windows.Converters.BindingInspector(); }
         private object Activate_12_WebContentViewConverter() { return new global::Rememba.Windows.Converters.WebContentViewConverter(); }
-        private object Activate_13_MainView() { return new global::Rememba.Windows.Views.MainView(); }
-        private object Activate_15_SomeObjectDetailView() { return new global::Rememba.Windows.Views.SomeObjectDetailView(); }
-        private object Activate_16_SomeOtherObjectDetailView() { return new global::Rememba.Windows.Views.SomeOtherObjectDetailView(); }
+        private object Activate_13_BoolToVisibilityConverter() { return new global::Rememba.Windows.Converters.BoolToVisibilityConverter(); }
+        private object Activate_14_MainView() { return new global::Rememba.Windows.Views.MainView(); }
+        private object Activate_16_SomeObjectDetailView() { return new global::Rememba.Windows.Views.SomeObjectDetailView(); }
+        private object Activate_17_SomeOtherObjectDetailView() { return new global::Rememba.Windows.Views.SomeOtherObjectDetailView(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -294,31 +297,38 @@ namespace Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 13:   //  Rememba.Windows.Views.MainView
+            case 13:   //  Rememba.Windows.Converters.BoolToVisibilityConverter
+                userType = new global::Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_13_BoolToVisibilityConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 14:   //  Rememba.Windows.Views.MainView
                 userType = new global::Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_MainView;
+                userType.Activator = Activate_14_MainView;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  Rememba.Contracts.ViewModels.IViewModel
+            case 15:   //  Rememba.Contracts.ViewModels.IViewModel
                 userType = new global::Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Rememba.Windows.Views.SomeObjectDetailView
+            case 16:   //  Rememba.Windows.Views.SomeObjectDetailView
                 userType = new global::Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_SomeObjectDetailView;
+                userType.Activator = Activate_16_SomeObjectDetailView;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  Rememba.Windows.Views.SomeOtherObjectDetailView
+            case 17:   //  Rememba.Windows.Views.SomeOtherObjectDetailView
                 userType = new global::Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_SomeOtherObjectDetailView;
+                userType.Activator = Activate_17_SomeOtherObjectDetailView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -726,6 +736,7 @@ namespace Rememba.Windows.Rememba_Windows_Windows_XamlTypeInfo
         }
     }
 }
+
 
 
 

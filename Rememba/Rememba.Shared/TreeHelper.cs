@@ -21,7 +21,8 @@ namespace Rememba.Shared
                           ContentId = source.cid,
                           Description = source.d,
                           Title = source.n,
-                          Parent = node
+                          Parent = node,
+                          Edit = false
                       };
 
             if (source.c != null)

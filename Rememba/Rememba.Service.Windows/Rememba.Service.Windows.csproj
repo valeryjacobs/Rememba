@@ -63,6 +63,7 @@
     <Compile Include="Data\ContentDataService.cs" />
     <Compile Include="Data\MindMapDataService.cs" />
     <Compile Include="Data\SomeDataService.cs" />
+    <Compile Include="Infrastructure\DialogService.cs" />
     <Compile Include="Infrastructure\Frame.cs" />
     <Compile Include="Infrastructure\PushNotificationService.cs" />
     <Compile Include="Infrastructure\StateService.cs" />

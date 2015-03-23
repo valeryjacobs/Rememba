@@ -18,6 +18,7 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoDo { get; set; }
+        public RelayCommand CreateGraphCommand { get; set; }
         public RelayCommand GoBack { get; set; }
         public RelayCommand GoBackTree { get; set; }
         public RelayCommand GoUpTree { get; set; }
@@ -30,6 +31,7 @@ namespace Rememba.ViewModels.Windows
         public RelayCommand AddChildNodeCommand { get; set; }
         public RelayCommand AddSiblingNodeCommand { get; set; }
         public RelayCommand DeleteNodeCommand { get; set; }
+        public RelayCommand EditNodeCommand { get; set; }
         public RelayCommand EditContent { get; set; }
         public RelayCommand Save { get; set; }
         //public RelayCommand<SelectionChangedEventArgs> SelectParentNodeCommand { get; set; }
@@ -41,6 +43,7 @@ namespace Rememba.ViewModels.Windows
         private IMindMapDataService _mindMapDataService;
         private IContentDataService _contentDataService;
         private INavigationService _navigationService;
+        private IDialogService _dialogService;
 
 
         private ObservableCollection<INode> _parentList;
@@ -52,23 +55,39 @@ namespace Rememba.ViewModels.Windows
 
         private IMindMap _mindMap;
 
+        public INode PreviousSelectedNode { get; set; }
+
+        public Dictionary<string, string> Graphs { get; set; }
+
         public async void Initialize(object parameter)
         {
-            _mindMap = await _mindMapDataService.GetMindMap("ValeryJacobs");
-            RootNode = await _mindMapDataService.GetRootNode(_mindMap);
 
-            ParentList = RootNode.Children;
-            SelectParent(RootNode.Children[0]);
+           
+            //_mindMap = await _mindMapDataService.GetMindMap("ValeryJacobs");
+            //RootNode = await _mindMapDataService.GetRootNode(_mindMap);
+
+            //ParentList = RootNode.Children;
+            //if (RootNode.Children.Count > 0)
+            //{
+            //    SelectParent(RootNode.Children[0]);
+
+            //}
+
+           
         }
 
         public MainViewViewModel(
             IMindMapDataService mindMapDataService,
             IContentDataService contentDataService,
-            INavigationService navigationService)
+            INavigationService navigationService,
+            IDialogService dialogService)
         {
             this._mindMapDataService = mindMapDataService;
             this._navigationService = navigationService;
             this._contentDataService = contentDataService;
+            this._dialogService = dialogService;
+
+            Graphs = new Dictionary<string, string>();
 
             InitializeCommands();
             Initialize("");
@@ -76,9 +95,36 @@ namespace Rememba.ViewModels.Windows
 
         private void InitializeCommands()
         {
-            GoDo = new RelayCommand(() =>
+            GoDo = new RelayCommand(async () =>
             {
-                
+               Graphs = await _mindMapDataService.ListMindMaps();
+
+            });
+
+            CreateGraphCommand = new RelayCommand(async () => 
+            {
+                await _dialogService.ShowMessage("Do you want to save the current graph? All intermediate changes will be lost.",
+                    "Warning",
+                    buttonConfirmText: "Yes", buttonCancelText: "No",
+                    afterHideCallback: async (confirmed) =>
+                    {
+                        if (confirmed)
+                        {
+                           await _mindMapDataService.Save(_mindMap, _rootNode);
+                        }
+
+
+                        _mindMap = await _mindMapDataService.Create("New graph2");
+
+                        RootNode = await _mindMapDataService.GetRootNode(_mindMap);
+
+                        ParentList = RootNode.Children;
+                        if (RootNode.Children.Count > 0)
+                        {
+                            SelectParent(RootNode.Children[0]);
+
+                        }
+                    });
             });
 
             GoBack = new RelayCommand(() =>
@@ -121,10 +167,20 @@ namespace Rememba.ViewModels.Windows
                 _contentDataService.UpdateContent(SelectedNodeContent);
             });
 
-            DeleteContent = new RelayCommand(() =>
+            DeleteContent = new RelayCommand(async () =>
             {
-                _contentDataService.DeleteContent(SelectedNodeContent.Id);
-                SelectedNodeContent.Data = "";
+                await _dialogService.ShowMessage("Are you sure you want to delete this nodes content? ["+ SelectedNode.Title + "]" ,
+                    "Warning",
+                    buttonConfirmText: "Yes", buttonCancelText: "No",
+                    afterHideCallback: async (confirmed) =>
+                    {
+                        if (confirmed)
+                        {
+                            await _contentDataService.DeleteContent(SelectedNodeContent.Id);
+                            SelectedNodeContent.Data = "";
+                        }
+                    });
+               
             });
 
             EditContent = new RelayCommand(() =>
@@ -132,9 +188,19 @@ namespace Rememba.ViewModels.Windows
 
             });
 
-            DeleteNodeCommand = new RelayCommand(() =>
+            DeleteNodeCommand = new RelayCommand(async () =>
             {
-                DeleteNode();
+                await _dialogService.ShowMessage("Are you sure you want to delete this node? [" + SelectedNode.Title + "]",
+                   "Warning",
+                   buttonConfirmText: "Yes", buttonCancelText: "No",
+                   afterHideCallback: (confirmed) =>
+                   {
+                       if (confirmed)
+                       {
+                           DeleteNode();
+                       }
+                   });
+                
             });
 
             AddChildNodeCommand = new RelayCommand(() =>
@@ -145,6 +211,10 @@ namespace Rememba.ViewModels.Windows
             AddSiblingNodeCommand = new RelayCommand(() =>
             {
                 CreateNode(false, SelectedNode);
+            });
+
+            EditNodeCommand = new RelayCommand(() => {
+                SwitchNodeToEditMode();
             });
         }
 
@@ -168,6 +238,11 @@ namespace Rememba.ViewModels.Windows
             ParentList.OrderBy(x => x.Title);
         }
 
+        private void SwitchNodeToEditMode()
+        {
+            PreviousSelectedNode.Edit = false;
+            SelectedNode.Edit = !SelectedNode.Edit;
+        }
 
         public void NavigateUp()
         {
@@ -257,7 +332,9 @@ namespace Rememba.ViewModels.Windows
             }
             set
             {
+                PreviousSelectedNode = _selectedNode;
                 _selectedNode = value;
+
                 RaisePropertyChanged("SelectedNode");
             }
         }
@@ -349,7 +426,7 @@ namespace Rememba.ViewModels.Windows
 
         public void SelectParent(INode selectedParent)
         {
-            
+
 
             if (selectedParent == null && _selectedChild != null) selectedParent = _selectedChild.Parent;
 

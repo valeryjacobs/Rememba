@@ -41,5 +41,18 @@ namespace Rememba.Service.Windows.Data
             MindMapRepository rep = new MindMapRepository();
             await rep.SaveMindMap(rootNode, mindMap);
         }
+
+        public async Task<IMindMap> Create(string name)
+        {
+            MindMapRepository rep = new MindMapRepository();
+            return await rep.CreateGraph(name);
+        }
+
+
+        public async Task<Dictionary<string,string>> ListMindMaps()
+        {
+            MindMapRepository rep = new MindMapRepository();
+            return await rep.ListMindMaps();
+        }
     }
 }

@@ -14,7 +14,10 @@ namespace Rememba.Contracts.Services
 
         Task<IMindMap> GetMindMap(string mindMapName);
 
+        Task<Dictionary<string,string>> ListMindMaps();
+
         Task Save(IMindMap mindMap, INode rootNode);
+        Task<IMindMap> Create(string name);
       
     }
 }

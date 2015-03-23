@@ -15,13 +15,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Class.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BindingInspector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\WebContentConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\WebContentViewConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ItemClickCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StreamURIResolver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
