@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-03-23T16:38:21.975</Modified>
+      <Modified>2015-03-24T14:33:36.645</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Rememba.Windows.Windows.exe">
       <PackagePath>Rememba.Windows.Windows.exe</PackagePath>
-      <Modified>2015-03-23T22:57:39.729</Modified>
+      <Modified>2015-03-24T14:51:17.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -74,7 +74,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Service.Windows.dll">
       <PackagePath>Rememba.Service.Windows.dll</PackagePath>
-      <Modified>2015-03-23T22:53:46.896</Modified>
+      <Modified>2015-03-24T14:51:13.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared\bin\Debug\Rememba.SharedPCL.dll">
       <PackagePath>Rememba.SharedPCL.dll</PackagePath>
@@ -82,7 +82,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.ViewModels.Windows\bin\Debug\Rememba.ViewModels.Windows.dll">
       <PackagePath>Rememba.ViewModels.Windows.dll</PackagePath>
-      <Modified>2015-03-23T22:52:57.914</Modified>
+      <Modified>2015-03-23T23:24:52.155</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
       <PackagePath>System.Spatial.dll</PackagePath>
@@ -90,7 +90,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Repositories.Windows.dll">
       <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
-      <Modified>2015-03-23T22:52:29.823</Modified>
+      <Modified>2015-03-24T14:51:12.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Model.dll">
       <PackagePath>Rememba.Model.dll</PackagePath>
@@ -230,7 +230,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\ContentTemplate.html">
       <PackagePath>html\ContentEditor\ContentTemplate.html</PackagePath>
-      <Modified>2015-03-20T13:51:25.319</Modified>
+      <Modified>2015-03-24T14:20:05.057</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\Editor.html">
       <PackagePath>html\ContentEditor\Editor.html</PackagePath>
@@ -282,7 +282,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\MainView.xbf">
       <PackagePath>Views\MainView.xbf</PackagePath>
-      <Modified>2015-03-23T22:36:06.416</Modified>
+      <Modified>2015-03-24T14:33:33.349</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Views\SomeObjectDetailView.xbf">
       <PackagePath>Views\SomeObjectDetailView.xbf</PackagePath>
@@ -302,7 +302,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-03-23T22:57:42.518</Modified>
+      <Modified>2015-03-24T14:48:13.786</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

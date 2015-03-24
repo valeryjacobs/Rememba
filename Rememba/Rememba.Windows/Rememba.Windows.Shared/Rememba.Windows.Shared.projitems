@@ -42,4 +42,7 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\jquery-1.11.1.min.js" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)htmlTester\" />
+  </ItemGroup>
 </Project>

@@ -19,8 +19,8 @@ namespace Rememba.Repositories.Windows
 {
     public class MindMapRepository
     {
-        private const string MindmapDataFileName = "initmindmap.json";
-
+        private  const string CacheFile = "MindMapsListCache.dat";
+       
         public static bool IsConnected()
         {
             //return false;
@@ -32,31 +32,56 @@ namespace Rememba.Repositories.Windows
         {
             var mindMaps = new List<IMindMap>();
 
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantGraphContainerSaS));
-
-            BlobContinuationToken token = null;
-            do
+            if (IsConnected())
             {
-                BlobResultSegment results = await container.ListBlobsSegmentedAsync(null, true, BlobListingDetails.None, 1, token, null, null);
 
-                foreach (IListBlobItem blobItem in results.Results)
+                CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantGraphContainerSaS));
+
+                BlobContinuationToken token = null;
+                do
                 {
-                    var blob = blobItem.Container.GetBlockBlobReference(blobItem.Uri.Segments[2]);
-                    await blob.FetchAttributesAsync();
-                    if (blob.Metadata.ContainsKey("Name"))
-                    {
-                        mindMaps.Add(new MindMap()
-                        {
-                            Name = blob.Metadata["Name"],
-                            ContentUri = blobItem.Uri.AbsoluteUri,
-                            Id = blob.Metadata["Id"]
-                        });
-                    }
-                }
+                    BlobResultSegment results = await container.ListBlobsSegmentedAsync(null, true, BlobListingDetails.None, 1, token, null, null);
 
-                token = results.ContinuationToken;
+                    foreach (IListBlobItem blobItem in results.Results)
+                    {
+                        var blob = blobItem.Container.GetBlockBlobReference(blobItem.Uri.Segments[2]);
+                        await blob.FetchAttributesAsync();
+                        if (blob.Metadata.ContainsKey("Name"))
+                        {
+                            mindMaps.Add(new MindMap()
+                            {
+                                Name = blob.Metadata["Name"],
+                                ContentUri = blobItem.Uri.AbsoluteUri,
+                                Id = blob.Metadata["Id"]
+                            });
+                        }
+                    }
+
+                    token = results.ContinuationToken;
+                }
+                while (token != null);
+
+                
+
+                StorageFolder localFolder =
+                    ApplicationData.Current.LocalFolder;
+                StorageFile storageFile = await localFolder.CreateFileAsync(CacheFile, CreationCollisionOption.ReplaceExisting);
+                await FileIO.WriteTextAsync(storageFile, JsonConvert.SerializeObject(mindMaps));
             }
-            while (token != null);
+            else
+            {
+                StorageFolder localFolder =
+                 ApplicationData.Current.LocalFolder;
+                StorageFile file =
+                        await localFolder.GetFileAsync(CacheFile);
+                var graphListSerialized = await FileIO.ReadTextAsync(file);
+
+                var list = JsonConvert.DeserializeObject<List<MindMap>>(graphListSerialized);
+                return list.ToList<IMindMap>();
+            }
+
+
+            
 
 
             return mindMaps;

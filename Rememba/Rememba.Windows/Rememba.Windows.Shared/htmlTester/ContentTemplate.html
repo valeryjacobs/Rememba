@@ -4,46 +4,15 @@
     <title>A StrapDown.js template</title>
     <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 
-    <script src="/ContentEditor/epiceditor/js/epiceditor.min.js"></script>
+    <script src="epiceditor/js/epiceditor.js"></script>
 </head>
 <body style="background-color:black;color:white;">
-    <!--<input id="test" maxlength="30" width="200" height="80"  />-->
+    <input id="test" maxlength="30" width="200" height="80"  />
     <div id="epiceditor" style="height:800px"></div>
 
     <script>
-        var opts = {
-            container: 'epiceditor',
-            textarea: null,
-            basePath: 'epiceditor',
-            clientSideStorage: true,
-            localStorageName: 'epiceditor',
-            useNativeFullscreen: false,
-
-            file: {
-                name: 'epiceditor',
-                defaultContent: '',
-                autoSave: 100
-            },
-          
-            button: {
-                preview: true,
-                fullscreen: false,
-                bar: "auto"
-            },
-            focusOnLoad: false,
-            shortcut: {
-                modifier: 18,
-                fullscreen: 70,
-                preview: 80
-            },
-            string: {
-                togglePreview: 'Toggle Preview Mode',
-                toggleEdit: 'Toggle Edit Mode',
-                toggleFullscreen: 'Enter Fullscreen'
-            },
-            autogrow: false
-        };
-        var editor = new EpicEditor(opts).load();
+      
+        var editor = new EpicEditor().load();
         var notifySwitch = false;
 
         function SetContent(value) {

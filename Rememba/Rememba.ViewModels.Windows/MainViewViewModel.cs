@@ -20,6 +20,8 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoDo { get; set; }
+
+        public RelayCommand Paste { get; set; }
         public RelayCommand LoadGraphCommand { get; set; }
         public RelayCommand CreateGraphCommand { get; set; }
         public RelayCommand GoBack { get; set; }
@@ -113,6 +115,10 @@ namespace Rememba.ViewModels.Windows
 
         private async void InitializeCommands()
         {
+            Paste = new RelayCommand(async () => { 
+
+            });
+
             LoadGraphCommand = new RelayCommand(async () =>
             {
                 InitMindMap();

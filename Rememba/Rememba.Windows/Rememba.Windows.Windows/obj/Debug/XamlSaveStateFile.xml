@@ -14,7 +14,7 @@
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="6f64c3c9-0c54-320f-1e41-ac775ee4e1ae" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.service.windows\bin\debug\rememba.service.windows.dll" HashGuid="c22e7c4a-206a-139c-467f-040dd0dd2b0a" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.shared\bin\debug\rememba.sharedpcl.dll" HashGuid="1775bbf4-0566-d98f-a70e-883a4d763a24" />
-    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="409480f2-d8fa-b6b4-9753-3a18cba977fc" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="73479f36-b9de-161e-7b44-885cd3c90606" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\system.spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\system.spatial.dll" HashGuid="4e779b7f-3e1d-55d1-cac0-694ae2344f0d" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

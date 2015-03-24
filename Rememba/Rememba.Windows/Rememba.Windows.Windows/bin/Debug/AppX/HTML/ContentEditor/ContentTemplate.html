@@ -7,13 +7,44 @@
     <script src="/ContentEditor/epiceditor/js/epiceditor.min.js"></script>
 </head>
 <body style="background-color:black;color:white;">
+    <!--<input id="test" maxlength="30" width="200" height="80"  />-->
     <div id="epiceditor" style="height:800px"></div>
 
     <script>
-        var editor = new EpicEditor().load();
+        var opts = {
+            container: 'epiceditor',
+            textarea: null,
+            basePath: 'epiceditor',
+            clientSideStorage: true,
+            localStorageName: 'epiceditor',
+            useNativeFullscreen: false,
+
+            file: {
+                name: 'epiceditor',
+                defaultContent: '',
+                autoSave: 100
+            },
+          
+            button: {
+                preview: true,
+                fullscreen: false,
+                bar: "auto"
+            },
+            focusOnLoad: false,
+            shortcut: {
+                modifier: 18,
+                fullscreen: 70,
+                preview: 80
+            },
+            string: {
+                togglePreview: 'Toggle Preview Mode',
+                toggleEdit: 'Toggle Edit Mode',
+                toggleFullscreen: 'Enter Fullscreen'
+            },
+            autogrow: false
+        };
+        var editor = new EpicEditor(opts).load();
         var notifySwitch = false;
-
-
 
         function SetContent(value) {
             notifySwitch = false;
@@ -27,6 +58,7 @@
         function Edit(value) {
             notifySwitch = false;
             editor.edit();
+            
         }
 
         function Preview(value) {

@@ -48,7 +48,7 @@
             </ComboBox>
             <Button Command="{Binding LoadGraphCommand}">Load</Button>
             <Button Command="{Binding GoDo}">Do</Button>
-           
+     
             <Button Command="{Binding CreateGraphCommand}">Create Graph</Button>
             <Button Command="{Binding GoUpTree}">Up</Button>
             <Button Command="{Binding Save}">Save</Button>
