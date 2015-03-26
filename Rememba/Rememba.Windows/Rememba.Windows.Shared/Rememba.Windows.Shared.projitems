@@ -28,21 +28,29 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)htmlTester\ContentTemplate.html" />
+    <Content Include="$(MSBuildThisFileDirectory)htmlTester\dummy.png" />
+    <Content Include="$(MSBuildThisFileDirectory)htmlTester\WikiMarkupSample.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)htmlTester\wiky.css" />
+    <Content Include="$(MSBuildThisFileDirectory)htmlTester\wiky.lang.css" />
+    <Content Include="$(MSBuildThisFileDirectory)htmlTester\wiky.math.css" />
     <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\ContentTemplate.html" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\Editor.html" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\js\epiceditor.js" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\js\epiceditor.min.js" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\base\epiceditor.css" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\editor\epic-dark.css" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\editor\epic-light.css" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\preview\bartik.css" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\preview\github.css" />
-    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\epiceditor\themes\preview\preview-dark.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\dummy.png" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\WikiMarkupSample.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.lang.css" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.math.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\jquery-1.11.1.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)htmlTester\" />
+    <None Include="$(MSBuildThisFileDirectory)htmlTester\jquery-1.11.1.min.js" />
+    <None Include="$(MSBuildThisFileDirectory)htmlTester\wiky.js" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.js" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.lang.js" />
+    <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.math.js" />
+    <None Include="$(MSBuildThisFileDirectory)htmlTester\wiky.lang.js" />
+    <None Include="$(MSBuildThisFileDirectory)htmlTester\wiky.math.js" />
   </ItemGroup>
 </Project>

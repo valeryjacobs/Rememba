@@ -525,6 +525,7 @@ namespace Rememba.ViewModels.Windows
                 parentNode.Parent.Children.Insert(parentNode.Parent.Children.IndexOf(parentNode) + 1, node);
             }
             SelectedNode = node;
+            SwitchNodeToEditMode();
         }
 
         public async void SetContent()

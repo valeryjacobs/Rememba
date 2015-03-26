@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
@@ -43,12 +44,27 @@ namespace Rememba.Windows.Extensions
         {
             var uri = new System.Uri("ms-appx:///html" + path);
 
-            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            try
+            {
+                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(uri);
 
-            var stream = await file.OpenAsync(FileAccessMode.Read);
 
-            return stream;
+                var stream = await file.OpenAsync(FileAccessMode.Read);
 
+
+                return stream;
+            }
+            catch(Exception ex)
+            {
+                
+            }
+
+            uri = new System.Uri("ms-appx:///html/ContentEditor/dummy.png");
+            StorageFile dummyFile = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            var dummyStream = await dummyFile.OpenAsync(FileAccessMode.Read);
+
+            return dummyStream;
+                            
             //return file.OpenAsync(FileAccessMode.Read);
             //using (IInputStream stream = (await file.OpenReadAsync()).AsStreamForRead()){
             //    return stream;

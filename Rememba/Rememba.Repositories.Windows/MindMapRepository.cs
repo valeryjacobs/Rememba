@@ -23,7 +23,7 @@ namespace Rememba.Repositories.Windows
        
         public static bool IsConnected()
         {
-            //return false;
+            return false;
             ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
             bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
             return internet;
@@ -79,10 +79,6 @@ namespace Rememba.Repositories.Windows
                 var list = JsonConvert.DeserializeObject<List<MindMap>>(graphListSerialized);
                 return list.ToList<IMindMap>();
             }
-
-
-            
-
 
             return mindMaps;
         }
@@ -214,7 +210,8 @@ namespace Rememba.Repositories.Windows
                             await blob.FetchAttributesAsync();
                             if (dt.ToUniversalTime() < blob.Properties.LastModified)
                             {
-                                //TODO:
+                                //TODO:We depend on client time accuracy, that is not acceptible for sync conflict handling, by any standard!
+                                
                                 //We have a newer file in the cloud. Handle it!
                                 blob = container.GetBlockBlobReference(id);
                                 retrievedJson = await blob.DownloadTextAsync();

@@ -170,38 +170,53 @@
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\dummy.png">
+      <PackagePath>htmlTester\dummy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\dummy.png">
+      <PackagePath>html\ContentEditor\dummy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\ContentTemplate.html">
+      <PackagePath>htmlTester\ContentTemplate.html</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\ContentTemplate.html">
       <PackagePath>html\ContentEditor\ContentTemplate.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\Editor.html">
-      <PackagePath>html\ContentEditor\Editor.html</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\WikiMarkupSample.txt">
+      <PackagePath>htmlTester\WikiMarkupSample.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\js\epiceditor.js">
-      <PackagePath>html\ContentEditor\epiceditor\js\epiceditor.js</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\WikiMarkupSample.txt">
+      <PackagePath>html\ContentEditor\WikiMarkupSample.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\js\epiceditor.min.js">
-      <PackagePath>html\ContentEditor\epiceditor\js\epiceditor.min.js</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.css">
+      <PackagePath>htmlTester\wiky.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.lang.css">
+      <PackagePath>htmlTester\wiky.lang.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.math.css">
+      <PackagePath>htmlTester\wiky.math.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.css">
+      <PackagePath>html\ContentEditor\wiky.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.lang.css">
+      <PackagePath>html\ContentEditor\wiky.lang.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.math.css">
+      <PackagePath>html\ContentEditor\wiky.math.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\jquery-1.11.1.min.js">
       <PackagePath>html\ContentEditor\jquery-1.11.1.min.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\themes\base\epiceditor.css">
-      <PackagePath>html\ContentEditor\epiceditor\themes\base\epiceditor.css</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.js">
+      <PackagePath>html\ContentEditor\wiky.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\themes\editor\epic-dark.css">
-      <PackagePath>html\ContentEditor\epiceditor\themes\editor\epic-dark.css</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.lang.js">
+      <PackagePath>html\ContentEditor\wiky.lang.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\themes\editor\epic-light.css">
-      <PackagePath>html\ContentEditor\epiceditor\themes\editor\epic-light.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\themes\preview\bartik.css">
-      <PackagePath>html\ContentEditor\epiceditor\themes\preview\bartik.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\themes\preview\github.css">
-      <PackagePath>html\ContentEditor\epiceditor\themes\preview\github.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\epiceditor\themes\preview\preview-dark.css">
-      <PackagePath>html\ContentEditor\epiceditor\themes\preview\preview-dark.css</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.math.js">
+      <PackagePath>html\ContentEditor\wiky.math.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>

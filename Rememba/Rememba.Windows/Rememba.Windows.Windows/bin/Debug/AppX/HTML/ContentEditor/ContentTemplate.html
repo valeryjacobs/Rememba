@@ -1,85 +1,62 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>A StrapDown.js template</title>
+    <title>WIKI Markup Editor</title>
     <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-
-    <script src="/ContentEditor/epiceditor/js/epiceditor.min.js"></script>
+    <script type="text/javascript" src="wiky.js"></script>
+    <script type="text/javascript" src="wiky.lang.js"></script>
+    <script type="text/javascript" src="wiky.math.js"></script>
+    <link rel="stylesheet" type="text/css" href="wiky.css" />
+    <link rel="stylesheet" type="text/css" href="wiky.lang.css" />
+    <link rel="stylesheet" type="text/css" href="wiky.math.css" />
+    <style>
+        /*html * {
+            font-size: 1em !important;
+            color: #fff !important;
+            font-family: 'Segoe UI' !important;
+        }*/
+    </style>
 </head>
-<body style="background-color:black;color:white;">
-    <!--<input id="test" maxlength="30" width="200" height="80"  />-->
-    <div id="epiceditor" style="height:800px"></div>
-
+<body style="background:black;color:white;">
     <script>
-        var opts = {
-            container: 'epiceditor',
-            textarea: null,
-            basePath: 'epiceditor',
-            clientSideStorage: true,
-            localStorageName: 'epiceditor',
-            useNativeFullscreen: false,
 
-            file: {
-                name: 'epiceditor',
-                defaultContent: '',
-                autoSave: 100
-            },
-          
-            button: {
-                preview: true,
-                fullscreen: false,
-                bar: "auto"
-            },
-            focusOnLoad: false,
-            shortcut: {
-                modifier: 18,
-                fullscreen: 70,
-                preview: 80
-            },
-            string: {
-                togglePreview: 'Toggle Preview Mode',
-                toggleEdit: 'Toggle Edit Mode',
-                toggleFullscreen: 'Enter Fullscreen'
-            },
-            autogrow: false
-        };
-        var editor = new EpicEditor(opts).load();
-        var notifySwitch = false;
+        function Preview() {
+            $('#output').html(Wiky.toHtml(document.getElementById('input').value));
+            $('#output').show();
+            $('#input').hide();
+
+            window.external.notify($('#input').text());
+        }
+
+
+        function Edit() {
+            $('#output').hide();
+            $('#input').show();
+        }
 
         function SetContent(value) {
-            notifySwitch = false;
-            editor.importFile('content', value).preview();
+            $('#input').text(value);
+            $('#output').hide();
+            $('#input').show();
         }
 
         function GetContent(value) {
-            return editor.exportFile();
+            return $('#input').text();
         }
 
-        function Edit(value) {
-            notifySwitch = false;
-            editor.edit();
-            
+        function SetRowCount(value) {
+            $('#input').rows = value;
         }
-
-        function Preview(value) {
-            notifySwitch = true;
-            editor.preview();
-        }
-
-        $(document).keypress(function (e) {
-            //window.external.notify(editor.exportFile());
-            //var checkWebkitandIE = (e.which == 26 ? 1 : 0);
-            //var checkMoz = (e.which == 122 && e.ctrlKey ? 1 : 0);
-
-        });
-
-        editor.on('preview', function () {
-            if (notifySwitch) {
-                window.external.notify(editor.exportFile());
-            }
-        });
 
     </script>
+    <textarea style="width:100%;height:100%; background:black;color:white" id="input" rows="1200"></textarea>
+    <div id="output"></div>
+    <!--<button onclick="Preview();">
+        Preview
+    </button>
+    <button onclick="Edit();">
+        Edit
+    </button>-->
 
 </body>
 </html>
