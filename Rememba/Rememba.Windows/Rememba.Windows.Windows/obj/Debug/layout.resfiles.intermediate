@@ -19,7 +19,7 @@ Assets\SmallLogo.scale-100.png
 Assets\SplashScreen.scale-100.png
 Assets\StoreLogo.scale-100.png
 App.xbf
-MainPage.xbf
+html\ContentEditor\MainPage.xbf
 Rememba.Windows.Windows.xr.xml
 Views\MainView.xbf
 Views\SomeObjectDetailView.xbf

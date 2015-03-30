@@ -20,7 +20,7 @@ namespace Rememba.Windows.Converters
 
             if (value == null) value = "";
 
-            if (ControlLocator.ContentViewReady && ControlLocator.ContentView.Source.LocalPath == "/ContentEditor/ContentTemplate.html")
+            if (ControlLocator.ContentViewReady && ControlLocator.ContentViewSmallReady && ControlLocator.ContentView.Source.LocalPath == "/ContentEditor/ContentTemplate.html")
             {
                 ControlLocator.ContentView.InvokeScriptAsync("SetContent", new string[] { value.ToString() });
             }
@@ -35,6 +35,7 @@ namespace Rememba.Windows.Converters
                 };
 
                 ControlLocator.ContentViewReady = true;
+                ControlLocator.ContentViewSmallReady = true;
             }
 
 

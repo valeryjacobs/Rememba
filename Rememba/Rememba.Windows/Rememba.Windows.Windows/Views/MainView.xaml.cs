@@ -1,7 +1,5 @@
 ﻿using Rememba.Contracts.ViewModels;
-using Rememba.Contracts.Views;
 using Rememba.ViewModels.Windows;
-using Rememba.Windows.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,11 +22,28 @@ namespace Rememba.Windows.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainView : Page, IMainView
+    public sealed partial class MainView : Page
     {
         public MainView()
         {
             this.InitializeComponent();
+            this.SizeChanged += MainView_SizeChanged;
+        }
+
+        void MainView_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (e.NewSize.Width < 500)
+            {
+                VisualStateManager.GoToState(this, "MinimalLayout", true);
+            }
+            //else if (e.NewSize.Width < e.NewSize.Height)
+            //{
+            //    VisualStateManager.GoToState(this, "PortraitLayout", true);
+            //}
+            else
+            {
+                VisualStateManager.GoToState(this, "DefaultLayout", true);
+            }
         }
 
         public IViewModel ViewModel
@@ -43,14 +58,14 @@ namespace Rememba.Windows.Views
 
         private void SwitchMode_Click(object sender, RoutedEventArgs e)
         {
-            if (switchModeButton.Content.ToString() == "Edit")
+            if (switchModeButton.Label == "Edit")
             {
-                switchModeButton.Content = "Preview";
+                switchModeButton.Label = "Preview";
                 contentView.InvokeScriptAsync("Edit", null);
             }
             else
             {
-                switchModeButton.Content = "Edit";
+                switchModeButton.Label = "Edit";
                 contentView.InvokeScriptAsync("Preview", null);
             }
         }
@@ -64,6 +79,24 @@ namespace Rememba.Windows.Views
         {
             //var content = await contentView.InvokeScriptAsync("GetContent", null);
             //(this.DataContext as MainViewViewModel).UpdateContentFromWebView(content);
+        }
+
+        private void FullscreenEditor_Click(object sender, RoutedEventArgs e)
+        {
+            parentListView.Visibility = global::Windows.UI.Xaml.Visibility.Collapsed;
+            childListView.Visibility = global::Windows.UI.Xaml.Visibility.Collapsed;
+            subChildListView.Visibility = global::Windows.UI.Xaml.Visibility.Collapsed;
+            contentView.SetValue(Grid.ColumnProperty, 0);
+            contentView.SetValue(Grid.ColumnSpanProperty, 4);
+
+        }
+        private void NormalEditor_Click(object sender, RoutedEventArgs e)
+        {
+            parentListView.Visibility = global::Windows.UI.Xaml.Visibility.Visible;
+            childListView.Visibility = global::Windows.UI.Xaml.Visibility.Visible;
+            subChildListView.Visibility = global::Windows.UI.Xaml.Visibility.Visible;
+            contentView.SetValue(Grid.ColumnProperty, 3);
+            contentView.SetValue(Grid.ColumnSpanProperty, 1);
         }
     }
 }

@@ -20,9 +20,12 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoDo { get; set; }
-
-        public RelayCommand Paste { get; set; }
+        public RelayCommand ClearLocalCacheCommand { get; set; }
+        public RelayCommand Copy { get; set; }
+        public RelayCommand PasteChild { get; set; }
+        public RelayCommand PasteSibling { get; set; }
         public RelayCommand LoadGraphCommand { get; set; }
+        public RelayCommand DeleteGraphCommand { get; set; }
         public RelayCommand CreateGraphCommand { get; set; }
         public RelayCommand GoBack { get; set; }
         public RelayCommand GoBackTree { get; set; }
@@ -48,6 +51,7 @@ namespace Rememba.ViewModels.Windows
         private IContentDataService _contentDataService;
         private INavigationService _navigationService;
         private IDialogService _dialogService;
+        private ICacheDataService _cacheService;
 
 
         private ObservableCollection<INode> _parentList;
@@ -67,6 +71,28 @@ namespace Rememba.ViewModels.Windows
                 RaisePropertyChanged("MindMap");
             }
         }
+
+        private bool _newGraphMode;
+
+        public bool NewGraphMode
+        {
+            get { return _newGraphMode; }
+            set { _newGraphMode = value; }
+        }
+
+
+        private string _newGraphName;
+
+        public string NewGraphName
+        {
+            get { return _newGraphName; }
+            set
+            {
+                _newGraphName = value;
+                RaisePropertyChanged("NewGraphName");
+            }
+        }
+
 
         private async Task InitMindMap()
         {
@@ -92,8 +118,8 @@ namespace Rememba.ViewModels.Windows
             Graphs = await _mindMapDataService.ListMindMaps();
             if (Graphs.Count > 0)
             {
-                MindMap = Graphs.First();
-                await InitMindMap();
+                //MindMap = Graphs.First();
+                //await InitMindMap();
             }
         }
 
@@ -101,61 +127,116 @@ namespace Rememba.ViewModels.Windows
             IMindMapDataService mindMapDataService,
             IContentDataService contentDataService,
             INavigationService navigationService,
-            IDialogService dialogService)
+            IDialogService dialogService,
+            ICacheDataService cacheService)
         {
             this._mindMapDataService = mindMapDataService;
             this._navigationService = navigationService;
             this._contentDataService = contentDataService;
             this._dialogService = dialogService;
+            this._cacheService = cacheService;
 
 
             InitializeCommands();
             Initialize("");
         }
 
+        private INode _clipBoardNode;
+
+        public INode ClipBoardNode
+        {
+            get { return _clipBoardNode; }
+            set { _clipBoardNode = value; }
+        }
+
+
         private async void InitializeCommands()
         {
-            Paste = new RelayCommand(async () => { 
+            ClearLocalCacheCommand = new RelayCommand(async () => {
+
+                  await _dialogService.ShowMessage("Do you want to clear the local cache? All unsynced changes will be lost. FOREVER!!",
+                        "Warning",
+                        buttonConfirmText: "Yes", buttonCancelText: "No",
+                        afterHideCallback:  (confirmed) =>
+                        {
+                            if (confirmed)
+                            {
+                               _cacheService.ClearCache();
+                            }
+                        });
+            });
+
+            Copy = new RelayCommand(() =>
+            {
+                ClipBoardNode = SelectedNode;
+            });
+
+            PasteChild = new RelayCommand(() =>
+            {
+                SelectedNode.Children.Add(ClipBoardNode);
+                ClipBoardNode.Parent.Children.Remove(ClipBoardNode);
+
+            });
+
+            PasteSibling = new RelayCommand(() =>
+            {
+                SelectedNode.Parent.Children.Add(ClipBoardNode);
+                ClipBoardNode.Parent.Children.Remove(ClipBoardNode);
 
             });
 
             LoadGraphCommand = new RelayCommand(async () =>
             {
-                InitMindMap();
+                await InitMindMap();
 
             });
 
             GoDo = new RelayCommand(async () =>
             {
-              //  Graphs = await _mindMapDataService.ListMindMaps();
-                _contentDataService.ClearCache();
+                //  Graphs = await _mindMapDataService.ListMindMaps();
+                await _contentDataService.ClearCache();
 
             });
 
             CreateGraphCommand = new RelayCommand(async () =>
             {
-                await _dialogService.ShowMessage("Do you want to save the current graph? All intermediate changes will be lost.",
+                if (_mindMap != null && _rootNode != null)
+                {
+                    await _dialogService.ShowMessage("Do you want to save the current graph? All intermediate changes will be lost.",
+                        "Warning",
+                        buttonConfirmText: "Yes", buttonCancelText: "No",
+                        afterHideCallback: async (confirmed) =>
+                        {
+                            if (confirmed && _mindMap != null && _rootNode != null)
+                            {
+                                await _mindMapDataService.Save(_mindMap, _rootNode);
+                            }
+
+
+                            await CreateGraph();
+                        });
+                }
+                else
+                {
+                    await CreateGraph();
+                }
+            }); 
+
+            DeleteGraphCommand = new RelayCommand(async () =>
+            {
+                await  _dialogService.ShowMessage("Do you want to dalete the current graph? [" + MindMap.Name + "]",
                     "Warning",
                     buttonConfirmText: "Yes", buttonCancelText: "No",
                     afterHideCallback: async (confirmed) =>
                     {
                         if (confirmed)
                         {
-                            await _mindMapDataService.Save(_mindMap, _rootNode);
-                        }
-
-
-                        _mindMap = await _mindMapDataService.Create("New graph2");
-
-                        RootNode = await _mindMapDataService.GetRootNode(_mindMap);
-
-                        ParentList = RootNode.Children;
-                        if (RootNode.Children.Count > 0)
-                        {
-                            SelectParent(RootNode.Children[0]);
-
+                            _graphs.Remove(MindMap);
+                            await _mindMapDataService.Delete(MindMap.Id);
+                            RootNode = null;
                         }
                     });
+               
             });
 
             GoBack = new RelayCommand(() =>
@@ -209,6 +290,7 @@ namespace Rememba.ViewModels.Windows
                         {
                             await _contentDataService.DeleteContent(SelectedNodeContent.Id);
                             SelectedNodeContent.Data = "";
+                            SelectedNode.ContentId = null;
                         }
                     });
 
@@ -250,6 +332,22 @@ namespace Rememba.ViewModels.Windows
             });
         }
 
+        private async Task CreateGraph()
+        {
+            _mindMap = await _mindMapDataService.Create(NewGraphName);
+
+            RootNode = await _mindMapDataService.GetRootNode(_mindMap);
+
+            ParentList = RootNode.Children;
+            if (RootNode.Children.Count > 0)
+            {
+                SelectParent(RootNode.Children[0]);
+
+            }
+
+            Initialize(null);
+        }
+
         public void UpdateContentFromWebView(string content)
         {
             if (content == SelectedNodeContent.Data) return;
@@ -272,7 +370,11 @@ namespace Rememba.ViewModels.Windows
 
         private void SwitchNodeToEditMode()
         {
-            PreviousSelectedNode.Edit = false;
+            if (PreviousSelectedNode != null)
+            {
+                PreviousSelectedNode.Edit = false;
+            }
+
             SelectedNode.Edit = !SelectedNode.Edit;
         }
 

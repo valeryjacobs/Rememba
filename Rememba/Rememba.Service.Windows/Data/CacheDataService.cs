@@ -10,7 +10,9 @@ namespace Rememba.Service.Windows.Data
 {
     public class CacheDataService : ICacheDataService
     {
-        public void ClearCache()
+    
+
+        void ICacheDataService.ClearCache()
         {
             new CacheRepository().ClearCache();
         }

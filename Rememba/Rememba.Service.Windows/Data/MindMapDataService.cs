@@ -24,6 +24,13 @@ namespace Rememba.Service.Windows.Data
             return mindmap;
         }
 
+        public async Task Delete(string id)
+        {
+            MindMapRepository rep = new MindMapRepository();
+
+            await rep.Delete(id);
+        }
+
         public async Task<INode> GetRootNode(IMindMap mindMap)
         {
             if (mindMap.Content == null || mindMap.Content == "")

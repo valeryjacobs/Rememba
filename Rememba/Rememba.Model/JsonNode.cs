@@ -18,6 +18,7 @@ namespace Rememba.Model
         public string n { get; set; }
         public string d { get; set; }
         public string cid { get; set; }
+        public string t { get; set; }
         public List<JsonNode> c { get; set; }
     }
 }

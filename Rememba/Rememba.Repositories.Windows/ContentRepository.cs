@@ -18,12 +18,10 @@ namespace Rememba.Repositories.Windows
     {
         public static bool IsConnected()
         {
-            return false;
+            //return false;
             ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
             bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
             return internet;
-
-           
         }
 
         public async Task ClearCache()
@@ -33,11 +31,10 @@ namespace Rememba.Repositories.Windows
 
             var files = await localFolder.GetFilesAsync();
 
-            foreach(StorageFile file in files)
+            foreach (StorageFile file in files)
             {
-               await file.DeleteAsync();
+                await file.DeleteAsync();
             }
-
         }
 
 
@@ -90,6 +87,8 @@ namespace Rememba.Repositories.Windows
                         data = await blob.DownloadTextAsync();
                     }
 
+                    if (data == null) data = "Not found.";
+
                     StorageFile storageFile = await localFolder.CreateFileAsync(contentId, CreationCollisionOption.ReplaceExisting);
                     await FileIO.WriteTextAsync(storageFile, data);
 
@@ -121,17 +120,11 @@ namespace Rememba.Repositories.Windows
                 CloudBlockBlob blob = container.GetBlockBlobReference(content.Id);
 
                 await blob.UploadTextAsync(content.Data);
+            }
 
-                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-                StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
-                await FileIO.WriteTextAsync(storageFile, content.Data);
-            }
-            else
-            {
-                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-                StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
-                await FileIO.WriteTextAsync(storageFile, content.Data);
-            }
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(storageFile, content.Data);
         }
 
         public async Task UpdateContent(IContent content)
@@ -151,29 +144,40 @@ namespace Rememba.Repositories.Windows
                     CloudBlockBlob blob = container.GetBlockBlobReference(content.Id);
 
                     await blob.UploadTextAsync(content.Data);
-
-                    StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-                    StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
-                    await FileIO.WriteTextAsync(storageFile, content.Data);
                 }
-                else
-                {
 
-                    StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-                    StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
-                    await FileIO.WriteTextAsync(storageFile, content.Data);
-                }
-              }
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile storageFile = await localFolder.CreateFileAsync(content.Id, CreationCollisionOption.ReplaceExisting);
+                await FileIO.WriteTextAsync(storageFile, content.Data);
+            }
         }
 
         public async Task DeleteContent(string id)
         {
-            CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
+            StorageFolder localFolder =
+               ApplicationData.Current.LocalFolder;
+            //use cached version
+            StorageFile file =
+                await localFolder.GetFileAsync(id);
 
-            CloudBlockBlob blob = container.GetBlockBlobReference(id);
+            await file.DeleteAsync();
 
-            //TODO:Instead of delete, throw it in a trashbin with a name extension so we can do some 'undoing'.
-            await blob.DeleteAsync();
+            if (IsConnected())
+            {
+                CloudBlobContainer backupContainer = new CloudBlobContainer(new Uri(Settings.TenantBackupContainerSaS));
+                CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantContentContainerSaS));
+
+                bool existsInCloud = await container.GetBlockBlobReference(id).ExistsAsync();
+                if (existsInCloud)
+                {
+
+                    CloudBlockBlob sourceBlob = container.GetBlockBlobReference(id);
+                    CloudBlockBlob targetBlob = backupContainer.GetBlockBlobReference(id);
+                    await targetBlob.StartCopyFromBlobAsync(sourceBlob);
+
+                    await sourceBlob.DeleteAsync();
+                }
+            }
         }
 
         public async Task<string> DownloadContent(string contentId)

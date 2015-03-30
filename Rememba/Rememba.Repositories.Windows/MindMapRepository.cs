@@ -19,11 +19,11 @@ namespace Rememba.Repositories.Windows
 {
     public class MindMapRepository
     {
-        private  const string CacheFile = "MindMapsListCache.dat";
-       
+        private const string CacheFile = "MindMapsListCache.dat";
+
         public static bool IsConnected()
         {
-            return false;
+            //return false;
             ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
             bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
             return internet;
@@ -61,7 +61,7 @@ namespace Rememba.Repositories.Windows
                 }
                 while (token != null);
 
-                
+
 
                 StorageFolder localFolder =
                     ApplicationData.Current.LocalFolder;
@@ -85,10 +85,13 @@ namespace Rememba.Repositories.Windows
 
         public async Task SaveMindMap(INode rootNode, IMindMap mindMap)
         {
+            if (rootNode == null || mindMap ==null) return;
+
             JsonNode jsonNode = new JsonNode();
             JsonNode jsonObject = BuildJSON(jsonNode, rootNode);
 
             mindMap.Content = JsonConvert.SerializeObject(jsonObject);
+            mindMap.Touched = DateTime.Now.Ticks.ToString();
             var serializedGraph = JsonConvert.SerializeObject(mindMap);
 
             if (IsConnected())
@@ -98,7 +101,7 @@ namespace Rememba.Repositories.Windows
                 await blob.FetchAttributesAsync();
                 blob.Metadata["Name"] = mindMap.Name;
                 blob.Metadata["Id"] = mindMap.Id;
-          
+
                 await blob.UploadTextAsync(serializedGraph);
                 await blob.SetMetadataAsync();
             }
@@ -139,7 +142,7 @@ namespace Rememba.Repositories.Windows
                     ApplicationData.Current.LocalFolder;
 
             Node rootNode = new Node();
-
+            rootNode.Id = Guid.NewGuid().ToString();
             rootNode.Title = graphName;
             rootNode.Description = "[Description]";
 
@@ -165,13 +168,46 @@ namespace Rememba.Repositories.Windows
                 CloudBlockBlob blob = container.GetBlockBlobReference(newGraph.Id);
                 blob.Metadata.Add("Name", graphName);
                 blob.Metadata.Add("Id", newGraph.Id);
-               
+
                 await blob.UploadTextAsync(serializedGraph);
                 await blob.SetMetadataAsync();
             }
 
             return newGraph;
         }
+
+        public async Task Delete(string id)
+        {
+            StorageFolder localFolder =
+                   ApplicationData.Current.LocalFolder;
+
+            if (await StorageHelper.DoesFileExistAsync(id, localFolder))
+            {
+                StorageFile file =
+              await localFolder.GetFileAsync(id);
+
+                await file.DeleteAsync();
+            }
+
+            if (IsConnected())
+            {
+                CloudBlobContainer backupContainer = new CloudBlobContainer(new Uri(Settings.TenantBackupContainerSaS));
+                CloudBlobContainer container = new CloudBlobContainer(new Uri(Settings.TenantGraphContainerSaS));
+
+                bool existsInCloud = await container.GetBlockBlobReference(id).ExistsAsync();
+                if (existsInCloud)
+                {
+
+                    CloudBlockBlob sourceBlob = container.GetBlockBlobReference(id);
+                    CloudBlockBlob targetBlob = backupContainer.GetBlockBlobReference(id);
+                    await targetBlob.StartCopyFromBlobAsync(sourceBlob);
+
+                    //TODO: Why does it say 404 when is also says it still exists and it DOES still exist.
+                    //await sourceBlob.DeleteAsync();
+                }
+            }
+        }
+
 
         public async Task<IMindMap> GetMindMap(string id)
         {
@@ -211,7 +247,7 @@ namespace Rememba.Repositories.Windows
                             if (dt.ToUniversalTime() < blob.Properties.LastModified)
                             {
                                 //TODO:We depend on client time accuracy, that is not acceptible for sync conflict handling, by any standard!
-                                
+
                                 //We have a newer file in the cloud. Handle it!
                                 blob = container.GetBlockBlobReference(id);
                                 retrievedJson = await blob.DownloadTextAsync();

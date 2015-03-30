@@ -59,6 +59,18 @@ namespace Rememba.Model
             }
         }
 
+        private string _type;
+        [JsonProperty("t")]
+        public string Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
+                NotifyPropertyChanged("Type");
+            }
+        }
+
         private string _contentId;
 
         [JsonProperty("cid")]
@@ -98,7 +110,6 @@ namespace Rememba.Model
             }
         }
 
-
         private bool _markedForDeletion;
 
         public bool MarkedForDeletion
@@ -106,8 +117,6 @@ namespace Rememba.Model
             get { return _markedForDeletion; }
             set { _markedForDeletion = value; }
         }
-
-
 
         private ObservableCollection<INode> _children;
 
@@ -121,8 +130,6 @@ namespace Rememba.Model
                 NotifyPropertyChanged("Children");
             }
         }
-
-
 
         public void NotifyPropertyChanged(string propertyName)
         {

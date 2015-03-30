@@ -20,10 +20,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\WebContentConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\WebContentViewConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FocusExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ItemClickCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StreamURIResolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)html\ContentEditor\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
@@ -52,5 +56,11 @@
     <Content Include="$(MSBuildThisFileDirectory)html\ContentEditor\wiky.math.js" />
     <None Include="$(MSBuildThisFileDirectory)htmlTester\wiky.lang.js" />
     <None Include="$(MSBuildThisFileDirectory)htmlTester\wiky.math.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)html\ContentEditor\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

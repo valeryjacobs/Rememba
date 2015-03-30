@@ -5,10 +5,9 @@
     xmlns:local="using:Rememba.Windows.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-   xmlns:conv="using:Rememba.Windows.Converters"
-    mc:Ignorable="d"               
+    xmlns:conv="using:Rememba.Windows.Converters"
     DataContext="{Binding MainViewViewModel, Source={StaticResource MainViewModelLocator}}"
-    >
+    mc:Ignorable="d">
     <Page.Resources>
         <conv:BindingInspector x:Key="inspector"></conv:BindingInspector>
         <conv:WebContentViewConverter x:Key="WebViewContentConverter" />
@@ -17,109 +16,155 @@
         <Style TargetType="TextBox">
             <Setter  Property="Background" Value="Black"></Setter>
             <Setter  Property="Foreground" Value="White"></Setter>
-            
         </Style>
     </Page.Resources>
-    <Grid Margin="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260"></ColumnDefinition>
-            <ColumnDefinition Width="260"></ColumnDefinition>
-            <ColumnDefinition Width="320"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10">
-            <StackPanel.Resources>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="DefaultLayout">
+                <!-- The default Visibility properties are set in the XAML that defines the objects. -->
+            </VisualState>
+            <VisualState x:Name="MinimalLayout">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="parentListView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="childListView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="subChildListView" Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+
+                </Storyboard>
+            </VisualState>
+        </VisualStateGroup>
+
+    </VisualStateManager.VisualStateGroups>
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='1'  Label="Editor view" Icon="FullScreen"                                 ></AppBarButton>
+            <AppBarButton x:ConnectionId='2'  Label="Normal view" Icon="ZoomOut"                             ></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+    <Page.BottomAppBar>
+        <CommandBar>
+
+            <AppBarButton  Label="Copy" Icon="Copy"  Command="{Binding Copy}">Copy</AppBarButton>
+            <AppBarButton Label="Paste as child" Icon="People"  Command="{Binding PasteChild}" ></AppBarButton>
+            <AppBarButton Label="Paste as sibling" Icon="Paste"   Command="{Binding PasteSibling}"></AppBarButton>
+            <AppBarSeparator></AppBarSeparator>
+            <AppBarButton Label="Add sibling" Icon="Add"  Command="{Binding AddSiblingNodeCommand}"></AppBarButton>
+            <AppBarButton Label="Add child" Icon="People"  Command="{Binding AddChildNodeCommand}"></AppBarButton>
+
+            <AppBarButton Label="Order up" Icon="Up"   Command="{Binding MoveUpOrder}"></AppBarButton>
+            <AppBarButton Label="Order down" Icon="Download"   Command="{Binding MoveDownOrder}"></AppBarButton>
+            <AppBarButton Label="Move up in tree" Icon="Back"   Command="{Binding MoveUpTreeCommand}"></AppBarButton>
+
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Add content" Icon="Add"  Command="{Binding AddContent}"></AppBarButton>
+                <AppBarButton x:ConnectionId='3' Label="Edit" Icon="Edit"  x:Name="switchModeButton" Command="{Binding EditContent}"                         ></AppBarButton>
+                <AppBarButton Label="Update content" Icon="Save"  Command="{Binding UpdateContent}"></AppBarButton>
+                <AppBarButton Label="Delete content" Icon="Delete"  Command="{Binding DeleteContent}" ></AppBarButton>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid>
+        <Grid Margin="20" >
+
+            <Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Height" Value="50"></Setter>
                     <Setter Property="Margin" Value="3"></Setter>
                     <Setter Property="FontSize" Value="9"></Setter>
                 </Style>
-            </StackPanel.Resources>
-            <!--<TextBox Text="{Binding Path.MindMap.Name}"></TextBox>-->
-            <!--<Button Command="{Binding SelectParentNodeCommand}">Select</Button>
-            <Button Command="{Binding SelectChildNodeCommand}">Select</Button>
-            <Button Command="{Binding SelectSubChildNodeCommand}">Select</Button>
-            <TextBlock Text="{Binding RootNode, Converter={StaticResource inspector}}"></TextBlock>-->
-            <ComboBox Width="240" Height="30" ItemsSource="{Binding Graphs}" SelectedItem="{Binding MindMap, Mode=TwoWay}" DisplayMemberPath="Name" >
-            </ComboBox>
-            <Button Command="{Binding LoadGraphCommand}">Load</Button>
-            <Button Command="{Binding GoDo}">Do</Button>
-     
-            <Button Command="{Binding CreateGraphCommand}">Create Graph</Button>
-            <Button Command="{Binding GoUpTree}">Up</Button>
-            <Button Command="{Binding Save}">Save</Button>
-            <Button Command="{Binding AddChildNodeCommand}">Add Child</Button>
-            <Button Command="{Binding AddSiblingNodeCommand}">Add Sibling</Button>
-            <Button Command="{Binding EditNodeCommand}">Edit node</Button>
-            <Button Command="{Binding DeleteNodeCommand}">Delete node</Button>
-            <Button Command="{Binding MoveUpOrder}">Order up</Button>
-            <Button Command="{Binding MoveDownOrder}">Order down</Button>
-            <Button Command="{Binding MoveUpTreeCommand}">Up tree</Button>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="320"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10">
+                <Button Command="{Binding GoDo}">Do</Button>
+                <Button Command="{Binding LoadGraphCommand}">Load</Button>
+                <ComboBox Width="240" Height="30" ItemsSource="{Binding Graphs}" SelectedItem="{Binding MindMap, Mode=TwoWay}" DisplayMemberPath="Name" >
+                </ComboBox>
 
-            <Button Command="{Binding AddContent}">Add content</Button>
-            <Button x:ConnectionId='2' x:Name="switchModeButton" Command="{Binding EditContent}"                         >Edit</Button>
-            <Button Command="{Binding UpdateContent}">Update content</Button>
-            <Button Command="{Binding DeleteContent}" >Delete content</Button>
-        </StackPanel>
+                <Button Command="{Binding Save}">Save</Button>
+                <Button Command="{Binding DeleteGraphCommand}">Delete graph</Button>
 
-        <ListView Grid.Row="1"  ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        
-                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
-                            <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
-                            <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
-                            <TextBox Width="240" HorizontalAlignment="Stretch" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
-                            <TextBox Width="240" HorizontalAlignment="Stretch" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
-                           
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <ListView Grid.Row="1"  Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
+                <Button Command="{Binding CreateGraphCommand}">Create Graph</Button>
+                <TextBox Height="30" Text="{Binding NewGraphName,Mode=TwoWay}"></TextBox>
 
-                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
-                            <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
-                            <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
-                            <TextBox Width="240" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
-                            <TextBox Width="240" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <ListView Grid.Row="1"  Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
+                <Button Command="{Binding ClearLocalCacheCommand}">Clear cache</Button>
 
-                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
-                            <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
-                            <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
-                            <TextBox Width="240" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
-                            <TextBox Width="240" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <WebView x:ConnectionId='1' Grid.Row="1"                                                                                                          Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
+                <!--<TextBox Height="30" Visibility="{Binding NewGraphMode, Converter={StaticResource boolToVisibilityConverter}}" Text="{Binding MindMap.Name,Mode=TwoWay}"></TextBox>-->
 
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,10">
+                <Button Command="{Binding GoUpTree}">Up</Button>
+
+                <Button Command="{Binding EditNodeCommand}">Edit node</Button>
+                <Button Command="{Binding DeleteNodeCommand}">Delete node</Button>
+            </StackPanel>
+
+            <ListView x:Name="parentListView" Grid.Row="2"  ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
+                                <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Description}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
+                                <TextBox BorderThickness="0" Background="#3a3737" Width="240" HorizontalAlignment="Stretch" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
+                                <TextBox BorderThickness="0" Background="#3a3737" Width="240" HorizontalAlignment="Stretch" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView  Grid.Row="2"  Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+
+                            <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
+                                <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
+                                <TextBox BorderThickness="0" Background="#3a3737" Width="240" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
+                                <TextBox BorderThickness="0" Background="#3a3737" Width="240" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="subChildListView" Grid.Row="2"  Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
+                                <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
+                                <TextBox BorderThickness="0" Background="#3a3737" Width="240" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
+                                <TextBox BorderThickness="0" Background="#3a3737" Width="240" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <WebView x:ConnectionId='4' Grid.Row="2"                                                                                                          Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
+
+        </Grid>
     </Grid>
 </Page>
 

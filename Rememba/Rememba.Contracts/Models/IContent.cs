@@ -10,5 +10,6 @@ namespace Rememba.Contracts.Models
     {
         string Data { get; set; }
         string Id { get; set; }
+        string Touched { get; set; }
     }
 }

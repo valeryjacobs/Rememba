@@ -172,11 +172,41 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\dummy.png">
+      <PackagePath>htmlTester\dummy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\dummy.png">
+      <PackagePath>html\ContentEditor\dummy.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\ContentTemplate.html">
       <PackagePath>htmlTester\ContentTemplate.html</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\ContentTemplate.html">
       <PackagePath>html\ContentEditor\ContentTemplate.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\WikiMarkupSample.txt">
+      <PackagePath>htmlTester\WikiMarkupSample.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\WikiMarkupSample.txt">
+      <PackagePath>html\ContentEditor\WikiMarkupSample.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.css">
+      <PackagePath>htmlTester\wiky.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.lang.css">
+      <PackagePath>htmlTester\wiky.lang.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.math.css">
+      <PackagePath>htmlTester\wiky.math.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.css">
+      <PackagePath>html\ContentEditor\wiky.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.lang.css">
+      <PackagePath>html\ContentEditor\wiky.lang.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.math.css">
+      <PackagePath>html\ContentEditor\wiky.math.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\jquery-1.11.1.min.js">
       <PackagePath>html\ContentEditor\jquery-1.11.1.min.js</PackagePath>
@@ -184,11 +214,17 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.js">
       <PackagePath>html\ContentEditor\wiky.js</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.lang.js">
+      <PackagePath>html\ContentEditor\wiky.lang.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.math.js">
+      <PackagePath>html\ContentEditor\wiky.math.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\html\ContentEditor\MainPage.xbf">
+      <PackagePath>html\ContentEditor\MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\Views\MainView.xbf">
       <PackagePath>Views\MainView.xbf</PackagePath>

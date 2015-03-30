@@ -10,14 +10,13 @@ namespace Rememba.Contracts.Services
 {
     public interface IMindMapDataService
     {
-        Task<INode> GetRootNode(IMindMap mindMap);
+        Task<List<IMindMap>> ListMindMaps();
+        Task<IMindMap> Create(string name);
+        Task Save(IMindMap mindMap, INode rootNode);
+        Task Delete(string id);
 
         Task<IMindMap> GetMindMap(string id);
 
-        Task<List<IMindMap>> ListMindMaps();
-
-        Task Save(IMindMap mindMap, INode rootNode);
-        Task<IMindMap> Create(string name);
-      
+        Task<INode> GetRootNode(IMindMap mindMap);
     }
 }

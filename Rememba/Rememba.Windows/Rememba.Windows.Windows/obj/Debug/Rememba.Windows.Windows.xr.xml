@@ -5,6 +5,18 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="MainViewViewModel" />
+    <RootPropertyPathName Name="MoveUpTreeCommand" />
+    <RootPropertyPathName Name="MoveDownOrder" />
+    <RootPropertyPathName Name="MoveUpOrder" />
+    <RootPropertyPathName Name="AddChildNodeCommand" />
+    <RootPropertyPathName Name="AddSiblingNodeCommand" />
+    <RootPropertyPathName Name="PasteSibling" />
+    <RootPropertyPathName Name="PasteChild" />
+    <RootPropertyPathName Name="Copy" />
+    <RootPropertyPathName Name="DeleteContent" />
+    <RootPropertyPathName Name="UpdateContent" />
+    <RootPropertyPathName Name="EditContent" />
+    <RootPropertyPathName Name="AddContent" />
     <RootPropertyPathName Name="SelectedNodeContent" />
     <RootPropertyPathName Name="Data" />
     <RootPropertyPathName Name="SubChildList" />
@@ -16,24 +28,18 @@
     <RootPropertyPathName Name="SelectedChild" />
     <RootPropertyPathName Name="ParentList" />
     <RootPropertyPathName Name="SelectedParent" />
-    <RootPropertyPathName Name="DeleteContent" />
-    <RootPropertyPathName Name="UpdateContent" />
-    <RootPropertyPathName Name="EditContent" />
-    <RootPropertyPathName Name="AddContent" />
-    <RootPropertyPathName Name="MoveUpTreeCommand" />
-    <RootPropertyPathName Name="MoveDownOrder" />
-    <RootPropertyPathName Name="MoveUpOrder" />
     <RootPropertyPathName Name="DeleteNodeCommand" />
     <RootPropertyPathName Name="EditNodeCommand" />
-    <RootPropertyPathName Name="AddSiblingNodeCommand" />
-    <RootPropertyPathName Name="AddChildNodeCommand" />
-    <RootPropertyPathName Name="Save" />
     <RootPropertyPathName Name="GoUpTree" />
+    <RootPropertyPathName Name="ClearLocalCacheCommand" />
+    <RootPropertyPathName Name="NewGraphName" />
     <RootPropertyPathName Name="CreateGraphCommand" />
-    <RootPropertyPathName Name="GoDo" />
-    <RootPropertyPathName Name="LoadGraphCommand" />
+    <RootPropertyPathName Name="DeleteGraphCommand" />
+    <RootPropertyPathName Name="Save" />
     <RootPropertyPathName Name="Graphs" />
     <RootPropertyPathName Name="MindMap" />
+    <RootPropertyPathName Name="LoadGraphCommand" />
+    <RootPropertyPathName Name="GoDo" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="SelectedObject" />
     <RootPropertyPathName Name="SomeStringProp" />
@@ -45,25 +51,15 @@
     </RootType>
     <RootType FullName="Rememba.Windows.ViewModel.ViewModelLocator" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Resources" />
+      <RootProperty Name="TopAppBar" />
+      <RootProperty Name="BottomAppBar" />
+      <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Background" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="Children" />
-      <RootMethod Name="GetRow" />
-      <RootMethod Name="SetRow" />
-      <RootMethod Name="GetColumnSpan" />
-      <RootMethod Name="SetColumnSpan" />
-      <RootMethod Name="GetColumn" />
-      <RootMethod Name="SetColumn" />
+    <RootType FullName="Windows.UI.Xaml.VisualStateManager">
+      <RootMethod Name="GetVisualStateGroups" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Rememba.Windows.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
       <RootProperty Name="Converter" />
@@ -75,11 +71,14 @@
     <RootType FullName="Rememba.Windows.Converters.WebContentViewConverter" />
     <RootType FullName="Rememba.Windows.Converters.BoolToVisibilityConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Width" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Text" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="Background" />
@@ -90,6 +89,60 @@
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.VisualStateGroup">
+      <RootProperty Name="States" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.VisualState">
+      <RootProperty Name="Storyboard" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.Storyboard">
+      <RootProperty Name="Children" />
+      <RootMethod Name="GetTargetName" />
+      <RootMethod Name="SetTargetName" />
+      <RootMethod Name="GetTargetProperty" />
+      <RootMethod Name="SetTargetProperty" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames">
+      <RootProperty Name="KeyFrames" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame">
+      <RootProperty Name="KeyTime" />
+      <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
+      <RootProperty Name="PrimaryCommands" />
+      <RootProperty Name="SecondaryCommands" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Label" />
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarSeparator" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Background" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Command" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -99,7 +152,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Resources" />
       <RootProperty Name="Children" />
       <RootProperty Name="Visibility" />
     </RootType>
@@ -128,15 +180,6 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Inlines" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Command" />
-      <RootProperty Name="Content" />
-      <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
@@ -145,7 +188,9 @@
       <RootProperty Name="DisplayMemberPath" />
     </RootType>
     <RootType FullName="Rememba.Windows.Views.MainView" />
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Rememba.Windows.Views.SomeObjectDetailView" />
     <RootType FullName="Rememba.Windows.Views.SomeOtherObjectDetailView" />
+    <RootType FullName="Rememba.Windows.MainPage" />
   </Roots.RootTypes>
 </Roots>

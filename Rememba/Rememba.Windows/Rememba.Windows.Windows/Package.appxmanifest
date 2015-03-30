@@ -19,6 +19,7 @@
         <m2:DefaultTile ShortName="Rememba">
         </m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:ApplicationView MinWidth="width320" />
       </m2:VisualElements>
     </Application>
   </Applications>

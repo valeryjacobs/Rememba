@@ -15,5 +15,8 @@ namespace Rememba.Model
 
         [JsonProperty(PropertyName = "content")]
         public string Data { get; set; }
+        
+        [JsonProperty(PropertyName = "t")]
+        public string Touched { get; set; }
     }
 }

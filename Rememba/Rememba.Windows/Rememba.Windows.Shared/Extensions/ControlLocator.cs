@@ -32,7 +32,10 @@ namespace Rememba.Windows.Extensions
         }
 
         public static bool ContentViewReady { get; set; }
+        public static bool ContentViewSmallReady { get; set; }
         public static bool ContentEditorReady { get; set; }
+
+        public static bool ContentEditorSmallReady { get; set; }
         private static WebView _contentEditor;
 
 

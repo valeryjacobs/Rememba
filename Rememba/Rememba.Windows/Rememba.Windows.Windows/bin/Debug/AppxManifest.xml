@@ -25,6 +25,7 @@
       <m2:VisualElements DisplayName="Rememba" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Rememba lets you contruct a tree of knowledge and easily access that knowledge whenever you need it." ForegroundText="light" BackgroundColor="#464646">
         <m2:DefaultTile ShortName="Rememba"></m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:ApplicationView MinWidth="width320" />
       </m2:VisualElements>
     </Application>
   </Applications>
