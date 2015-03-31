@@ -5,7 +5,14 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="MainViewViewModel" />
-    <RootPropertyPathName Name="Main" />
+    <RootPropertyPathName Name="ParentList" />
+    <RootPropertyPathName Name="SelectedParent" />
+    <RootPropertyPathName Name="Edit" />
+    <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="LoadGraphCommand" />
+    <RootPropertyPathName Name="Graphs" />
+    <RootPropertyPathName Name="MindMap" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="TestBinding" />
     <RootPropertyPathName Name="SomeOtherObjectDetailViewModel" />
@@ -23,17 +30,64 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
-      <RootProperty Name="Path" />
+      <RootProperty Name="Mode" />
       <RootProperty Name="Converter" />
+      <RootProperty Name="ConverterParameter" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Rememba.Windows.Converters.BindingInspector" />
+    <RootType FullName="Rememba.Windows.Converters.WebContentViewConverter" />
+    <RootType FullName="Rememba.Windows.Converters.BoolToVisibilityConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
+      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="DisplayMemberPath" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedValue" />
+      <RootProperty Name="SelectionMode" />
+      <RootProperty Name="ItemTemplate" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Children" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Text" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="FontWeight" />
       <RootProperty Name="Text" />
       <RootProperty Name="FontSize" />
     </RootType>

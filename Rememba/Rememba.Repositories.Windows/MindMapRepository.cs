@@ -83,6 +83,8 @@ namespace Rememba.Repositories.Windows
             return mindMaps;
         }
 
+      
+
         public async Task SaveMindMap(INode rootNode, IMindMap mindMap)
         {
             if (rootNode == null || mindMap ==null) return;
@@ -319,6 +321,13 @@ namespace Rememba.Repositories.Windows
             }
             catch (Exception ex)
             {
+                var jsonObject = (JObject)JsonConvert.DeserializeObject(retrievedJson);
+                return new MindMap
+                {
+                    Content = jsonObject["content"].ToString(),
+                    Id = id,
+                    Name = jsonObject["name"].ToString()
+                };
                 return null;
             }
         }

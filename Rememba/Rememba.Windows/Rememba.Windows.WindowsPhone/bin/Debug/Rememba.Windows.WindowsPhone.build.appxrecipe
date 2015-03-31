@@ -58,11 +58,11 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
       <PackagePath>System.Spatial.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Repositories.Windows.dll">
-      <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Model.dll">
       <PackagePath>Rememba.Model.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Repositories.Windows.dll">
+      <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.Edm.resources.dll">
       <PackagePath>de\Microsoft.Data.Edm.resources.dll</PackagePath>

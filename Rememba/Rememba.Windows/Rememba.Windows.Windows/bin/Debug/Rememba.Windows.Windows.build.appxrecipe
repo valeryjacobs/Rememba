@@ -64,11 +64,11 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
       <PackagePath>System.Spatial.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Repositories.Windows.dll">
-      <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Model.dll">
       <PackagePath>Rememba.Model.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Debug\Rememba.Repositories.Windows.dll">
+      <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.Edm.resources.dll">
       <PackagePath>de\Microsoft.Data.Edm.resources.dll</PackagePath>
@@ -154,6 +154,9 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Settings\bin\Debug\Rememba.Settings.dll">
       <PackagePath>Rememba.Settings.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
+      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -235,9 +238,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Rememba.Windows.Windows.xr.xml">
       <PackagePath>Rememba.Windows.Windows.xr.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
-      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

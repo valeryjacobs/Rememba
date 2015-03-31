@@ -87,7 +87,7 @@ namespace Rememba.Repositories.Windows
                         data = await blob.DownloadTextAsync();
                     }
 
-                    if (data == null) data = "Not found.";
+                    if (data == null) data = "";
 
                     StorageFile storageFile = await localFolder.CreateFileAsync(contentId, CreationCollisionOption.ReplaceExisting);
                     await FileIO.WriteTextAsync(storageFile, data);

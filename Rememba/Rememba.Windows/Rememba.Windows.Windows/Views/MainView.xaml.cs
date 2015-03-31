@@ -2,11 +2,13 @@
 using Rememba.ViewModels.Windows;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -70,8 +72,10 @@ namespace Rememba.Windows.Views
             }
         }
 
+
         private void contentView_KeyDown(object sender, KeyRoutedEventArgs e)
         {
+
 
         }
 
@@ -97,6 +101,95 @@ namespace Rememba.Windows.Views
             subChildListView.Visibility = global::Windows.UI.Xaml.Visibility.Visible;
             contentView.SetValue(Grid.ColumnProperty, 3);
             contentView.SetValue(Grid.ColumnSpanProperty, 1);
+        }
+
+        bool isCtrlKeyPressed = false;
+        //bool isShiftKeyPressed = false;
+
+        private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Control) isCtrlKeyPressed = true;
+            else if (isCtrlKeyPressed)
+            {
+                switch (e.Key)
+                {
+                    case VirtualKey.A:
+                        (this.DataContext as MainViewViewModel).AddChildNodeCommand.Execute(null);
+                        break;
+                    case VirtualKey.S: (this.DataContext as MainViewViewModel).AddSiblingNodeCommand.Execute(null); break;
+                    case VirtualKey.Delete: (this.DataContext as MainViewViewModel).DeleteNodeCommand.Execute(null); break;
+                    case VirtualKey.Down: (this.DataContext as MainViewViewModel).MoveDownOrder.Execute(null); break;
+                    case VirtualKey.Up: (this.DataContext as MainViewViewModel).MoveUpOrder.Execute(null); break;
+                    //case VirtualKey.U: (this.DataContext as MainViewViewModel).GoUpTree.Execute(null); break;
+
+                    //case VirtualKey.E: (this.DataContext as MainViewViewModel).EditContent.Execute(null); break;
+                    //case VirtualKey.N: (this.DataContext as MainViewViewModel).EditNodeCommand.Execute(null); break;
+                    //case VirtualKey.C: (this.DataContext as MainViewViewModel).Copy.Execute(null); break;
+                    //case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteSibling.Execute(null); break;
+                    //case VirtualKey.L:
+                    //    (this.DataContext as MainViewViewModel).LoadGraphCommand.Execute(null);
+                    //    break;
+                    //case VirtualKey.X: (this.DataContext as MainViewViewModel).DeleteGraphCommand.Execute(null); break;
+
+                }
+            }
+
+            // isCtrlKeyPressed =  (e.Key == VirtualKey.Control)   ;         //if (e.Key == VirtualKey.Shift) isShiftKeyPressed = true;
+
+            // else if (isCtrlKeyPressed)
+            // {
+            //     Debug.WriteLine(e.Key + " : " + isCtrlKeyPressed );
+            //     switch (e.Key)
+            //     {
+            //         case VirtualKey.A:
+            //             (this.DataContext as MainViewViewModel).AddChildNodeCommand.Execute(null);
+            //             break;
+            //         case VirtualKey.S: (this.DataContext as MainViewViewModel).AddSiblingNodeCommand.Execute(null); break;
+            //         case VirtualKey.Delete: (this.DataContext as MainViewViewModel).DeleteNodeCommand.Execute(null); break;
+            //         case VirtualKey.Down: (this.DataContext as MainViewViewModel).MoveDownOrder.Execute(null); break;
+            //         case VirtualKey.Up: (this.DataContext as MainViewViewModel).MoveUpOrder.Execute(null); break;
+            //         case VirtualKey.U: (this.DataContext as MainViewViewModel).GoUpTree.Execute(null); break;
+
+            //         case VirtualKey.E: (this.DataContext as MainViewViewModel).EditContent.Execute(null); break;
+            //         case VirtualKey.N: (this.DataContext as MainViewViewModel).EditNodeCommand.Execute(null); break;
+            //         case VirtualKey.C: (this.DataContext as MainViewViewModel).Copy.Execute(null); break;
+            //         case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteSibling.Execute(null); break;
+            //         case VirtualKey.L:
+            //             (this.DataContext as MainViewViewModel).LoadGraphCommand.Execute(null);
+            //             break;
+
+
+            //     }
+            //     //isCtrlKeyPressed = false;
+            //     //isShiftKeyPressed = false;
+
+            // }
+            // //else if (isCtrlKeyPressed && isShiftKeyPressed)
+            // //{
+            // //    Debug.WriteLine(e.Key + " : " + isCtrlKeyPressed + " : " + isShiftKeyPressed);
+            // //    switch (e.Key)
+            // //    {
+            // //        case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteChild.Execute(null); break;
+            // //        case VirtualKey.S: (this.DataContext as MainViewViewModel).Save.Execute(null); break;
+            // //        case VirtualKey.L:
+            // //            (this.DataContext as MainViewViewModel).LoadGraphCommand.Execute(null);
+            // //            break;
+            // //        case VirtualKey.C: (this.DataContext as MainViewViewModel).CreateGraphCommand.Execute(null); break;
+            // //        case VirtualKey.Delete: (this.DataContext as MainViewViewModel).DeleteContent.Execute(null); break;
+            // //        case VirtualKey.X: (this.DataContext as MainViewViewModel).DeleteGraphCommand.Execute(null); break;
+            // //        case VirtualKey.U: (this.DataContext as MainViewViewModel).UpdateContent.Execute(null); break;
+            // //    }
+
+            // //    isCtrlKeyPressed = false;
+            // //    isShiftKeyPressed = false;
+            // //}
+
+            //// isCtrlKeyPressed = false;
+        }
+
+        private void Page_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
         }
     }
 }

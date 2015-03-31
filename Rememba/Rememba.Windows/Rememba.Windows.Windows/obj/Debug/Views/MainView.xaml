@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page x:ConnectionId='1'
     x:Class="Rememba.Windows.Views.MainView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:conv="using:Rememba.Windows.Converters"
     DataContext="{Binding MainViewViewModel, Source={StaticResource MainViewModelLocator}}"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+                                             >
     <Page.Resources>
         <conv:BindingInspector x:Key="inspector"></conv:BindingInspector>
         <conv:WebContentViewConverter x:Key="WebViewContentConverter" />
@@ -42,8 +43,10 @@
     </VisualStateManager.VisualStateGroups>
     <Page.TopAppBar>
         <CommandBar>
-            <AppBarButton x:ConnectionId='1'  Label="Editor view" Icon="FullScreen"                                 ></AppBarButton>
-            <AppBarButton x:ConnectionId='2'  Label="Normal view" Icon="ZoomOut"                             ></AppBarButton>
+            <AppBarButton x:ConnectionId='2'  Label="Editor view" Icon="FullScreen"                                 ></AppBarButton>
+            <AppBarButton x:ConnectionId='3'  Label="Normal view" Icon="ZoomOut"                             ></AppBarButton>
+            <AppBarSeparator></AppBarSeparator>
+            <AppBarButton  Label="Order" Icon="Sort"  Command="{Binding Order}" ></AppBarButton>
         </CommandBar>
     </Page.TopAppBar>
     <Page.BottomAppBar>
@@ -62,7 +65,7 @@
 
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Add content" Icon="Add"  Command="{Binding AddContent}"></AppBarButton>
-                <AppBarButton x:ConnectionId='3' Label="Edit" Icon="Edit"  x:Name="switchModeButton" Command="{Binding EditContent}"                         ></AppBarButton>
+                <AppBarButton x:ConnectionId='4' Label="Edit" Icon="Edit"  x:Name="switchModeButton" Command="{Binding EditContent}"                         ></AppBarButton>
                 <AppBarButton Label="Update content" Icon="Save"  Command="{Binding UpdateContent}"></AppBarButton>
                 <AppBarButton Label="Delete content" Icon="Delete"  Command="{Binding DeleteContent}" ></AppBarButton>
             </CommandBar.SecondaryCommands>
@@ -88,7 +91,7 @@
                 <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+            </Grid.RowDefinitions> 
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10">
                 <Button Command="{Binding GoDo}">Do</Button>
                 <Button Command="{Binding LoadGraphCommand}">Load</Button>
@@ -162,7 +165,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <WebView x:ConnectionId='4' Grid.Row="2"                                                                                                          Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
+            <WebView x:ConnectionId='5' Grid.Row="2"                                                                                                          Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
 
         </Grid>
     </Grid>

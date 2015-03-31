@@ -20,6 +20,7 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoDo { get; set; }
+        public RelayCommand Order { get; set; }
         public RelayCommand ClearLocalCacheCommand { get; set; }
         public RelayCommand Copy { get; set; }
         public RelayCommand PasteChild { get; set; }
@@ -166,13 +167,34 @@ namespace Rememba.ViewModels.Windows
                         });
             });
 
+            Order = new RelayCommand(() => {
+                if(ChildList.Contains(SelectedNode))
+                { 
+                   ChildList =  ChildList.OrderBy(x => x.Title) as ObservableCollection<INode>;
+                }
+
+                if (SubChildList.Contains(SelectedNode))
+                {
+                    SubChildList = SubChildList.OrderBy(x => x.Title) as ObservableCollection<INode>;
+                }
+
+                if (ParentList.Contains(SelectedNode))
+                {
+                    ParentList = ParentList.OrderBy(x => x.Title) as ObservableCollection<INode>;
+                }
+
+                //SelectedNode.Parent.Children.OrderBy(x => x.Title);
+            });
+
             Copy = new RelayCommand(() =>
             {
                 ClipBoardNode = SelectedNode;
             });
 
-            PasteChild = new RelayCommand(() =>
+            PasteChild = new RelayCommand(async () =>
             {
+                ClipBoardNode = await _mindMapDataService.CloneNode(ClipBoardNode); 
+
                 SelectedNode.Children.Add(ClipBoardNode);
                 ClipBoardNode.Parent.Children.Remove(ClipBoardNode);
 
@@ -363,10 +385,7 @@ namespace Rememba.ViewModels.Windows
 
         }
 
-        public void Sort()
-        {
-            ParentList.OrderBy(x => x.Title);
-        }
+  
 
         private void SwitchNodeToEditMode()
         {

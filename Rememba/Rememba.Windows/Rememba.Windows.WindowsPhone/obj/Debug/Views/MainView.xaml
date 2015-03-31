@@ -5,17 +5,45 @@
     xmlns:local="using:Rememba.Windows.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:conv="using:Rememba.Windows.Converters"
     mc:Ignorable="d"
-    xmlns:converters="using:Rememba.Windows.Converters"
+  
     DataContext="{Binding MainViewViewModel, Source={StaticResource MainViewModelLocator}}"
     >
     <Page.Resources>
-        <converters:BindingInspector x:Key="inspector"></converters:BindingInspector>
+        <conv:BindingInspector x:Key="inspector"></conv:BindingInspector>
+         <conv:WebContentViewConverter x:Key="WebViewContentConverter" />
+        <conv:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="Green"></Grid>
-        <TextBlock Text="{Binding Path=Main,Converter={StaticResource inspector}}"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--<Grid Background="Green"></Grid>
+        <TextBlock Text="{Binding Path=Main,Converter={StaticResource inspector}}"></TextBlock>-->
+        <ComboBox Margin="5" Height="40" ItemsSource="{Binding Graphs}" SelectedItem="{Binding MindMap, Mode=TwoWay}" DisplayMemberPath="Name" >
+        </ComboBox>
+        <Button Margin="5" Grid.Row="1" Command="{Binding LoadGraphCommand}">Load</Button>
+        <ListView x:Name="parentListView" Grid.Row="2"  ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
+                            <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Description}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
+                            <TextBox BorderThickness="0" Background="#3a3737" Width="240" HorizontalAlignment="Stretch" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>
+                            <TextBox BorderThickness="0" Background="#3a3737" Width="240" HorizontalAlignment="Stretch" TextWrapping="Wrap"  Text="{Binding Description,Mode=TwoWay}"></TextBox>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Page>
 

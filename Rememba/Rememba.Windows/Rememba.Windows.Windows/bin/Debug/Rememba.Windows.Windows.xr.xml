@@ -5,6 +5,7 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="MainViewViewModel" />
+    <RootPropertyPathName Name="Order" />
     <RootPropertyPathName Name="MoveUpTreeCommand" />
     <RootPropertyPathName Name="MoveDownOrder" />
     <RootPropertyPathName Name="MoveUpOrder" />
@@ -56,6 +57,8 @@
       <RootProperty Name="TopAppBar" />
       <RootProperty Name="BottomAppBar" />
       <RootProperty Name="Content" />
+      <RootEvent Name="KeyDown" />
+      <RootEvent Name="KeyUp" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualStateManager">
       <RootMethod Name="GetVisualStateGroups" />

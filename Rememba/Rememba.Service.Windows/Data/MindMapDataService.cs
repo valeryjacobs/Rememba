@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Rememba.Contracts.Models;
 using Rememba.Contracts.Services;
 using Rememba.Model;
@@ -41,6 +42,43 @@ namespace Rememba.Service.Windows.Data
             dynamic json = await Task.Run(() => JValue.Parse(mindMap.Content));
 
             return await Task.Run(() => TreeHelper.BuildTree(new Node(), json));
+        }
+
+        public async Task<INode> CloneNode(INode node)
+        {
+            JsonNode jsonNode = new JsonNode();
+            JsonNode jsonObject = BuildJSON(jsonNode, node);
+
+            var serializedNode = JsonConvert.SerializeObject(jsonObject);
+
+            dynamic json = await Task.Run(() => JValue.Parse(serializedNode));
+
+            var clonedNode =  await Task.Run(() => TreeHelper.BuildTree(new Node(), json));
+
+            return clonedNode;
+        }
+
+        private JsonNode BuildJSON(JsonNode jsonNode, INode source)
+        {
+            if (source == null)
+            {
+                return null;
+            }
+            JsonNode node = new JsonNode
+            {
+                id = source.Id,
+                cid = source.ContentId,
+                d = source.Description,
+                n = source.Title
+            };
+            if (source.Children != null)
+            {
+                foreach (INode node2 in source.Children)
+                {
+                    node.c.Add(BuildJSON(node, node2));
+                }
+            }
+            return node;
         }
 
         public async Task Save(IMindMap mindMap, INode rootNode)

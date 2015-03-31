@@ -12,28 +12,35 @@ namespace Rememba.Shared
     {
         public static INode BuildTree(INode node, dynamic source)
         {
-            if(source.id == null) source.id = Guid.NewGuid().ToString();
-            //if (source.d == null) source.d = "";
-            //if (source.n == null) source.n = "";
-            var newNode = new Node
-                      {
-                          Id = source.id,
-                          ContentId = source.cid,
-                          Description = source.d,
-                          Title = source.n,
-                          Parent = node,
-                          Edit = false
-                      };
-
-            if (source.c != null)
+            try
             {
-                foreach (dynamic d in source.c)
-                {
-                    newNode.Children.Add(BuildTree(newNode, d));
-                }
-            }
+                if (source.id == null) source.id = Guid.NewGuid().ToString();
+                //if (source.d == null) source.d = "";
+                //if (source.n == null) source.n = "";
+                var newNode = new Node
+                          {
+                              Id = source.id,
+                              ContentId = source.cid,
+                              Description = source.d,
+                              Title = source.n,
+                              Parent = node,
+                              Edit = false
+                          };
 
-            return newNode;
+                if (source.c != null)
+                {
+                    foreach (dynamic d in source.c)
+                    {
+                        newNode.Children.Add(BuildTree(newNode, d));
+                    }
+                }
+
+                return newNode;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

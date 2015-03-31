@@ -17,6 +17,7 @@ namespace RemembaManager
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
+           
             // Retrieve reference to a previously created container.
             CloudBlobContainer container = blobClient.GetContainerReference(tenantId);
             container.CreateIfNotExists();

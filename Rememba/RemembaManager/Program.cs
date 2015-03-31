@@ -14,9 +14,10 @@ namespace RemembaManager
         static void Main(string[] args)
         {
 
-            var tenantId = "34a3e707-00d8-4172-91a1-873ce6efd843graphs";// Guid.NewGuid().ToString();
+            var tenantId = Guid.NewGuid().ToString();//"34a3e707-00d8-4172-91a1-873ce6efd843"
             var key = StorageController.GenerateKey(tenantId);
 
+            //var key = "https://rememba.blob.core.windows.net/34a3e707-00d8-4172-91a1-873ce6efd843?sv=2014-02-14&sr=c&si=34a3e707-00d8-4172-91a1-873ce6efd843&sig=BSLN7oWVtOTKgY9YE2dGXVtemmWRp99AGHqt2cLYoag%3D";
 
             CloudBlobContainer container = new CloudBlobContainer(new Uri(key));
             CloudBlockBlob blob = container.GetBlockBlobReference("blobCreatedViaSAS.txt");

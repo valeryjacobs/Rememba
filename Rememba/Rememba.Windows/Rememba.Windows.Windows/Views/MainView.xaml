@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:conv="using:Rememba.Windows.Converters"
     DataContext="{Binding MainViewViewModel, Source={StaticResource MainViewModelLocator}}"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    KeyDown="Page_KeyDown" KeyUp="Page_KeyUp">
     <Page.Resources>
         <conv:BindingInspector x:Key="inspector"></conv:BindingInspector>
         <conv:WebContentViewConverter x:Key="WebViewContentConverter" />
@@ -44,6 +45,8 @@
         <CommandBar>
             <AppBarButton  Label="Editor view" Icon="FullScreen" Click="FullscreenEditor_Click"  ></AppBarButton>
             <AppBarButton  Label="Normal view" Icon="ZoomOut" Click="NormalEditor_Click"  ></AppBarButton>
+            <AppBarSeparator></AppBarSeparator>
+            <AppBarButton  Label="Order" Icon="Sort"  Command="{Binding Order}" ></AppBarButton>
         </CommandBar>
     </Page.TopAppBar>
     <Page.BottomAppBar>
@@ -88,7 +91,7 @@
                 <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+            </Grid.RowDefinitions> 
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10">
                 <Button Command="{Binding GoDo}">Do</Button>
                 <Button Command="{Binding LoadGraphCommand}">Load</Button>
