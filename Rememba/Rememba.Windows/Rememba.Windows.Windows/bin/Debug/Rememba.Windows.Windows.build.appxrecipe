@@ -154,12 +154,81 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Settings\bin\Debug\Rememba.Settings.dll">
       <PackagePath>Rememba.Settings.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
-      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo120x120.png">
+      <PackagePath>Assets\RemembaLogo120x120.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo140x140.png">
+      <PackagePath>Assets\RemembaLogo140x140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo150x150.png">
+      <PackagePath>Assets\RemembaLogo150x150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-100.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-140.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-180.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-80.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo180x180.png">
+      <PackagePath>Assets\RemembaLogo180x180.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo210x210.png">
+      <PackagePath>Assets\RemembaLogo210x210.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo248x120.png">
+      <PackagePath>Assets\RemembaLogo248x120.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo24x24.png">
+      <PackagePath>Assets\RemembaLogo24x24.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo256x256.png">
+      <PackagePath>Assets\RemembaLogo256x256.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo270x270.png">
+      <PackagePath>Assets\RemembaLogo270x270.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo310x150.png">
+      <PackagePath>Assets\RemembaLogo310x150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo33x33.png">
+      <PackagePath>Assets\RemembaLogo33x33.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo434x210.png">
+      <PackagePath>Assets\RemembaLogo434x210.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo43x43.scale-100.png">
+      <PackagePath>Assets\RemembaLogo43x43.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo43x43.scale-140.png">
+      <PackagePath>Assets\RemembaLogo43x43.scale-140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo43x43.scale-180.png">
+      <PackagePath>Assets\RemembaLogo43x43.scale-180.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo50x50.png">
+      <PackagePath>Assets\RemembaLogo50x50.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo558x270.png">
+      <PackagePath>Assets\RemembaLogo558x270.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo70x70.png">
+      <PackagePath>Assets\RemembaLogo70x70.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo90x90.png">
+      <PackagePath>Assets\RemembaLogo90x90.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
@@ -171,6 +240,14 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\StoreLogo.scale-140.png">
+      <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\StoreLogo.scale-180.png">
+      <PackagePath>Assets\StoreLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\dummy.png">
@@ -238,6 +315,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\Rememba.Windows.Windows.xr.xml">
       <PackagePath>Rememba.Windows.Windows.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
+      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

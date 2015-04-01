@@ -119,8 +119,8 @@ namespace Rememba.ViewModels.Windows
             Graphs = await _mindMapDataService.ListMindMaps();
             if (Graphs.Count > 0)
             {
-                //MindMap = Graphs.First();
-                //await InitMindMap();
+                MindMap = Graphs.First();
+                await InitMindMap();
             }
         }
 

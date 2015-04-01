@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
   <Identity Name="41540b8d-f660-48b8-95f0-efce16ce0e0b" Publisher="CN=Valery" Version="0.9.0.0" />
   <Properties>
-    <DisplayName>RefApp.Windows.Windows</DisplayName>
+    <DisplayName>Rememba</DisplayName>
     <PublisherDisplayName>Valery Jacobs</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,11 +15,21 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="RefApp.Windows.Windows.App">
-      <m2:VisualElements DisplayName="Rememba" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Rememba lets you contruct a tree of knowledge and easily access that knowledge whenever you need it." ForegroundText="light" BackgroundColor="#464646">
-        <m2:DefaultTile ShortName="Rememba">
+      <m2:VisualElements DisplayName="Rememba" Square150x150Logo="Assets\RemembaLogo15x150.png" Square30x30Logo="Assets\SmallLogo.png" Description="Rememba lets you contruct a tree of knowledge and easily access that knowledge whenever you need it." ForegroundText="light" BackgroundColor="#000000" ToastCapable="false">
+        <!--<m2:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\RemembaLogo43x43.png" />-->
+        <m2:DefaultTile ShortName="Rememba" DefaultSize="square150x150Logo" Wide310x150Logo="Assets\RemembaLogo15x150.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+          </m2:ShowNameOnTiles>
         </m2:DefaultTile>
-        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000" />
         <m2:ApplicationView MinWidth="width320" />
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="portrait" />
+          <m2:Rotation Preference="landscape" />
+          <m2:Rotation Preference="portraitFlipped" />
+          <m2:Rotation Preference="landscapeFlipped" />
+        </m2:InitialRotationPreference>
       </m2:VisualElements>
     </Application>
   </Applications>

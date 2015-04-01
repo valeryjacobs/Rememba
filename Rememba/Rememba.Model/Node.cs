@@ -17,7 +17,6 @@ namespace Rememba.Model
         public Node()
         {
             Children = new ObservableCollection<INode>();
-            ContentId = "1";
         }
 
 

@@ -125,9 +125,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\RemembaLogo120x120.png" />
+    <Content Include="Assets\RemembaLogo140x140.png" />
+    <Content Include="Assets\RemembaLogo150x150.png" />
+    <Content Include="Assets\RemembaLogo15x150.scale-100.png" />
+    <Content Include="Assets\RemembaLogo15x150.scale-140.png" />
+    <Content Include="Assets\RemembaLogo15x150.scale-180.png" />
+    <Content Include="Assets\RemembaLogo15x150.scale-80.png" />
+    <Content Include="Assets\RemembaLogo180x180.png" />
+    <Content Include="Assets\RemembaLogo210x210.png" />
+    <Content Include="Assets\RemembaLogo248x120.png" />
+    <Content Include="Assets\RemembaLogo24x24.png" />
+    <Content Include="Assets\RemembaLogo256x256.png" />
+    <Content Include="Assets\RemembaLogo270x270.png" />
+    <Content Include="Assets\RemembaLogo310x150.png" />
+    <Content Include="Assets\RemembaLogo33x33.png" />
+    <Content Include="Assets\RemembaLogo434x210.png" />
+    <Content Include="Assets\RemembaLogo43x43.scale-100.png" />
+    <Content Include="Assets\RemembaLogo43x43.scale-140.png" />
+    <Content Include="Assets\RemembaLogo43x43.scale-180.png" />
+    <Content Include="Assets\RemembaLogo50x50.png" />
+    <Content Include="Assets\RemembaLogo558x270.png" />
+    <Content Include="Assets\RemembaLogo70x70.png" />
+    <Content Include="Assets\RemembaLogo90x90.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\MainView.xaml">

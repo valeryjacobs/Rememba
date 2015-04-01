@@ -19,9 +19,6 @@
 </head>
 <body style="background:black;color:white;">
     <script>
-
-      
-
         function Preview() {
             $('#output').html(Wiky.toHtml(document.getElementById('input').value));
             $('#output').show();
@@ -30,6 +27,9 @@
             window.external.notify($('#input').text());
         }
 
+        $('#input').keyup(function () {
+            window.external.notify($('#input').text());
+        })
 
         function Edit() {
             $('#output').hide();

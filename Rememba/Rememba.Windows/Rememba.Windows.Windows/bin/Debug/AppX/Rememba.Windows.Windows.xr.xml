@@ -5,7 +5,12 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="MainViewViewModel" />
+    <RootPropertyPathName Name="ClearLocalCacheCommand" />
     <RootPropertyPathName Name="Order" />
+    <RootPropertyPathName Name="CreateGraphCommand" />
+    <RootPropertyPathName Name="DeleteGraphCommand" />
+    <RootPropertyPathName Name="Save" />
+    <RootPropertyPathName Name="LoadGraphCommand" />
     <RootPropertyPathName Name="MoveUpTreeCommand" />
     <RootPropertyPathName Name="MoveDownOrder" />
     <RootPropertyPathName Name="MoveUpOrder" />
@@ -32,15 +37,9 @@
     <RootPropertyPathName Name="DeleteNodeCommand" />
     <RootPropertyPathName Name="EditNodeCommand" />
     <RootPropertyPathName Name="GoUpTree" />
-    <RootPropertyPathName Name="ClearLocalCacheCommand" />
     <RootPropertyPathName Name="NewGraphName" />
-    <RootPropertyPathName Name="CreateGraphCommand" />
-    <RootPropertyPathName Name="DeleteGraphCommand" />
-    <RootPropertyPathName Name="Save" />
     <RootPropertyPathName Name="Graphs" />
     <RootPropertyPathName Name="MindMap" />
-    <RootPropertyPathName Name="LoadGraphCommand" />
-    <RootPropertyPathName Name="GoDo" />
     <RootPropertyPathName Name="SomeObjectDetailViewModel" />
     <RootPropertyPathName Name="SelectedObject" />
     <RootPropertyPathName Name="SomeStringProp" />
@@ -81,6 +80,7 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Text" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
@@ -139,8 +139,13 @@
       <RootMethod Name="SetColumn" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Command" />
       <RootProperty Name="Content" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="Height" />
@@ -165,6 +170,7 @@
       <RootProperty Name="ItemTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.WebView">
+      <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Tag" />

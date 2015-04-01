@@ -43,10 +43,16 @@
     </VisualStateManager.VisualStateGroups>
     <Page.TopAppBar>
         <CommandBar>
+            <AppBarButton Label="Load" Icon="OpenFile" Command="{Binding LoadGraphCommand}"></AppBarButton>
+            <AppBarButton Label="Save" Icon="Save"  Command="{Binding Save}"></AppBarButton>
+            <AppBarButton Label="Delete graph" Icon="Delete" Command="{Binding DeleteGraphCommand}"></AppBarButton>
+            <AppBarButton Label="Create Graph" Icon="Add"  Command="{Binding CreateGraphCommand}"></AppBarButton>
+            <AppBarSeparator></AppBarSeparator>
             <AppBarButton  Label="Editor view" Icon="FullScreen" Click="FullscreenEditor_Click"  ></AppBarButton>
             <AppBarButton  Label="Normal view" Icon="ZoomOut" Click="NormalEditor_Click"  ></AppBarButton>
             <AppBarSeparator></AppBarSeparator>
             <AppBarButton  Label="Order" Icon="Sort"  Command="{Binding Order}" ></AppBarButton>
+            <AppBarButton  Label="Clear cache" Icon="Remove"  Command="{Binding ClearLocalCacheCommand}"></AppBarButton>
         </CommandBar>
     </Page.TopAppBar>
     <Page.BottomAppBar>
@@ -65,7 +71,7 @@
 
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Add content" Icon="Add"  Command="{Binding AddContent}"></AppBarButton>
-                <AppBarButton Label="Edit" Icon="Edit"  x:Name="switchModeButton" Command="{Binding EditContent}" Click="SwitchMode_Click"></AppBarButton>
+                <AppBarButton Label="Edit" Icon="Edit" Command="{Binding EditContent}" Click="SwitchMode_Click"></AppBarButton>
                 <AppBarButton Label="Update content" Icon="Save"  Command="{Binding UpdateContent}"></AppBarButton>
                 <AppBarButton Label="Delete content" Icon="Delete"  Command="{Binding DeleteContent}" ></AppBarButton>
             </CommandBar.SecondaryCommands>
@@ -76,7 +82,7 @@
 
             <Grid.Resources>
                 <Style TargetType="Button">
-                    <Setter Property="Height" Value="50"></Setter>
+                    <Setter Property="Height" Value="40"></Setter>
                     <Setter Property="Margin" Value="3"></Setter>
                     <Setter Property="FontSize" Value="9"></Setter>
                 </Style>
@@ -89,34 +95,22 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
+              
                 <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions> 
+            </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,10">
-                <Button Command="{Binding GoDo}">Do</Button>
-                <Button Command="{Binding LoadGraphCommand}">Load</Button>
+                <!--<Button Command="{Binding GoDo}">Do</Button>-->
                 <ComboBox Width="240" Height="30" ItemsSource="{Binding Graphs}" SelectedItem="{Binding MindMap, Mode=TwoWay}" DisplayMemberPath="Name" >
                 </ComboBox>
-
-                <Button Command="{Binding Save}">Save</Button>
-                <Button Command="{Binding DeleteGraphCommand}">Delete graph</Button>
-
-                <Button Command="{Binding CreateGraphCommand}">Create Graph</Button>
-                <TextBox Height="30" Text="{Binding NewGraphName,Mode=TwoWay}"></TextBox>
-
-                <Button Command="{Binding ClearLocalCacheCommand}">Clear cache</Button>
-
-                <!--<TextBox Height="30" Visibility="{Binding NewGraphMode, Converter={StaticResource boolToVisibilityConverter}}" Text="{Binding MindMap.Name,Mode=TwoWay}"></TextBox>-->
-
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,10">
+                <TextBox Margin="3" Height="26" Text="{Binding NewGraphName,Mode=TwoWay}"></TextBox>
                 <Button Command="{Binding GoUpTree}">Up</Button>
-
-                <Button Command="{Binding EditNodeCommand}">Edit node</Button>
-                <Button Command="{Binding DeleteNodeCommand}">Delete node</Button>
+               <Button Command="{Binding EditNodeCommand}">Edit node</Button>
+               <Button Command="{Binding DeleteNodeCommand}">Delete node</Button>
+                <!--<TextBox Height="30" Visibility="{Binding NewGraphMode, Converter={StaticResource boolToVisibilityConverter}}" Text="{Binding MindMap.Name,Mode=TwoWay}"></TextBox>-->
             </StackPanel>
+         
 
-            <ListView x:Name="parentListView" Grid.Row="2"  ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
+            <ListView x:Name="parentListView" Grid.Row="1"  ItemsSource="{Binding ParentList}" SelectedValue="{Binding SelectedParent, Mode=TwoWay}" SelectionMode="Single">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -132,7 +126,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ListView  Grid.Row="2"  Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
+            <ListView  Grid.Row="1"  Grid.Column="1" ItemsSource="{Binding ChildList}" x:Name="childListView"   SelectedValue="{Binding SelectedChild, Mode=TwoWay}"  >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -149,7 +143,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ListView x:Name="subChildListView" Grid.Row="2"  Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
+            <ListView x:Name="subChildListView" Grid.Row="1"  Grid.Column="2" ItemsSource="{Binding SubChildList}" SelectedValue="{Binding SelectedSubChild, Mode=TwoWay}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -165,8 +159,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <WebView Grid.Row="2" LostFocus="contentView_LostFocus" KeyDown="contentView_KeyDown" ScriptNotify="contentView_ScriptNotify"  Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
-
+            <WebView Margin="0,40,0,0" Grid.Row="1" LostFocus="contentView_LostFocus" KeyDown="contentView_KeyDown" ScriptNotify="contentView_ScriptNotify"  Grid.Column="3"   HorizontalAlignment="Stretch" DataContext="{Binding SelectedNodeContent}" Tag="{Binding Data, Converter={StaticResource WebViewContentConverter},ConverterParameter='contentView'}"  x:Name="contentView"></WebView>
+            <Button Margin="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Grid.Row="1" Grid.Column="3" x:Name="switchModeButton" Command="{Binding EditContent}" Click="SwitchMode_Click">Edit</Button>
         </Grid>
     </Grid>
 </Page>

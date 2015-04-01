@@ -147,6 +147,8 @@ namespace Rememba.Windows
         {
             var deferral = e.SuspendingOperation.GetDeferral();
 
+            
+
             // TODO: Save application state and stop any background activity
             deferral.Complete();
         }

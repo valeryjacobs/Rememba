@@ -60,14 +60,19 @@ namespace Rememba.Windows.Views
 
         private void SwitchMode_Click(object sender, RoutedEventArgs e)
         {
-            if (switchModeButton.Label == "Edit")
+            SwitchMode();
+        }
+
+        private void SwitchMode()
+        {
+            if (switchModeButton.Content.ToString() == "Edit")
             {
-                switchModeButton.Label = "Preview";
+                switchModeButton.Content = "Preview";
                 contentView.InvokeScriptAsync("Edit", null);
             }
             else
             {
-                switchModeButton.Label = "Edit";
+                switchModeButton.Content = "Edit";
                 contentView.InvokeScriptAsync("Preview", null);
             }
         }
@@ -122,8 +127,8 @@ namespace Rememba.Windows.Views
                     case VirtualKey.Up: (this.DataContext as MainViewViewModel).MoveUpOrder.Execute(null); break;
                     //case VirtualKey.U: (this.DataContext as MainViewViewModel).GoUpTree.Execute(null); break;
 
-                    //case VirtualKey.E: (this.DataContext as MainViewViewModel).EditContent.Execute(null); break;
-                    //case VirtualKey.N: (this.DataContext as MainViewViewModel).EditNodeCommand.Execute(null); break;
+                    case VirtualKey.E: SwitchMode(); break;
+                    case VirtualKey.N: (this.DataContext as MainViewViewModel).EditNodeCommand.Execute(null); break;
                     //case VirtualKey.C: (this.DataContext as MainViewViewModel).Copy.Execute(null); break;
                     //case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteSibling.Execute(null); break;
                     //case VirtualKey.L:
