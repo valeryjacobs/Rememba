@@ -20,5 +20,9 @@ namespace Rememba.Contracts.Services
         Task<INode> GetRootNode(IMindMap mindMap);
 
         Task<INode> CloneNode(INode node);
+
+        Task<List<INode>> Search(string searchQuery, INode rootNode);
+
+
     }
 }

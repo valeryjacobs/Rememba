@@ -196,5 +196,13 @@ namespace Rememba.Windows.Views
         {
             if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count != 1) return;
+
+            (this.DataContext as MainViewViewModel).SelectParent(e.AddedItems[0]);
+
+        }
     }
 }

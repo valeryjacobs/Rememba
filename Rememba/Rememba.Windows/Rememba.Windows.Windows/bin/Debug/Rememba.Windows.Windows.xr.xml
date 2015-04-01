@@ -34,6 +34,9 @@
     <RootPropertyPathName Name="SelectedChild" />
     <RootPropertyPathName Name="ParentList" />
     <RootPropertyPathName Name="SelectedParent" />
+    <RootPropertyPathName Name="SearchResults" />
+    <RootPropertyPathName Name="SearchQuery" />
+    <RootPropertyPathName Name="Search" />
     <RootPropertyPathName Name="DeleteNodeCommand" />
     <RootPropertyPathName Name="EditNodeCommand" />
     <RootPropertyPathName Name="GoUpTree" />
@@ -185,6 +188,7 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Text" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Inlines" />
@@ -195,6 +199,7 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedItem" />
       <RootProperty Name="DisplayMemberPath" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Rememba.Windows.Views.MainView" />
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />

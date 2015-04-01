@@ -20,6 +20,7 @@ namespace Rememba.ViewModels.Windows
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
         public RelayCommand GoDo { get; set; }
+        public RelayCommand Search { get; set; }
         public RelayCommand Order { get; set; }
         public RelayCommand ClearLocalCacheCommand { get; set; }
         public RelayCommand Copy { get; set; }
@@ -150,27 +151,59 @@ namespace Rememba.ViewModels.Windows
             set { _clipBoardNode = value; }
         }
 
+        private string _searchQuery;
+
+        public string SearchQuery
+        {
+            get { return _searchQuery; }
+            set
+            {
+                _searchQuery = value;
+                RaisePropertyChanged("SearchQuery");
+            }
+        }
+
+        private List<INode> _searchResults;
+
+        public List<INode> SearchResults
+        {
+            get { return _searchResults; }
+            set
+            {
+                _searchResults = value;
+                RaisePropertyChanged("SearchResults");
+            }
+        }
+
 
         private async void InitializeCommands()
         {
-            ClearLocalCacheCommand = new RelayCommand(async () => {
+            Search = new RelayCommand(async () =>
+            {
+                SearchResults = await _mindMapDataService.Search(SearchQuery, RootNode);
 
-                  await _dialogService.ShowMessage("Do you want to clear the local cache? All unsynced changes will be lost. FOREVER!!",
-                        "Warning",
-                        buttonConfirmText: "Yes", buttonCancelText: "No",
-                        afterHideCallback:  (confirmed) =>
-                        {
-                            if (confirmed)
-                            {
-                               _cacheService.ClearCache();
-                            }
-                        });
             });
 
-            Order = new RelayCommand(() => {
-                if(ChildList.Contains(SelectedNode))
-                { 
-                   ChildList =  ChildList.OrderBy(x => x.Title) as ObservableCollection<INode>;
+            ClearLocalCacheCommand = new RelayCommand(async () =>
+            {
+
+                await _dialogService.ShowMessage("Do you want to clear the local cache? All unsynced changes will be lost. FOREVER!!",
+                      "Warning",
+                      buttonConfirmText: "Yes", buttonCancelText: "No",
+                      afterHideCallback: (confirmed) =>
+                      {
+                          if (confirmed)
+                          {
+                              _cacheService.ClearCache();
+                          }
+                      });
+            });
+
+            Order = new RelayCommand(() =>
+            {
+                if (ChildList.Contains(SelectedNode))
+                {
+                    ChildList = ChildList.OrderBy(x => x.Title) as ObservableCollection<INode>;
                 }
 
                 if (SubChildList.Contains(SelectedNode))
@@ -193,7 +226,7 @@ namespace Rememba.ViewModels.Windows
 
             PasteChild = new RelayCommand(async () =>
             {
-                ClipBoardNode = await _mindMapDataService.CloneNode(ClipBoardNode); 
+                ClipBoardNode = await _mindMapDataService.CloneNode(ClipBoardNode);
 
                 SelectedNode.Children.Add(ClipBoardNode);
                 ClipBoardNode.Parent.Children.Remove(ClipBoardNode);
@@ -242,11 +275,11 @@ namespace Rememba.ViewModels.Windows
                 {
                     await CreateGraph();
                 }
-            }); 
+            });
 
             DeleteGraphCommand = new RelayCommand(async () =>
             {
-                await  _dialogService.ShowMessage("Do you want to dalete the current graph? [" + MindMap.Name + "]",
+                await _dialogService.ShowMessage("Do you want to dalete the current graph? [" + MindMap.Name + "]",
                     "Warning",
                     buttonConfirmText: "Yes", buttonCancelText: "No",
                     afterHideCallback: async (confirmed) =>
@@ -258,7 +291,7 @@ namespace Rememba.ViewModels.Windows
                             RootNode = null;
                         }
                     });
-               
+
             });
 
             GoBack = new RelayCommand(() =>
@@ -385,7 +418,7 @@ namespace Rememba.ViewModels.Windows
 
         }
 
-  
+
 
         private void SwitchNodeToEditMode()
         {
@@ -578,13 +611,22 @@ namespace Rememba.ViewModels.Windows
             SetContent();
         }
 
-        public void SelectParent(INode selectedParent)
+        public void SelectParent(object selection)
         {
 
+            var selectedSearchResult = (INode)selection;
+            if (selectedSearchResult.Parent != null && selectedSearchResult.Parent.Parent != null)
+            {
+                ParentList = selectedSearchResult.Parent.Parent.Children;
+            }
+            SelectChild(selectedSearchResult);
 
+            SelectedChild = selectedSearchResult;
+        }
+
+        public void SelectParent(INode selectedParent)
+        {
             if (selectedParent == null && _selectedChild != null) selectedParent = _selectedChild.Parent;
-
-
 
             SelectedNode = selectedParent;
             _selectedParent = SelectedNode;

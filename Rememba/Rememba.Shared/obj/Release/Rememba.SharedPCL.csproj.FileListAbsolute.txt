@@ -1,0 +1,13 @@
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.SharedPCL.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.SharedPCL.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Autofac.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.Contracts.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.Model.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Newtonsoft.Json.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.Contracts.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.Model.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Autofac.xml
+C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Newtonsoft.Json.xml
+C:\Code\Rememba\Rememba\Rememba.Shared\obj\Release\Rememba.SharedPCL.csprojResolveAssemblyReference.cache
+C:\Code\Rememba\Rememba\Rememba.Shared\obj\Release\Rememba.SharedPCL.dll
+C:\Code\Rememba\Rememba\Rememba.Shared\obj\Release\Rememba.SharedPCL.pdb

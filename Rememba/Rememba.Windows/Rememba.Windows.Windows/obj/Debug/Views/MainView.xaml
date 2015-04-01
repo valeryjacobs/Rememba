@@ -106,7 +106,12 @@
                 <Button Command="{Binding GoUpTree}">Up</Button>
                <Button Command="{Binding EditNodeCommand}">Edit node</Button>
                <Button Command="{Binding DeleteNodeCommand}">Delete node</Button>
-                <!--<TextBox Height="30" Visibility="{Binding NewGraphMode, Converter={StaticResource boolToVisibilityConverter}}" Text="{Binding MindMap.Name,Mode=TwoWay}"></TextBox>-->
+                <Button Command="{Binding Search}">Search</Button>
+                <TextBox Margin="3" Height="26" Text="{Binding SearchQuery,Mode=TwoWay}"></TextBox>
+                <ComboBox x:ConnectionId='7' Width="240" Height="30" ItemsSource="{Binding SearchResults}"                                              DisplayMemberPath="Title" >
+                </ComboBox>
+                <!--<TextBox Height="30" Visibility="{Binding NewGraphMode, Converter={StaticResource boolToVisibilityConverter}}" Text="{Binding MindMap.Name,Mode=TwoWay}">
+                    </TextBox> -->
             </StackPanel>
          
 
@@ -133,7 +138,7 @@
 
                             <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter}}" Orientation="Vertical" Margin="5">
                                 <TextBlock TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title}"></TextBlock>
-                                <TextBlock TextWrapping="Wrap"   Text="{Binding Description}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Foreground="DarkGray"  Text="{Binding Description}"></TextBlock>
                             </StackPanel>
                             <StackPanel Visibility="{Binding Edit, Converter={StaticResource boolToVisibilityConverter},ConverterParameter=Flip}" Orientation="Vertical" Margin="5">
                                 <TextBox BorderThickness="0" Background="#3a3737" Width="240" TextWrapping="Wrap" FontWeight="Bold"  Text="{Binding Title,Mode=TwoWay}"></TextBox>

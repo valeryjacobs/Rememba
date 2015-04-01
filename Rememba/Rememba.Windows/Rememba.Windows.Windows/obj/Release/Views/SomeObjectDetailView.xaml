@@ -6,10 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+   
     DataContext="{Binding SomeObjectDetailViewModel, Source={StaticResource MainViewModelLocator}}"
+   
     >
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Margin="40" FontSize="40" >BINDING:</TextBlock>
+        <TextBlock Margin="100" FontSize="50" Text="{Binding SelectedObject.SomeStringProp}"></TextBlock>
 
     </Grid>
 </Page>

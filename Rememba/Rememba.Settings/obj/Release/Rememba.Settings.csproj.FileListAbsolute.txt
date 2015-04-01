@@ -1,0 +1,4 @@
+C:\Code\Rememba\Rememba\Rememba.Settings\bin\Release\Rememba.Settings.dll
+C:\Code\Rememba\Rememba\Rememba.Settings\bin\Release\Rememba.Settings.pdb
+C:\Code\Rememba\Rememba\Rememba.Settings\obj\Release\Rememba.Settings.dll
+C:\Code\Rememba\Rememba\Rememba.Settings\obj\Release\Rememba.Settings.pdb

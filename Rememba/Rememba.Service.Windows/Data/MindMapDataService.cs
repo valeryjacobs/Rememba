@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 
 namespace Rememba.Service.Windows.Data
 {
@@ -53,7 +54,7 @@ namespace Rememba.Service.Windows.Data
 
             dynamic json = await Task.Run(() => JValue.Parse(serializedNode));
 
-            var clonedNode =  await Task.Run(() => TreeHelper.BuildTree(new Node(), json));
+            var clonedNode = await Task.Run(() => TreeHelper.BuildTree(new Node(), json));
 
             return clonedNode;
         }
@@ -98,6 +99,72 @@ namespace Rememba.Service.Windows.Data
         {
             MindMapRepository rep = new MindMapRepository();
             return await rep.ListMindMaps();
+        }
+
+
+        public async Task<List<INode>> Search(string searchQuery, INode rootNode)
+        {
+            if (rootNode == null || rootNode.Children == null || rootNode.Children.Count == 0) return new List<INode>();
+
+            //var boo = ContentContains(rootNode.ContentId, searchQuery);
+
+
+            var results = new List<INode>();
+
+            await SearchNode(rootNode, searchQuery, results);
+
+            //return await Task.Run(() =>
+            //{
+            //    var some = rootNode.Children.Where(x =>
+            //        x.Title.Contains(searchQuery) ||
+            //               (x.Description != null && x.Description.Contains(searchQuery))
+            //         );
+
+            //    return new List<INode>();
+            //}); 
+
+            return results;
+        }
+
+        private  async Task SearchNode(INode node, string searchQuery, List<INode> results)
+        {
+            if (node.Title.Contains(searchQuery) || (node.Description!=null && node.Description.Contains(searchQuery)))
+            {
+                results.Add(node);
+            }
+            else
+            {
+                if(await ContentContains(node.ContentId,searchQuery))
+                {
+                    results.Add(node);
+                }
+            }
+
+            foreach (INode n in node.Children)
+            {
+                await SearchNode(n, searchQuery, results);
+            }
+        }
+
+        private async Task<bool> ContentContains(string contentId, string searchQuery)
+        {
+            // return true;
+
+            string data = null;
+
+            StorageFolder localFolder = 
+                  ApplicationData.Current.LocalFolder;
+            if (await StorageHelper.DoesFileExistAsync
+                (contentId, localFolder))
+            {
+                //use cached version
+                StorageFile file =await localFolder.GetFileAsync(contentId);
+                data = await FileIO.ReadTextAsync(file);
+
+                return data.Contains(searchQuery);
+            }
+            else
+            { return false; }
         }
     }
 }
