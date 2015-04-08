@@ -1,4 +1,6 @@
-﻿using Rememba.Contracts.ViewModels;
+﻿using GalaSoft.MvvmLight.Ioc;
+using Rememba.Contracts.Plugins;
+using Rememba.Contracts.ViewModels;
 using Rememba.ViewModels.Windows;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,7 @@ namespace Rememba.Windows.Views
     {
         public MainView()
         {
+            //SimpleIoc.Default.Register<INodePlugin, NodePlugin>();
             this.InitializeComponent();
             this.SizeChanged += MainView_SizeChanged;
         }
@@ -65,16 +68,18 @@ namespace Rememba.Windows.Views
 
         private void SwitchMode()
         {
-            if (switchModeButton.Content.ToString() == "Edit")
-            {
-                switchModeButton.Content = "Preview";
-                contentView.InvokeScriptAsync("Edit", null);
-            }
-            else
-            {
-                switchModeButton.Content = "Edit";
-                contentView.InvokeScriptAsync("Preview", null);
-            }
+            contentView.InvokeScriptAsync("Switch", null);
+
+            //if (switchModeButton.Content.ToString() == "Edit")
+            //{
+            //    switchModeButton.Content = "Preview";
+            //    contentView.InvokeScriptAsync("Edit", null);
+            //}
+            //else
+            //{
+            //    switchModeButton.Content = "Edit";
+            //    contentView.InvokeScriptAsync("Preview", null);
+            //}
         }
 
 
@@ -113,13 +118,17 @@ namespace Rememba.Windows.Views
 
         private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
         {
+           
             if (e.Key == VirtualKey.Control) isCtrlKeyPressed = true;
+
             else if (isCtrlKeyPressed)
             {
                 switch (e.Key)
                 {
                     case VirtualKey.A:
-                        (this.DataContext as MainViewViewModel).AddChildNodeCommand.Execute(null);
+                       // AddNodePopup.IsOpen = true;
+                        AddChildNodeCommandButton.Flyout.ShowAt((FrameworkElement)sender);
+                       // (this.DataContext as MainViewViewModel).AddChildNodeCommand.Execute(null);
                         break;
                     case VirtualKey.S: (this.DataContext as MainViewViewModel).AddSiblingNodeCommand.Execute(null); break;
                     case VirtualKey.Delete: (this.DataContext as MainViewViewModel).DeleteNodeCommand.Execute(null); break;
@@ -129,23 +138,19 @@ namespace Rememba.Windows.Views
 
                     case VirtualKey.E: SwitchMode(); break;
                     case VirtualKey.N: (this.DataContext as MainViewViewModel).EditNodeCommand.Execute(null); break;
-                    //case VirtualKey.C: (this.DataContext as MainViewViewModel).Copy.Execute(null); break;
-                    //case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteSibling.Execute(null); break;
+                    case VirtualKey.X: (this.DataContext as MainViewViewModel).Cut.Execute(null); break;
+                    case VirtualKey.C: (this.DataContext as MainViewViewModel).Copy.Execute(null); break;
+                    case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteSibling.Execute(null); break;
                     //case VirtualKey.L:
                     //    (this.DataContext as MainViewViewModel).LoadGraphCommand.Execute(null);
                     //    break;
                     //case VirtualKey.X: (this.DataContext as MainViewViewModel).DeleteGraphCommand.Execute(null); break;
 
                 }
+                isCtrlKeyPressed = false;
+
             }
 
-            // isCtrlKeyPressed =  (e.Key == VirtualKey.Control)   ;         //if (e.Key == VirtualKey.Shift) isShiftKeyPressed = true;
-
-            // else if (isCtrlKeyPressed)
-            // {
-            //     Debug.WriteLine(e.Key + " : " + isCtrlKeyPressed );
-            //     switch (e.Key)
-            //     {
             //         case VirtualKey.A:
             //             (this.DataContext as MainViewViewModel).AddChildNodeCommand.Execute(null);
             //             break;
@@ -163,17 +168,6 @@ namespace Rememba.Windows.Views
             //             (this.DataContext as MainViewViewModel).LoadGraphCommand.Execute(null);
             //             break;
 
-
-            //     }
-            //     //isCtrlKeyPressed = false;
-            //     //isShiftKeyPressed = false;
-
-            // }
-            // //else if (isCtrlKeyPressed && isShiftKeyPressed)
-            // //{
-            // //    Debug.WriteLine(e.Key + " : " + isCtrlKeyPressed + " : " + isShiftKeyPressed);
-            // //    switch (e.Key)
-            // //    {
             // //        case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteChild.Execute(null); break;
             // //        case VirtualKey.S: (this.DataContext as MainViewViewModel).Save.Execute(null); break;
             // //        case VirtualKey.L:
@@ -184,17 +178,11 @@ namespace Rememba.Windows.Views
             // //        case VirtualKey.X: (this.DataContext as MainViewViewModel).DeleteGraphCommand.Execute(null); break;
             // //        case VirtualKey.U: (this.DataContext as MainViewViewModel).UpdateContent.Execute(null); break;
             // //    }
-
-            // //    isCtrlKeyPressed = false;
-            // //    isShiftKeyPressed = false;
-            // //}
-
-            //// isCtrlKeyPressed = false;
         }
 
         private void Page_KeyUp(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
+        //    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -202,6 +190,20 @@ namespace Rememba.Windows.Views
             if (e.AddedItems.Count != 1) return;
 
             (this.DataContext as MainViewViewModel).SelectParent(e.AddedItems[0]);
+
+        }
+
+        private void TextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if(e.Key == VirtualKey.Enter)
+            {
+                (this.DataContext as MainViewViewModel).EditNodeCommand.Execute(null);
+            }
+        }
+
+        private void parentListView_GotFocus(object sender, RoutedEventArgs e)
+        {
+           
 
         }
     }

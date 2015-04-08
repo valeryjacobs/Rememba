@@ -21,7 +21,7 @@ namespace Rememba.Contracts.Services
 
         Task<INode> CloneNode(INode node);
 
-        Task<List<INode>> Search(string searchQuery, INode rootNode);
+        Task<List<INode>> Search(string searchQuery, INode rootNode,bool searchContent);
 
 
     }

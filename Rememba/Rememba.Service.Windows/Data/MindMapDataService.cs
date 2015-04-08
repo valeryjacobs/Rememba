@@ -102,7 +102,7 @@ namespace Rememba.Service.Windows.Data
         }
 
 
-        public async Task<List<INode>> Search(string searchQuery, INode rootNode)
+        public async Task<List<INode>> Search(string searchQuery, INode rootNode, bool searchContent)
         {
             if (rootNode == null || rootNode.Children == null || rootNode.Children.Count == 0) return new List<INode>();
 
@@ -111,7 +111,7 @@ namespace Rememba.Service.Windows.Data
 
             var results = new List<INode>();
 
-            await SearchNode(rootNode, searchQuery, results);
+            await SearchNode(rootNode, searchQuery, results,searchContent);
 
             //return await Task.Run(() =>
             //{
@@ -126,7 +126,7 @@ namespace Rememba.Service.Windows.Data
             return results;
         }
 
-        private  async Task SearchNode(INode node, string searchQuery, List<INode> results)
+        private  async Task SearchNode(INode node, string searchQuery, List<INode> results, bool searchContent)
         {
             if (node.Title.Contains(searchQuery) || (node.Description!=null && node.Description.Contains(searchQuery)))
             {
@@ -134,15 +134,18 @@ namespace Rememba.Service.Windows.Data
             }
             else
             {
-                if(await ContentContains(node.ContentId,searchQuery))
+                if (searchContent)
                 {
-                    results.Add(node);
+                    if (await ContentContains(node.ContentId, searchQuery))
+                    {
+                        results.Add(node);
+                    }
                 }
             }
 
             foreach (INode n in node.Children)
             {
-                await SearchNode(n, searchQuery, results);
+                await SearchNode(n, searchQuery, results,searchContent);
             }
         }
 

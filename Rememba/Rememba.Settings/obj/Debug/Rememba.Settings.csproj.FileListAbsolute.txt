@@ -1,5 +1,5 @@
-C:\Code\Rememba\Rememba\Rememba.Settings\obj\Debug\Rememba.Settings.csprojResolveAssemblyReference.cache
 C:\Code\Rememba\Rememba\Rememba.Settings\bin\Debug\Rememba.Settings.dll
 C:\Code\Rememba\Rememba\Rememba.Settings\bin\Debug\Rememba.Settings.pdb
 C:\Code\Rememba\Rememba\Rememba.Settings\obj\Debug\Rememba.Settings.dll
 C:\Code\Rememba\Rememba\Rememba.Settings\obj\Debug\Rememba.Settings.pdb
+C:\Code\Rememba\Rememba\Rememba.Settings\obj\Debug\Rememba.Settings.csprojResolveAssemblyReference.cache

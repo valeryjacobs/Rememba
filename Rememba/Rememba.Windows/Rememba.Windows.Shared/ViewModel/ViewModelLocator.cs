@@ -16,6 +16,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
+using Rememba.Contracts.Plugins;
 using Rememba.Contracts.Services;
 using Rememba.Contracts.ViewModels;
 using Rememba.Contracts.Views;
@@ -50,6 +51,8 @@ namespace Rememba.Windows.ViewModel
             SimpleIoc.Default.Register<ISomeObjectDetailViewModel, SomeObjectDetailViewModel>();
             SimpleIoc.Default.Register<ISomeOtherObjectDetailViewModel, SomeOtherObjectDetailViewModel>();
             SimpleIoc.Default.Register<IMainViewViewModel, MainViewViewModel>();
+
+            //SimpleIoc.Default.Register<INodePlugin, INodePlugin>();
 
             //if (ViewModelBase.IsInDesignModeStatic)
             //{

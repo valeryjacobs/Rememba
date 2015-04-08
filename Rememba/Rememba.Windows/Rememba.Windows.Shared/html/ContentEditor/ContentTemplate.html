@@ -19,6 +19,8 @@
 </head>
 <body style="background:black;color:white;">
     <script>
+
+        var InEditMode = false;
         function Preview() {
             $('#output').html(Wiky.toHtml(document.getElementById('input').value));
             $('#output').show();
@@ -30,6 +32,21 @@
         $('#input').keyup(function () {
             window.external.notify($('#input').text());
         })
+
+        function Switch()
+        {
+
+            if(InEditMode)
+            {
+                Preview();
+            }
+            else
+            {
+                Edit();
+            }
+
+            InEditMode = !InEditMode;
+        }
 
         function Edit() {
             $('#output').hide();
@@ -51,7 +68,7 @@
 
        
     </script>
-    <textarea style="width:100%;height:100%; background:#3a3737;color:white;border:0px;margin-right:20px" id="input" rows="1200"></textarea>
+    <textarea  style="width:100%;height:100%; background:#3a3737;color:white;border:0px;" id="input" rows="1200"></textarea>
     <div id="output"></div>
     <!--<button onclick="Preview();">
         Preview

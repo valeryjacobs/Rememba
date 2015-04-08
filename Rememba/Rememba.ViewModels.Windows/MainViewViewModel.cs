@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using Rememba.Contracts.Models;
+using Rememba.Contracts.Plugins;
 using Rememba.Contracts.Services;
 using Rememba.Contracts.ViewModels;
 using Rememba.Model;
@@ -24,6 +25,7 @@ namespace Rememba.ViewModels.Windows
         public RelayCommand Order { get; set; }
         public RelayCommand ClearLocalCacheCommand { get; set; }
         public RelayCommand Copy { get; set; }
+        public RelayCommand Cut { get; set; }
         public RelayCommand PasteChild { get; set; }
         public RelayCommand PasteSibling { get; set; }
         public RelayCommand LoadGraphCommand { get; set; }
@@ -54,6 +56,7 @@ namespace Rememba.ViewModels.Windows
         private INavigationService _navigationService;
         private IDialogService _dialogService;
         private ICacheDataService _cacheService;
+        // private INodePlugin _nodePlugin;
 
 
         private ObservableCollection<INode> _parentList;
@@ -95,6 +98,15 @@ namespace Rememba.ViewModels.Windows
             }
         }
 
+        private bool _hasContent = false;
+
+        public bool HasContent
+        {
+            get { return _hasContent; }
+            set { _hasContent = value; }
+        }
+
+
 
         private async Task InitMindMap()
         {
@@ -105,6 +117,15 @@ namespace Rememba.ViewModels.Windows
 
             RootNode = await _mindMapDataService.GetRootNode(_mindMap);
 
+            SubChildList = null;
+            ChildList = null;
+            SelectedNodeContent = null;
+            SelectedNode = null;
+            PreviousSelectedNode = null;
+            SelectedParent = null;
+            SelectedChild = null;
+            SelectedSubChild = null;
+
             ParentList = RootNode.Children;
             if (RootNode.Children.Count > 0)
             {
@@ -114,9 +135,49 @@ namespace Rememba.ViewModels.Windows
 
         public INode PreviousSelectedNode { get; set; }
 
+        private List<string> _nodeTypes;
+
+        public List<string> NodeTypes
+        {
+            get { return _nodeTypes; }
+            set
+            {
+                _nodeTypes = value;
+                RaisePropertyChanged("NodeTypes");
+            }
+        }
+
+        private string _newNodeTitle;
+
+        public string NewNodeTitle
+        {
+            get { return _newNodeTitle; }
+            set
+            {
+                _newNodeTitle = value;
+                RaisePropertyChanged("NewNodeTitle");
+            }
+        }
+
+        private string _newNodeType;
+
+        public string NewNodeType
+        {
+            get { return _newNodeType; }
+            set
+            {
+                _newNodeType = value;
+                RaisePropertyChanged("NewNodeType");
+            }
+        }
 
         public async void Initialize(object parameter)
         {
+            NodeTypes = new List<string>() { "Content", "Trello", "Demo", "SharePoint", "Exchange", "OneDrive", "IFTTT", "Feed", "Azure" };
+
+            NewNodeType = "Content";
+            NewNodeTitle = "New node";
+
             Graphs = await _mindMapDataService.ListMindMaps();
             if (Graphs.Count > 0)
             {
@@ -130,13 +191,15 @@ namespace Rememba.ViewModels.Windows
             IContentDataService contentDataService,
             INavigationService navigationService,
             IDialogService dialogService,
-            ICacheDataService cacheService)
+            ICacheDataService cacheService
+            )
         {
             this._mindMapDataService = mindMapDataService;
             this._navigationService = navigationService;
             this._contentDataService = contentDataService;
             this._dialogService = dialogService;
             this._cacheService = cacheService;
+            //  this._nodePlugin = nodePlugin;
 
 
             InitializeCommands();
@@ -180,7 +243,7 @@ namespace Rememba.ViewModels.Windows
         {
             Search = new RelayCommand(async () =>
             {
-                SearchResults = await _mindMapDataService.Search(SearchQuery, RootNode);
+                SearchResults = await _mindMapDataService.Search(SearchQuery, RootNode, SearchContentEnabled);
 
             });
 
@@ -219,9 +282,16 @@ namespace Rememba.ViewModels.Windows
                 //SelectedNode.Parent.Children.OrderBy(x => x.Title);
             });
 
-            Copy = new RelayCommand(() =>
+            Copy = new RelayCommand(async () =>
+            {
+                ClipBoardNode = await _mindMapDataService.CloneNode(SelectedNode);
+            });
+
+            Cut = new RelayCommand(() =>
             {
                 ClipBoardNode = SelectedNode;
+                SelectedNode.Parent.Children.Remove(SelectedNode);
+
             });
 
             PasteChild = new RelayCommand(async () =>
@@ -235,8 +305,9 @@ namespace Rememba.ViewModels.Windows
 
             PasteSibling = new RelayCommand(() =>
             {
+                ClipBoardNode.Parent = SelectedNode.Parent;
                 SelectedNode.Parent.Children.Add(ClipBoardNode);
-                ClipBoardNode.Parent.Children.Remove(ClipBoardNode);
+              //  ClipBoardNode.Parent.Children.Remove(ClipBoardNode);
 
             });
 
@@ -389,7 +460,11 @@ namespace Rememba.ViewModels.Windows
 
         private async Task CreateGraph()
         {
-            _mindMap = await _mindMapDataService.Create(NewGraphName);
+            ParentList = null;
+            ChildList = null;
+            SubChildList = null;
+
+            MindMap = await _mindMapDataService.Create(NewGraphName);
 
             RootNode = await _mindMapDataService.GetRootNode(_mindMap);
 
@@ -397,10 +472,11 @@ namespace Rememba.ViewModels.Windows
             if (RootNode.Children.Count > 0)
             {
                 SelectParent(RootNode.Children[0]);
-
             }
 
-            Initialize(null);
+            Graphs = await _mindMapDataService.ListMindMaps();
+
+            await InitMindMap();
         }
 
         public void UpdateContentFromWebView(string content)
@@ -499,6 +575,18 @@ namespace Rememba.ViewModels.Windows
         }
 
 
+        private bool _searchContentEnabled;
+
+        public bool SearchContentEnabled
+        {
+            get { return _searchContentEnabled; }
+            set
+            {
+                _searchContentEnabled = value;
+                RaisePropertyChanged("SearchContentEnabled");
+            }
+        }
+
         public INode RootNode
         {
             get { return _rootNode; }
@@ -535,6 +623,16 @@ namespace Rememba.ViewModels.Windows
             set
             {
                 _selectedNodeContent = value;
+
+                if (_selectedNodeContent != null && _selectedNodeContent.Id != null && _selectedNodeContent.Id != "1")
+                {
+                    HasContent = true;
+                }
+                else
+                {
+                    HasContent = false;
+                }
+
                 RaisePropertyChanged("SelectedNodeContent");
             }
         }
@@ -671,24 +769,38 @@ namespace Rememba.ViewModels.Windows
             {
                 parentNode = RootNode;
             }
-            INode node = new Node();
-            node.Title = "New Node added on " + DateTime.Now.ToString();
-            if (addAsChild)
+
+
+            switch (NewNodeType)
             {
-                node.Parent = parentNode;
-                parentNode.Children.Add(node);
+                case "Content":
+                    INode node = new Node();
+                    node.Title = NewNodeTitle;
+                    if (addAsChild)
+                    {
+                        node.Parent = parentNode;
+                        parentNode.Children.Add(node);
+                    }
+                    else
+                    {
+                        if (parentNode.Parent == null)
+                        {
+                            return;
+                        }
+                        node.Parent = parentNode.Parent;
+                        parentNode.Parent.Children.Insert(parentNode.Parent.Children.IndexOf(parentNode) + 1, node);
+                    }
+                    SelectedNode = node;
+                    SwitchNodeToEditMode();
+                    break;
+                case "Trello":
+
+
+                    break;
+
+
             }
-            else
-            {
-                if (parentNode.Parent == null)
-                {
-                    return;
-                }
-                node.Parent = parentNode.Parent;
-                parentNode.Parent.Children.Insert(parentNode.Parent.Children.IndexOf(parentNode) + 1, node);
-            }
-            SelectedNode = node;
-            SwitchNodeToEditMode();
+
         }
 
         public async void SetContent()

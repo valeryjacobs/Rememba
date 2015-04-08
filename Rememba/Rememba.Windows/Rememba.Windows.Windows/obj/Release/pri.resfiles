@@ -1,6 +1,11 @@
-C:\Code\RefApp\RefApp\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.Platform.pri
-C:\Code\RefApp\RefApp\RefApp.Repositories.Windows\bin\Release\RefApp.Repositories.Windows.pri
-C:\Code\RefApp\RefApp\RefApp.Service.Windows\bin\Release\RefApp.Service.Windows.pri
-C:\Code\RefApp\RefApp\RefApp.Shared.Windows\bin\Release\RefApp.Shared.Windows.pri
-C:\Code\RefApp\RefApp\RefApp.ViewModels.Windows\bin\Release\RefApp.ViewModels.Windows.pri
-C:\Code\RefApp\RefApp\RefApp.Windows\RefApp.Windows.Windows\obj\Release\Microsoft.Practices.ServiceLocation.pri
+C:\Code\Rememba\Rememba\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.Platform.pri
+C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\bin\Release\Rememba.Repositories.Windows.pri
+C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Release\Rememba.Service.Windows.pri
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Release\Rememba.Shared.Windows.pri
+C:\Code\Rememba\Rememba\Rememba.ViewModels.Windows\bin\Release\Rememba.ViewModels.Windows.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\Redist\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\Redist\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.pri
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\Microsoft.Data.Edm.pri
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\Microsoft.Data.OData.pri
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\Microsoft.Practices.ServiceLocation.pri
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\System.Spatial.pri

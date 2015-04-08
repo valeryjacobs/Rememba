@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="41540b8d-f660-48b8-95f0-efce16ce0e0b" Publisher="CN=Valery" Version="0.9.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="8946CloudCompanion.Rememba" Publisher="CN=38C66C40-A4B8-457C-AAF0-EC86EF854F07" Version="1.1.0.0" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>Rememba</DisplayName>
-    <PublisherDisplayName>Valery Jacobs</PublisherDisplayName>
+    <PublisherDisplayName>CloudCompanion</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>

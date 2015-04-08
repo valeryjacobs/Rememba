@@ -1,3 +1,8 @@
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.pdb
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.pri
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.dll
+C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.pdb
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\priconfig.xml
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\priconfig.xml.intermediate
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\layout.resfiles
@@ -9,9 +14,4 @@ C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\pri.resfiles.intermedia
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\qualifiers.txt
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\qualifiers.txt.intermediate
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.pdb
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.pri
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.dll
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.pdb
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.csprojResolveAssemblyReference.cache

@@ -79,10 +79,13 @@ namespace Rememba.Windows
 
                 if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    stateService.LoadState();
-                    if (stateService.Parameter != null && stateService.ViewName != null)
+                    if (stateService != null)
                     {
-                        navigationService.NavigateTo(stateService.ViewName, stateService.Parameter);
+                        stateService.LoadState();
+                        if (stateService.Parameter != null && stateService.ViewName != null)
+                        {
+                            navigationService.NavigateTo(stateService.ViewName, stateService.Parameter);
+                        }
                     }
                 }
 
