@@ -1,0 +1,9 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.scale-140"
+"ResourceDimensions"		"scale-140"
+
+[Files]
+"C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\split.scale-140.pri"			"resources.pri"
+"C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\PackageLayout\Assets\StoreLogo.scale-140.png"			"Assets\StoreLogo.scale-140.png"
+"C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\PackageLayout\Assets\RemembaLogo43x43.scale-140.png"			"Assets\RemembaLogo43x43.scale-140.png"
+"C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\PackageLayout\Assets\RemembaLogo15x150.scale-140.png"			"Assets\RemembaLogo15x150.scale-140.png"

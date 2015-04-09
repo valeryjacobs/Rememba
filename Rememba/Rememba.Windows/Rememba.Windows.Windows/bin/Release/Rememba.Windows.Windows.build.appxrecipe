@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SURFACERED</Machine>
+    <WindowsUser>Valery</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>8946CloudCompanion.Rememba</PackageIdentityName>
+    <IntermediateOutputPath>C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\Rememba.Windows.Windows.exe">
+      <PackagePath>Rememba.Windows.Windows.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.dll">
+      <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\MvvmLightLibs.5.1.1.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
+      <PackagePath>Microsoft.Data.Edm.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.OData.dll">
+      <PackagePath>Microsoft.Data.OData.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
+      <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\WindowsAzure.Storage.4.3.0\lib\win8\Microsoft.WindowsAzure.Storage.dll">
+      <PackagePath>Microsoft.WindowsAzure.Storage.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Contracts\bin\Release\Rememba.Contracts.dll">
+      <PackagePath>Rememba.Contracts.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Release\Rememba.Service.Windows.dll">
+      <PackagePath>Rememba.Service.Windows.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared\bin\Release\Rememba.SharedPCL.dll">
+      <PackagePath>Rememba.SharedPCL.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.ViewModels.Windows\bin\Release\Rememba.ViewModels.Windows.dll">
+      <PackagePath>Rememba.ViewModels.Windows.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
+      <PackagePath>System.Spatial.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Release\Rememba.Model.dll">
+      <PackagePath>Rememba.Model.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Service.Windows\bin\Release\Rememba.Repositories.Windows.dll">
+      <PackagePath>Rememba.Repositories.Windows.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>de\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>es\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>fr\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>it\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>ja\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>ko\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>ru\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>zh-Hans\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.Edm.resources.dll">
+      <PackagePath>zh-Hant\Microsoft.Data.Edm.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.OData.resources.dll">
+      <PackagePath>de\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.OData.resources.dll">
+      <PackagePath>es\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.OData.resources.dll">
+      <PackagePath>fr\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.OData.resources.dll">
+      <PackagePath>it\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.OData.resources.dll">
+      <PackagePath>ja\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.OData.resources.dll">
+      <PackagePath>ko\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.OData.resources.dll">
+      <PackagePath>ru\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.OData.resources.dll">
+      <PackagePath>zh-Hans\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.OData.resources.dll">
+      <PackagePath>zh-Hant\Microsoft.Data.OData.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\System.Spatial.resources.dll">
+      <PackagePath>de\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\System.Spatial.resources.dll">
+      <PackagePath>es\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\System.Spatial.resources.dll">
+      <PackagePath>fr\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\System.Spatial.resources.dll">
+      <PackagePath>it\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\System.Spatial.resources.dll">
+      <PackagePath>ja\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\System.Spatial.resources.dll">
+      <PackagePath>ko\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\System.Spatial.resources.dll">
+      <PackagePath>ru\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\System.Spatial.resources.dll">
+      <PackagePath>zh-Hans\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\System.Spatial.resources.dll">
+      <PackagePath>zh-Hant\System.Spatial.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Settings\bin\Release\Rememba.Settings.dll">
+      <PackagePath>Rememba.Settings.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Release\Rememba.Shared.Windows.dll">
+      <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\Edit.png">
+      <PackagePath>Assets\Edit.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo120x120.png">
+      <PackagePath>Assets\RemembaLogo120x120.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo140x140.png">
+      <PackagePath>Assets\RemembaLogo140x140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo150x150.png">
+      <PackagePath>Assets\RemembaLogo150x150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-100.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-140.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-180.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo15x150.scale-80.png">
+      <PackagePath>Assets\RemembaLogo15x150.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo180x180.png">
+      <PackagePath>Assets\RemembaLogo180x180.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo210x210.png">
+      <PackagePath>Assets\RemembaLogo210x210.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo248x120.png">
+      <PackagePath>Assets\RemembaLogo248x120.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo24x24.png">
+      <PackagePath>Assets\RemembaLogo24x24.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo256x256.png">
+      <PackagePath>Assets\RemembaLogo256x256.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo270x270.png">
+      <PackagePath>Assets\RemembaLogo270x270.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo310x150.png">
+      <PackagePath>Assets\RemembaLogo310x150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo33x33.png">
+      <PackagePath>Assets\RemembaLogo33x33.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo434x210.png">
+      <PackagePath>Assets\RemembaLogo434x210.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo43x43.scale-100.png">
+      <PackagePath>Assets\RemembaLogo43x43.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo43x43.scale-140.png">
+      <PackagePath>Assets\RemembaLogo43x43.scale-140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo43x43.scale-180.png">
+      <PackagePath>Assets\RemembaLogo43x43.scale-180.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo50x50.png">
+      <PackagePath>Assets\RemembaLogo50x50.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo558x270.png">
+      <PackagePath>Assets\RemembaLogo558x270.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo70x70.png">
+      <PackagePath>Assets\RemembaLogo70x70.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaLogo90x90.png">
+      <PackagePath>Assets\RemembaLogo90x90.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\RemembaSplash620-300.png">
+      <PackagePath>Assets\RemembaSplash620-300.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\StoreLogo.scale-140.png">
+      <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\Assets\StoreLogo.scale-180.png">
+      <PackagePath>Assets\StoreLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\dummy.png">
+      <PackagePath>htmlTester\dummy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\dummy.png">
+      <PackagePath>html\ContentEditor\dummy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\ContentTemplate.html">
+      <PackagePath>htmlTester\ContentTemplate.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\ContentTemplate.html">
+      <PackagePath>html\ContentEditor\ContentTemplate.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\WikiMarkupSample.txt">
+      <PackagePath>htmlTester\WikiMarkupSample.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\WikiMarkupSample.txt">
+      <PackagePath>html\ContentEditor\WikiMarkupSample.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.css">
+      <PackagePath>htmlTester\wiky.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.lang.css">
+      <PackagePath>htmlTester\wiky.lang.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\htmlTester\wiky.math.css">
+      <PackagePath>htmlTester\wiky.math.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.css">
+      <PackagePath>html\ContentEditor\wiky.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.lang.css">
+      <PackagePath>html\ContentEditor\wiky.lang.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.math.css">
+      <PackagePath>html\ContentEditor\wiky.math.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\jquery-1.11.1.min.js">
+      <PackagePath>html\ContentEditor\jquery-1.11.1.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.js">
+      <PackagePath>html\ContentEditor\wiky.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.lang.js">
+      <PackagePath>html\ContentEditor\wiky.lang.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Shared\html\ContentEditor\wiky.math.js">
+      <PackagePath>html\ContentEditor\wiky.math.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\html\ContentEditor\MainPage.xbf">
+      <PackagePath>html\ContentEditor\MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\Views\MainView.xbf">
+      <PackagePath>Views\MainView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\Views\SomeObjectDetailView.xbf">
+      <PackagePath>Views\SomeObjectDetailView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\Views\SomeOtherObjectDetailView.xbf">
+      <PackagePath>Views\SomeOtherObjectDetailView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\Rememba.Windows.Windows.xr.xml">
+      <PackagePath>Rememba.Windows.Windows.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\bin\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

@@ -37,6 +37,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\IBinaryContent.cs" />
     <Compile Include="Models\IContent.cs" />
     <Compile Include="Models\IMindMap.cs" />
     <Compile Include="Models\INode.cs" />

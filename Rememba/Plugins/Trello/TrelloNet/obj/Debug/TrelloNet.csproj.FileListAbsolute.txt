@@ -1,0 +1,16 @@
+C:\RnD\Trello.NET\TrelloNet\bin\Debug\TrelloNet.dll
+C:\RnD\Trello.NET\TrelloNet\bin\Debug\TrelloNet.pdb
+C:\RnD\Trello.NET\TrelloNet\bin\Debug\RestSharp.dll
+C:\RnD\Trello.NET\TrelloNet\obj\Debug\TrelloNet.csprojResolveAssemblyReference.cache
+C:\RnD\Trello.NET\TrelloNet\obj\Debug\TrelloNet.dll
+C:\RnD\Trello.NET\TrelloNet\obj\Debug\TrelloNet.pdb
+C:\RnD\Trello.NET\TrelloNet\bin\Debug\TrelloNet.dll.config
+C:\RnD\Trello.NET\TrelloNet\bin\Debug\Newtonsoft.Json.dll
+C:\RnD\Trello.NET\TrelloNet\bin\Debug\Newtonsoft.Json.xml
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\bin\Debug\TrelloNet.dll.config
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\bin\Debug\TrelloNet.dll
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\bin\Debug\TrelloNet.pdb
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\bin\Debug\Newtonsoft.Json.dll
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\obj\Debug\TrelloNet.dll
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\obj\Debug\TrelloNet.pdb
+C:\Code\Rememba\Rememba\Plugins\Trello\TrelloNet\obj\Debug\TrelloNet.csprojResolveAssemblyReference.cache

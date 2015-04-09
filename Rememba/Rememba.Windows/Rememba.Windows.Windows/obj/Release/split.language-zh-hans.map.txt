@@ -1,0 +1,7 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-zh-hans"
+"ResourceDimensions"		"language-zh-hans"
+"ResourceDimensions"		"language-zh-cn"
+
+[Files]
+"C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\split.language-zh-hans.pri"			"resources.pri"

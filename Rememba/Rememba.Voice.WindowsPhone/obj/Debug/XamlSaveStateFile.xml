@@ -1,0 +1,13 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.voice.windowsphone\obj\debug\intermediatexaml\rememba.voice.windowsphone.exe" HashGuid="dd998c29-3271-d28b-d71d-93cd7ad7cbe4" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\microsoft.data.edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\microsoft.data.edm.dll" HashGuid="652859ac-63b5-9ab0-7a6b-0cb8dfcd265f" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\microsoft.data.odata.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\microsoft.data.odata.dll" HashGuid="4e84b0db-d22a-61af-6343-dd7cc7f44046" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\windowsazure.storage.4.3.0\lib\wpa\microsoft.windowsazure.storage.dll" HashGuid="69d1254a-41d8-4cd8-9ab3-c7714bab061b" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="2fe38646-8d70-0dd5-ca41-48cdfd1a6b3d" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.model\bin\debug\rememba.model.dll" HashGuid="34fbc82c-76be-7c0e-0c11-d082c0f551f4" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.repositories.windows\bin\debug\rememba.repositories.windows.dll" HashGuid="8236b740-d144-f7e0-9068-a142ba456ba4" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.settings\bin\debug\rememba.settings.dll" HashGuid="2090ac50-568f-f2b2-238c-86d6713d9fdf" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\system.spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\system.spatial.dll" HashGuid="4e779b7f-3e1d-55d1-cac0-694ae2344f0d" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>

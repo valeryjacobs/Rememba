@@ -1,0 +1,7 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-ko"
+"ResourceDimensions"		"language-ko"
+"ResourceDimensions"		"language-ko-kr"
+
+[Files]
+"C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Release\split.language-ko.pri"			"resources.pri"

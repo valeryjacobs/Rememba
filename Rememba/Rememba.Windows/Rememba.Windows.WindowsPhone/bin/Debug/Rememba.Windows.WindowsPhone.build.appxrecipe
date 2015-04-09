@@ -145,9 +145,6 @@
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\System.Spatial.resources.dll">
       <PackagePath>zh-Hant\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Settings\bin\Debug\Rememba.Settings.dll">
-      <PackagePath>Rememba.Settings.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Shared.Windows\bin\Debug\Rememba.Shared.Windows.dll">
       <PackagePath>Rememba.Shared.Windows.dll</PackagePath>
     </AppxPackagedFile>
@@ -240,6 +237,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\Rememba.Windows.WindowsPhone.xr.xml">
       <PackagePath>Rememba.Windows.WindowsPhone.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Settings\bin\Debug\Rememba.Settings.dll">
+      <PackagePath>Rememba.Settings.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.WindowsPhone\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

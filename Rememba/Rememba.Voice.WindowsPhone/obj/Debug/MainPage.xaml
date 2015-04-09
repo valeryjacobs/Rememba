@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="Rememba.Voice.WindowsPhone.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Rememba.Voice.WindowsPhone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    
+    >
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition MaxHeight="600"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ComboBox    ItemsSource="{Binding MindMapList}"  SelectedValue="{Binding SelectedMindMap, Mode=TwoWay}"  >
+        </ComboBox>
+        <ListView SelectionMode="Single"  Grid.Row="1" ItemsSource="{Binding MemoList}"   SelectedValue="{Binding SelectedMemo, Mode=TwoWay}"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="18" Text="{Binding}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:ConnectionId='1' Grid.Row="2" BorderThickness="0" x:Name="record"                      Width="100" Height="100" HorizontalAlignment="Center">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Ellipse Fill="Red" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Ellipse>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center">Record</TextBlock>
+                    </Grid>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:ConnectionId='2' Grid.Row="2" BorderThickness="0" x:Name="stop"                    Width="100" Height="100" HorizontalAlignment="Center">
+            
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                       
+                        <Ellipse x:Name="ellipse" Fill="Red"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Ellipse>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center">Stop</TextBlock>
+                    </Grid>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:ConnectionId='3' Grid.Row="2" BorderThickness="0" x:Name="play"                    Width="100" Height="100" HorizontalAlignment="Center">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Ellipse Fill="Green" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Ellipse>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center">Play</TextBlock>
+                    </Grid>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:ConnectionId='4' Grid.Row="2" BorderThickness="0" x:Name="stopPlay"                        Width="100" Height="100" HorizontalAlignment="Center">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Ellipse Fill="Green" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Ellipse>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center">Stop</TextBlock>
+                    </Grid>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Grid>
+            <MediaElement x:Name="playbackElement1" ></MediaElement>
+
+        </Grid>
+
+    </Grid>
+</Page>
+
