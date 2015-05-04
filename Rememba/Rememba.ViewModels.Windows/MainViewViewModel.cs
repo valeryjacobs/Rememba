@@ -13,13 +13,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage.Streams;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Rememba.ViewModels.Windows
 {
     public class MainViewViewModel : ViewModelBase, IMainViewViewModel
     {
+        public RelayCommand InsertClipboardDataCommand { get; set; }
         public RelayCommand GoDo { get; set; }
         public RelayCommand Search { get; set; }
         public RelayCommand Order { get; set; }
@@ -238,9 +242,51 @@ namespace Rememba.ViewModels.Windows
             }
         }
 
+        private async Task<string> StoreClipboardData()
+        {
+
+            return "";
+            //var dataPackageView = Clipboard.GetContent();
+            //if (dataPackageView.Contains(StandardDataFormats.Bitmap))
+            //{
+            //    IRandomAccessStreamReference imageReceived = null;
+            //    try
+            //    {
+            //        imageReceived = await dataPackageView.GetBitmapAsync();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //rootPage.NotifyUser("Error retrieving image from Clipboard: " + ex.Message, NotifyType.ErrorMessage);
+            //    }
+
+            //    if (imageReceived != null)
+            //    {
+            //        using (var imageStream = await imageReceived.OpenReadAsync())
+            //        {
+            //            var bitmapImage = new BitmapImage();
+            //            bitmapImage.SetSource(imageStream);
+            //           // ImageHolder.Source = bitmapImage;
+            //          //  ImageHolder.Visibility = Visibility.Visible;
+            //           // OutputText.Text = "Image is retrieved from the clipboard and pasted successfully.";
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //  //  OutputText.Text = "Bitmap format is not available in clipboard";
+            //  //  ImageHolder.Visibility = Visibility.Collapsed;
+            //}
+
+        }
+
 
         private async void InitializeCommands()
         {
+            InsertClipboardDataCommand = new RelayCommand(async () =>
+            {
+               
+            });
+
             Search = new RelayCommand(async () =>
             {
                 SearchResults = await _mindMapDataService.Search(SearchQuery, RootNode, SearchContentEnabled);

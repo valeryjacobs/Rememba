@@ -70,6 +70,46 @@ namespace Rememba.Windows.ViewModel
             SimpleIoc.Default.Register<ICacheDataService, CacheDataService>();
         }
 
+
+        public static void SetAndReg()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            
+            var navigationService = new NavigationService();
+            navigationService.Configure(PageNames.SomeObjectDetailView, typeof(SomeObjectDetailView));
+            navigationService.Configure(PageNames.SomeOtherObjectDetailView, typeof(SomeOtherObjectDetailView));
+            navigationService.Configure(PageNames.MainView, typeof(MainView));
+            SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
+            SimpleIoc.Default.Register<MainViewModel>();
+            //SimpleIoc.Default.Register<SomeObjectDetailViewModel>();
+            SimpleIoc.Default.Register<IStateService, StateService>();
+
+            SimpleIoc.Default.Register<ISomeObjectDetailViewModel, SomeObjectDetailViewModel>();
+            SimpleIoc.Default.Register<ISomeOtherObjectDetailViewModel, SomeOtherObjectDetailViewModel>();
+            SimpleIoc.Default.Register<IMainViewViewModel, MainViewViewModel>();
+
+            //SimpleIoc.Default.Register<INodePlugin, INodePlugin>();
+
+            //if (ViewModelBase.IsInDesignModeStatic)
+            //{
+            //    // Create design time view services and models
+            //    SimpleIoc.Default.Register<IDataService, DesignDataService>();
+            //}
+            //else
+            //{
+            // Create run time view services and models
+            SimpleIoc.Default.Register<ISomeDataService, SomeDataService>();
+            SimpleIoc.Default.Register<IMindMapDataService, MindMapDataService>();
+            SimpleIoc.Default.Register<IContentDataService, ContentDataService>();
+            //}
+
+            SimpleIoc.Default.Register<ICacheDataService, CacheDataService>();
+
+         
+        }
+
         private INavigationService CreateNavigationService()
         {
             var navigationService = new NavigationService();

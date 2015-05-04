@@ -1,8 +1,10 @@
-﻿using GalaSoft.MvvmLight.Views;
+﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using Rememba.Contracts.Services;
 using Rememba.Shared;
 using Rememba.Windows.Extensions;
+using Rememba.Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -63,7 +65,7 @@ namespace Rememba.Windows
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
+          //  ViewModelLocator.SetAndReg();
             Frame rootFrame = Window.Current.Content as Frame;
 
 

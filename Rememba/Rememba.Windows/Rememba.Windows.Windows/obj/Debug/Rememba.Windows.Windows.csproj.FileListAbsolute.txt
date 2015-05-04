@@ -87,7 +87,6 @@ C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\html\ContentEditor\MainPage.g.i.cs
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\html\ContentEditor\MainPage.g.cs
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\XamlTypeInfo.g.cs
-C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\XamlSaveStateFile.xml
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\App.xaml
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\MainView.xaml
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\SomeObjectDetailView.xaml
@@ -98,6 +97,7 @@ C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\SomeObjectDetailView.xbf
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Views\SomeOtherObjectDetailView.xbf
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\html\ContentEditor\MainPage.xbf
+C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\XamlSaveStateFile.xml
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Rememba.Windows.Windows.exe
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Rememba.Windows.Windows.pdb
 C:\Code\Rememba\Rememba\Rememba.Windows\Rememba.Windows.Windows\obj\Debug\Microsoft.Data.Edm\en-US\Microsoft.Data.Edm.resw

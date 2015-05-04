@@ -330,6 +330,14 @@ namespace Rememba.Voice.WindowsPhone
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(string memo in MemoList)
+            {                 var stream = await _recordStorageFile.OpenAsync(FileAccessMode.Read);
+                UploadBinaryContent(memo,)
+            }
+        }
+
 
     }
 }

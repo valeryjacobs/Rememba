@@ -14,4 +14,3 @@ C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\pri.resfiles.intermedia
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\qualifiers.txt
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\qualifiers.txt.intermediate
 C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
-C:\Code\Rememba\Rememba\Rememba.Shared.Windows\obj\Debug\Rememba.Shared.Windows.csprojResolveAssemblyReference.cache

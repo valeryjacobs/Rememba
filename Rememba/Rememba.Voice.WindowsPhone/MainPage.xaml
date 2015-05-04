@@ -15,6 +15,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition MaxHeight="600"></RowDefinition>
             <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <ComboBox    ItemsSource="{Binding MindMapList}"  SelectedValue="{Binding SelectedMindMap, Mode=TwoWay}"  >
         </ComboBox>
@@ -75,7 +76,9 @@
             </Button.Template>
         </Button>
 
-
+        <StackPanel>
+            <Button Click="Button_Click">Upload</Button>
+        </StackPanel>
         <Grid>
             <MediaElement x:Name="playbackElement1" ></MediaElement>
 

@@ -141,6 +141,7 @@ namespace Rememba.Windows.Views
                     case VirtualKey.X: (this.DataContext as MainViewViewModel).Cut.Execute(null); break;
                     case VirtualKey.C: (this.DataContext as MainViewViewModel).Copy.Execute(null); break;
                     case VirtualKey.V: (this.DataContext as MainViewViewModel).PasteSibling.Execute(null); break;
+                   // case VirtualKey.I: (this.DataContext as MainViewViewModel).InsertClipboardDataCommand.Execute(null); break;
                     //case VirtualKey.L:
                     //    (this.DataContext as MainViewViewModel).LoadGraphCommand.Execute(null);
                     //    break;

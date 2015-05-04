@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.windows\rememba.windows.windows\obj\debug\intermediatexaml\rememba.windows.windows.exe" HashGuid="40c3b380-2e7b-8b53-fb64-5472794e4678" />
+    <LocalAssembly PathName="c:\code\rememba\rememba\rememba.windows\rememba.windows.windows\obj\debug\intermediatexaml\rememba.windows.windows.exe" HashGuid="ca7b50a1-119e-8ceb-4659-712926beb737" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactions.dll" HashGuid="95a94f94-3917-d473-4f7c-18c4bd437046" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactivity.dll" HashGuid="d25f59e6-dd81-900a-0dfc-55b39f6898ef" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\mvvmlightlibs.5.1.1.0\lib\windows81\galasoft.mvvmlight.dll" HashGuid="d702f8e6-9904-1220-8de7-be8614bf93e8" />
@@ -14,7 +14,7 @@
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.contracts\bin\debug\rememba.contracts.dll" HashGuid="2fe38646-8d70-0dd5-ca41-48cdfd1a6b3d" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.service.windows\bin\debug\rememba.service.windows.dll" HashGuid="ed0852d5-6dac-454f-f490-4d6b24ff8729" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.shared\bin\debug\rememba.sharedpcl.dll" HashGuid="37d90658-7838-680b-35bc-20006e098460" />
-    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="eef7c9d5-5047-433f-06fc-b4f6378d4456" />
+    <ReferenceAssembly PathName="c:\code\rememba\rememba\rememba.viewmodels.windows\bin\debug\rememba.viewmodels.windows.dll" HashGuid="4798a658-9192-d0d4-2011-bcda835d8924" />
     <ReferenceAssembly PathName="c:\code\rememba\rememba\packages\system.spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\system.spatial.dll" HashGuid="4e779b7f-3e1d-55d1-cac0-694ae2344f0d" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
