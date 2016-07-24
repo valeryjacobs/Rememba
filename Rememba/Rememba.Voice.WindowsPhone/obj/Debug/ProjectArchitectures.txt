@@ -1,9 +1,0 @@
-C:\Code\Rememba\Rememba\Rememba.Contracts\Rememba.Contracts.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Contracts\Rememba.Contracts.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Contracts\Rememba.Contracts.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Model\Rememba.Model.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Model\Rememba.Model.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Repositories.Windows\Rememba.Repositories.Windows.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Settings\Rememba.Settings.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Settings\Rememba.Settings.csproj;neutral
-C:\Code\Rememba\Rememba\Rememba.Voice.WindowsPhone\Rememba.Voice.WindowsPhone.csproj;neutral
